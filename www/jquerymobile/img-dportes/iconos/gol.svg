@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Generator: Adobe Fireworks 10, Export SVG Extension by Aaron Beall (http://fireworks.abeall.com) . Version: 0.6.1  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="gol.fw-P%E1gina%201" viewBox="0 0 77 77" style="background-color:#ffffff00" version="1.1"
+	xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+	x="0px" y="0px" width="77px" height="77px"
+>
+	<g id="Capa%201">
+		<g>
+			<path d="M 38.5 24.0885 L 53.2133 34.7521 L 47.5933 52.006 L 29.4067 52.006 L 23.7867 34.7521 L 38.5 24.0885 Z" stroke="#ffffff00" stroke-width="1" fill="#000000"/>
+		</g>
+		<path id="Elipse" d="M 1 38.5 C 1 17.7891 17.7891 1 38.5 1 C 59.2109 1 76 17.7891 76 38.5 C 76 59.2109 59.2109 76 38.5 76 C 17.7891 76 1 59.2109 1 38.5 Z" stroke="#000000" stroke-width="2" fill="none"/>
+		<path d="M 24.3059 58.9991 L 6.6424 58.8503 C 11.8249 66.7733 19.9247 72.6151 29.4163 74.8509 L 24.3059 58.9991 Z" stroke="#ffffff00" stroke-width="1" fill="#000000"/>
+		<path d="M 52.5561 58.9991 L 47.4193 74.9331 C 56.8459 72.6333 64.8762 66.7702 70.0023 58.8519 L 52.5561 58.9991 Z" stroke="#ffffff00" stroke-width="1" fill="#000000"/>
+		<path d="M 38.1982 14.7324 L 52.9115 4.0688 L 52.836 3.8378 C 48.4194 2.0091 43.5777 1 38.5 1 C 33.1802 1 28.119 2.1075 23.5347 4.1049 L 38.1982 14.7324 Z" stroke="#ffffff00" stroke-width="1" fill="#000000"/>
+		<path d="M 9.819 14.9347 L 9.3307 14.9308 C 4.1205 21.3709 1 29.5708 1 38.5 C 1 39.796 1.0656 41.0769 1.1939 42.339 L 15.344 32.0733 L 9.819 14.9347 Z" stroke="#ffffff00" stroke-width="1" fill="#000000"/>
+		<path d="M 67.1939 14.9347 L 61.6689 32.0733 L 75.8068 42.33 C 75.9346 41.0707 76 39.793 76 38.5 C 76 29.5709 72.8794 21.3709 67.6693 14.9308 L 67.1939 14.9347 Z" stroke="#ffffff00" stroke-width="1" fill="#000000"/>
+		<path id="L%EDnea" d="M 38.5 12.5 L 38.5 29.5 " stroke="#000000" stroke-width="2" fill="none"/>
+		<path id="L%EDnea2" d="M 65 31 L 49 36 " stroke="#000000" stroke-width="2" fill="none"/>
+		<path id="L%EDnea3" d="M 55 62 L 46 48 " stroke="#000000" stroke-width="2" fill="none"/>
+		<path id="L%EDnea4" d="M 10 31 L 26 36 " stroke="#000000" stroke-width="2" fill="none"/>
+		<path id="L%EDnea5" d="M 23 62 L 32 48 " stroke="#000000" stroke-width="2" fill="none"/>
+	</g>
+</svg>

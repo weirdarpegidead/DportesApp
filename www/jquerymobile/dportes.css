@@ -1,0 +1,435 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* BOTON DE COLOR VERDE OSCURO */
+a.color-boton, a.color-boton:hover {
+	background:#008000 !important;
+	font-size:14px;
+	color:#FFF !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	text-shadow:none !important;
+	border-color:transparent !important;
+	text-decoration:none;
+}
+a.color-boton:hover { background:#94E100 !important;}
+a.color-boton:focus { box-shadow:none !important;}
+/*cierre*/
+
+/* BOTON AZUL DE COMENZAR PARTIDO, PERFIL.HTML */
+a.boton-partido, a.boton-partido:hover {
+	background:#06F !important;
+	font-size:14px;
+	color:#FFF !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	text-shadow:none !important;
+	border-color:transparent !important;
+	border-color:
+}
+a.boton-partido:hover { background:#09F !important;}
+a.boton-partido:focus { box-shadow:none !important;}
+/*cierre*/
+
+/* BOTONES PARA FACEBOOK Y TWITTER, DE MOMENTO NO SE ESTAN UTILIZANDO */
+/*a.color-boton-facebook, a.color-boton-facebook:hover {
+	background:#3A5795 !important;
+	font-size:14px;
+	color:#FFF !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	text-shadow:none !important;
+	border:hidden !important;
+	text-shadow:none !important;
+}
+
+a.color-boton-facebook:hover {background:#3A5795 !important;}
+
+a.color-boton-twitter, a.color-boton-twitter:hover {
+	background:#659FCB !important;
+	font-size:14px;
+	color:#FFF !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	text-shadow:none !important;
+	border:hidden !important;
+	text-shadow:none !important;
+}
+
+a.color-boton-twitter:hover {background:#659FCB !important;}*/
+/*cierre*/
+
+/* BOTÓN DE ERROR, BOTON DE COLOR ROJO QUE MARCA ERRORES POR ALGUNA VALIDACION */
+a.color-boton-error-validacion, a.color-boton-error-validacion:hover {
+	background:#900 !important;
+	font-size:14px;
+	color:#FFF !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	text-shadow:none !important;
+	border:hidden !important;
+	text-shadow:none !important;
+}
+/*cierre*/
+
+/* CLASE PARA BOTONES SUBMIT */
+.btn-input { background: #008000 !important; color: white !important; text-shadow: none !important; border-color:transparent !important;}
+/*cierre*/
+
+/* INICIO DE LOGO ANTES DE QUE SE HABRA LA APLICACION */
+.centrado-inicio-logo  { width:100%;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);}
+.contenedor-inicio-logo {text-align:center; width:100%;}
+/*cierre*/
+
+/* ES PARA CUANDO SE UTLICE EL FOOTER EN LA PLANTILLA DE DPORTES, DE MOMENTO NO SE ESTA UTILIZANDO EL FOOTER */
+/*a.enlace_footer {
+	color:#666 !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	text-shadow:none !important;
+	text-decoration:none !important;
+}
+
+a.enlace_footer:hover {
+	color:#666 !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	text-shadow:none !important;
+	text-decoration:none !important;
+}
+
+.footer-background { background-color:transparent !important; border-color:transparent !important; }*/
+/*cierre*/
+
+
+/* ALINEACIÓN CENTRADO DE FORMA VERTICAL PARA BOTONES Y CAMPOS DEL LOGIN INDEX.HTML, COMENZAR_PARTIDA.HTML, DETALLE_ESTADISTICAS.HTML */
+.alineacion-centro-vertical {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+	width:90%;
+}
+/*cierre*/
+
+/* LE DA LA POSICIÓN CENTRADA HORIZONTALMENTE DEL LOGO EN EL LOGIN INDEX.HTML*/
+.contenedor_logo_dportes{ width:100%; text-align:center;}
+.contenedor_logo_dportes img {max-width: 258px;}
+/*cierre*/
+
+/* COLOR DE FONDO Y ANCHO DE BOTONES PARA EL LOGIN INDEX.HTML */
+.background-login {background:#6BC43C;}
+.ancho-botones {width:50%;float:left;}
+/*cierre*/
+
+/* ESTILO TEXTO REGISTRARSE.HTML, REGISTRAR-EQUIPO.HTML */
+.cantidad-jugadores {color:#666; margin-top:15px !important;}
+
+.nombre-disponible, .falta-campo {
+	font-size:14px;
+	color:#090;
+	text-align:left;
+	margin-top:0;
+	margin-bottom:0;
+	margin-left:25px;
+}
+.falta-campo { color:#900;}
+/*cierre*/
+
+/* ENLACE DE RECUPERAR CLAVE INDEX.HTML */
+a.olvidemiclave, a.olvidemiclave:hover, a.olvidemiclave:visited {
+	font-size:12px;
+	color:#FFF;
+	text-decoration:none;
+	text-shadow:none;
+}
+/*cierre*/
+
+/* PUBLICIDAD */
+.contenedor_publicidad { width:100%; text-align:center; bottom: 0px; position: fixed; height:auto; margin-bottom:0px !important}
+.contenedor_publicidad a img {width: 100%; max-width: 500px; margin-bottom:0px !important}
+/*cierre*/
+
+/* lista de numero de jugador, aplica ESTADISTICAS_JUGADORES.HTML*/
+/*.numero-jugador {font-size:30px; float:left;}*/
+/*cierre*/
+
+/* Separador o raya vertical que separa el número y el nombre del jugador, de momento no se esta utilizando*/
+/*.separador-numero-jugador {height:30px; background:#FFF; width:1px; float:left; margin:10px 10px 0 10px;}*/
+/*cierre*/
+
+/* Alineación de textos checkbox en partido en juego: PENDIENTE */
+/*.leyenda-checkbox{
+	font-size:14px;
+	font-weight:bold;
+	text-align:left;
+}*/
+/*cierre*/
+
+
+/*---- BLOQUE DE ENCUENTROS O EL VERSUS AFECTA A: FECHAS_JUGADAS.HTML ----*/
+
+/* ESTE ES UNA ALTERNANCIA DE COLORES APLICADO A LA TABLA ODD = IMPAR, EVEN = PAR, AFECTA A FECHAS_JUGADAS.HTML Y LAS TABLAS DE LAS ESTADISTICAS DE LOS PARTIDOS */
+table tr:nth-child(odd) {background-color:#EFEFEF;}
+table tr:nth-child(even) {background:#FFF;}
+/*cierre*/
+
+/* Caja contenedora de encuentros */
+.contenedor-fechas {padding-top:15px; padding-bottom:10px;text-align:center;width:100%;}
+
+/* Caja con un ancho fijo */
+.centrado-fechas {display:inline-block;width:230px;}
+
+/* Contenedores de logo de equipo, el versus y la fecha */
+.block { display:inline-block;}
+.vs { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px;  }
+.fecha-partido {text-align:center;font-size:11px;}
+
+/* Afecta a los textos de las fechas de encuentros o el versus*/
+a.fechas, a.fechas:hover, a.fechas:visited {
+	color:#333 !important;
+	text-decoration:none !important;
+	text-shadow:none !important;
+}
+/*cierre*/
+
+/* Nombre del equipo que esta debajo de la imagen del equipo o en el versus */
+.nombre-equipo {
+	margin: 5px 0 5px 0;
+	font-size:12px;
+	text-align:center;
+}
+/*cierre*/
+
+/* Goles */
+.marcador {
+	font-size:28px;
+	font-weight:bold;
+	margin-bottom:0 !important; margin-top:0 !important;
+}
+/*cierre*/
+
+/* Grilla de jugadores, aplica ACCION_DE_JUGADOR.HTML */
+.centrar_jugador {text-align:center; margin-bottom:7px;}
+.ancho_grilla img {width:100%;max-width:200px;}
+/*cierre*/
+
+/*----cierre----*/
+
+/* Panel o menu de jugadas ACCION_DE_JUGADOR.HTML */
+.jugadas {
+	position: relative;
+	padding: 12px 90px 12px 12px;
+}
+
+.texto_jugada {
+	font-size:17px;
+	font-weight:bold;
+}
+
+.jugada_buena, .jugada_mala {
+	background-image:url(img-dportes/iconos/buena.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 58px;
+	width:30px;
+	height:30px;
+}
+
+.jugada_mala {
+	background-image:url(img-dportes/iconos/mala.png);
+	right: 0px;
+	margin-right: 15px;
+}
+
+.tarjeta_amarilla, .tarjeta_roja {
+	background-image:url(img-dportes/iconos/amarilla.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 58px;
+	width:30px;
+	height:30px;
+}
+
+.tarjeta_roja {
+	background-image:url(img-dportes/iconos/roja.png);
+	right: 0px;
+	margin-right: 15px;
+}
+
+.quita_margenes_iconos{margin:0 !important;}
+
+.nombre-jugador-accion {font-size:12px; color:#666; font-weight:bold; display:block;}
+/*cierre*/
+
+/* Alineamiento de avatar cuando se sube una foto del jugador nuevo jugadores AGREGAR_JUGADORES.HTML */
+.avatar {text-align:center; display:block;}
+/*cierre*/
+
+/* Alineamiento cuando se escoge el jugador en los titulares, SELECCIONAR_TITULARES_NUEVO_JUEGO.HTML */
+.imagen_jugador { float:left; margin-right:10px;}
+.imagen_jugador img { max-width:68px;}
+.li-padding {padding:0 !important; border-top:hidden !important;} /*este aplica tambien a SELECCIONAR_RESERVAS.HTML*/
+li.li-padding div.ui-checkbox { margin:0 !important;}
+li.li-padding div.ui-checkbox label { border-top:hidden; border-left:hidden; border-right:hidden;}
+/*cierre*/
+
+/* Afecta a SELECCIONAR_RESERVAS.HTML */
+li.li-padding div.ui-radio { margin:0 !important;}
+li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border-right:hidden;}
+/*cierre*/	
+
+/*.espaciado_marcador{margin:0 12px 0 12px;}
+.logo-equipos {width:100%; max-width:180px;}
+.alinea-centro-checkbox {text-align:inherit;}*/
+
+/* Saca los estilos a boton predeterminado, para poner icono de flecha avanzar o retroceder e icono menu */
+.saca-estilo-boton {
+	padding: 0 !important;
+	text-shadow:none !important;
+	border:hidden !important;
+	box-shadow:none !important;
+	background-color:transparent !important;
+}
+
+.fl-izquierda, .fl-derecha {
+	background-image: url(images/icons-svg/fl-izquierda.svg);
+	width:22px;
+	height:22px;
+	margin-top: 8px;
+	margin-left: 5px;
+}
+
+.fl-derecha{ background-image: url(images/icons-png/fl-derecha.png);}
+
+.fl-izquierda{ background-image: url(images/icons-png/fl-izquierda.png);}
+
+.icono-menu-left, .icono-menu-right {
+	background-image: url(images/icons-svg/menu.svg);
+	width:22px;
+	height:22px;
+	margin-top: 8px;
+	margin-left: 5px;
+}
+
+.icono-menu-right { background-image: url(images/icons-svg/menu.svg);}
+/*cierre*/
+
+/* Estilos para todos los encabezados o header */
+.color-encabezado { background-color:#6BC43C !important; }
+.color-encabezado h1 { color:#FFF !important; text-shadow:none !important; font-weight:normal !important;}
+/*cierre*/
+
+/* Contenedor de resumen de goles RESUMEN_1_TIEMPO.HTML, RESUMEN_2_TIEMPO.HTML*/
+.alinea-resumen {text-align:center; margin-bottom:10px;}
+.texto-resumen-goles {font-size:16px; font-weight:bold; color:#666;}
+.contenedor-resumen-goles { margin-bottom:10px; text-align:center; color:#666;}
+.resultados-partido {width:49%;display:inline-block;}
+
+.contenedor-resultados { text-align:center}
+.estadisticas-mi-equipo { width:20%/*width:20%*/; text-align:center; font-size:16px; color:#000; display:inline-block; margin-bottom:10px; color:#666;}
+.campos { width:45%/*width:57%*/; text-align:center; font-size:16px; color:#000; display:inline-block; margin-bottom:10px; color:#666; margin-left:5px;}
+.estadisticas-equipo-contrario { width:20%; text-align:center; font-size:14px; color:#000; display:inline-block; margin-bottom:16px; color:#666;}
+/*cierre*/
+
+/* Iconos personalizados para botones con iconos */
+.ui-icon-gol-encontra:after {background-image:url(img-dportes/iconos/gol-encontra.png);}
+.ui-icon-fin-tiempo:after {background-image:url(img-dportes/iconos/tiempo.png);}
+/*cierre*/
+
+/* Iconos pertenecientes al resumen del partido RESUMEN_1_TIEMPO.HTML, RESUMEN_2_TIEMPO.HTML ...etc */
+.contenedor-gol {display:block; width:100%}
+.icono-gol {background-image:url(img-dportes/iconos/gol.png); width:22px; height:22px; display:inline-block;}
+.icono-fallado {background-image:url(img-dportes/iconos/fallado.png); width:22px; height:22px; display:inline-block;}
+.jugador {display: inline-block; vertical-align: top; margin-top: 2px;}
+.detalle { margin:10px auto;}
+/*cierre*/
+
+/* Notificaciones, afecta NOTIFICACIONES.HTML */
+.boton-participar {width:50%; float:left;}
+.contenedor-general-notificaciones {overflow:auto; margin-bottom:15px; background:#FFF;}
+div.boton-participar a {margin-top:0px; margin-bottom:0px;}
+.contenedor-fechas-notificacion { padding-top:15px; padding-bottom:10px; text-align:center;width:100%;}
+.centrado-fechas-notificacion {display:inline-block;width:230px;}
+.block-notificacion { display:inline-block;}
+.vs-notificacion { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px;  }
+.nombre-equipo-notificacion {margin: 5px 0 5px 0;font-size:12px; font-weight:bold; text-align:center;}
+.fecha-notificacion { font-size: 12px;text-align: center;font-weight: bold;color: #FFF; background:#5C5C5C; padding:5px; text-shadow:none;}
+.block-notificacion-invitacion { float:left;}
+
+/*botones notificacion*/
+a.color-boton-notificacion, a.color-boton-notificacion:hover {
+	background:#75B100 !important;
+	font-size:13px;
+	color:#FFF !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	text-shadow:none !important;
+	border-color:transparent !important;
+	padding-top: 0.4em; padding-bottom:0.4em;
+}
+a.color-boton-notificacion:focus { box-shadow:none !important; padding-top: 0.4em; padding-bottom:0.4em;}
+
+a.color-boton-notificacion-2, a.color-boton-notificacion-2:hover {
+	background:#008000 !important;
+	font-size:13px;
+	color:#FFF !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	text-shadow:none !important;
+	border-color:transparent !important;
+	padding-top: 0.4em; padding-bottom:0.4em;
+}
+a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.4em; padding-bottom:0.4em;}
+/*cierre*/
+
+/* Elemento agregar jugador afecta: SELECCIONAR_TITUTALES_NUEVO_JUEGO.HTML */
+.agregar_jugador {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	width: 50px;
+	height: 50px;
+	background-image: url("img-dportes/iconos/agregar.svg");
+	z-index: 3;
+}
+/*cierre*/
+
+
+/* Afecta a PENALES.HTML */
+.contenedor-penales { margin-bottom:10px; text-align:center;}
+.caja-penales {width:49%;display:inline-block; vertical-align:middle;}
+.pelota-penal-buena {margin-right: 12px; width:55px; height:55px; background-image:url(img-dportes/penales/tiro-bueno-normal.png); display:inline-block;}
+.pelota-penal-buena:hover {margin-right: 12px; width:55px; height:55px; background-image:url(img-dportes/penales/tiro-bueno.png); display:inline-block;}
+.pelota-penal-buena:active {margin-right: 12px; width:55px; height:55px; background-image:url(img-dportes/penales/tiro-bueno.png); display:inline-block;}
+.pelota-penal-mala {width:55px; height:55px; background-image:url(img-dportes/penales/tiro-malo.png); display:inline-block;}
+.tirador{ text-align:center; font-size:14px; color:#666;}
+/*cierre*/
+
+/* Afecta a PERFIL.HTML */
+.centrado-iconos-inicio  { width:100%;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);}
+.contenedor-iconos-inicio {text-align:center; width:100%;}
+.icono-inicio-1 {display:inline-block; margin-right:10px}
+.icono-inicio-2 {display:inline-block;}
+.icono-inicio-3 {display:inline-block; margin-right:10px; margin-top:10px;}
+.icono-inicio-4 {display:inline-block; margin-top:10px;}
+/*cierre*/
+
+/* Boton invitar a equipo rival, PERFIL_EQUIPO_RIVAL.HTML */
+.contenedor-invitacion-enviada {width:100%; text-align:center;}
+.imagen-ok {display:inline-block;}
+.texto-invitacion {
+	display: inline-block;
+	font-size: 14px;
+	color: #090;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	vertical-align: top;
+}
+/*cierre*/
+
+/* Página: TERMINOSYCONDICIONES.HTML */
+.titulo-terminos {color:#333;}
+.texto-terminos {font-size:16px; color:#333; text-align:justify;}
+/*cierre*/
+
+/* Contenedor de Campos para estadisticas, afecta a: RESUMEN_1_TIEMPO.HTML, RESUMEN_2_TIEMPO.HTML, RESUMEN_1Y2_TIEMPO.HTML, RESUMEN_1_TIEMPO_EXTRA.HTML
+ RESUMEN_2_TIEMPO_EXTRA.HTML, RESUMEN_GENERAL_1Y2_TIEMPO_EXTRA.HTML, RESUMEN_COMPLETO_PENALES.HTML, RESUMEN_COMPLETO.HTML */
+.contenedor-campo {display:block;}
+/*cierre*/
+
+.fijo {
