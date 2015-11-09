@@ -564,12 +564,12 @@
     <script type="text/javascript" src="js/auth.js"></script>
     <script type="text/javascript">
     $(document).on('pagecontainerbeforeshow', function (e, ui) {
+        document.addEventListener("online", function(){alert('online');}, false);
         var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
         if(activePage === 'index') {
             document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady(){
-                checkConnection();
                 //StatusBar.overlaysWebView(false);
                 //StatusBar.backgroundColorByName("black");
                 //StatusBar.styleLightContent();
@@ -653,6 +653,7 @@
         }
 
         if(activePage === 'home'){
+            checkConnection();
             swipe('#home','#menu_perfil','right');
             sessionStorage.removeItem('evento');
             document.getElementById('jg-rel-back').href = "#home";
