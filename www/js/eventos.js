@@ -30,7 +30,7 @@ function eventos(){
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             xhr.send(add);
             $.mobile.loading('show');
-            xhr.timeout = 5000;
+            xhr.timeout = 10000;
             xhr.ontimeout = function () {
                 $.mobile.loading('hide');
                 navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
@@ -45,6 +45,7 @@ function eventos(){
                 $.mobile.loading('hide');
                 //alert('asdasd' + this.status);
                 if(this.status == 200){
+                    alert(this.response);
                     if(isNumeric(this.response)){
                         //alert(this.response);
                         sessionStorage.evento = this.response;
