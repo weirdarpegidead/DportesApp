@@ -50,8 +50,12 @@ function jugadores(){
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
+        xhr.timeout = 10000;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
+        }
+        xhr.ontimeout = function(e){
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
         }
         xhr.onload = function(e){
             $.mobile.loading('hide');
@@ -75,7 +79,7 @@ function jugadores(){
                     };
                     //document.getElementById('set-titulares').innerHTML = inc;
                 } else {
-                    alert("ocurrio un error, intentelo nuevamente");
+                    navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
                 }
             }
         }

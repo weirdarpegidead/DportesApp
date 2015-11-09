@@ -21,12 +21,12 @@ function authentication(){
             xhr.open('POST', path + 'auth/login');
             xhr.setRequestHeader('Cache-Control', 'no-cache');
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-            xhr.timeout = 3500;
+            xhr.timeout = 5000;
             xhr.send(login);
             $.mobile.loading('show');
             xhr.ontimeout = function(e) {
                 $.mobile.loading('hide');
-                alert("AHAHAHAHAHAHAHAHAHAHAHAHAHA NO TIENES INTERNET");
+                navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
             }
             xhr.onprogress = function(e){
                 $.mobile.loading('show');
@@ -47,7 +47,7 @@ function authentication(){
                         document.getElementById('log-error').style.display = 'block';
                     }
                 } else {
-                    alert("ocurrio un error inesperado");
+                    navigator.notification.alert('Ocurrio un error, intentelo nuevamente',function(){},'Atención','OK');
                     //alert(this.status);
                 }
             }          

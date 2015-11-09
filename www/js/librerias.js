@@ -41,7 +41,7 @@ function swipe(id,nav,position){
 	        }
 	    });
 	} else {
-		alert('ingrese la posicion del panel para el swipe');
+		navigator.notification.alert('Ocurre un error con el menu',function(){},'Atención','OK');
 	}
 }
 

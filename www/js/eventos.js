@@ -30,10 +30,10 @@ function eventos(){
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             xhr.send(add);
             $.mobile.loading('show');
-            xhr.timeout = 3000;
+            xhr.timeout = 5000;
             xhr.ontimeout = function () {
                 $.mobile.loading('hide');
-                alert("timed out.");
+                navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
             };
             /*xhr.onprogress = function(){
                 alert('progress');
@@ -56,7 +56,7 @@ function eventos(){
                         //$.mobile.navigate("#registro-equipo", {transition: "slide"});
                     }
                 } else {
-                    alert(this.status);
+                    navigator.notification.alert('Se un error inesperado, intentelo nuevamente',function(){},'Atención','OK');
                 }
             };
         } 
