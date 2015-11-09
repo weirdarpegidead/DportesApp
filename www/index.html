@@ -564,7 +564,6 @@
     <script type="text/javascript" src="js/auth.js"></script>
     <script type="text/javascript">
     $(document).on('pagecontainerbeforeshow', function (e, ui) {
-        document.addEventListener("online", function(){alert('online');}, false);
         var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
         if(activePage === 'index') {
             document.addEventListener("deviceready", onDeviceReady, false);
@@ -578,6 +577,7 @@
                 //localStorage.removeItem('evento');
                 //localStorage.removeItem('accIDTitular');
                 //alert('asdsadas');
+                StatusBar.show();
                 setTimeout(function(){ 
                     if(localStorage.getItem('login')){
                         $.mobile.navigate("#home", {transition: "fade"});
@@ -645,7 +645,7 @@
         if(activePage === 'acciones'){
            document.getElementById('stat-back-rel').style.display = "none";
            document.getElementById('stat-forward-rel').style.display = "block";
-           document.getElementById('stat-forward-rel').href = '#panel-juego'; 
+           document.getElementById('stat-forward-rel').href = '#panel-juego';
         }
 
         if(activePage === 'seleccionar-titulares'){
@@ -653,7 +653,7 @@
         }
 
         if(activePage === 'home'){
-            checkConnection();
+            //checkConnection();
             swipe('#home','#menu_perfil','right');
             sessionStorage.removeItem('evento');
             document.getElementById('jg-rel-back').href = "#home";
