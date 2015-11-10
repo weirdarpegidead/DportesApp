@@ -13,7 +13,6 @@
             <link rel="stylesheet" href="./jquerymobile/dportes.css" />
             <script>
             $(function () {
-
                 $("[data-role='panel']").panel().enhanceWithin();
             });
             </script>
@@ -188,9 +187,9 @@
     <!-- ————— PAGINA INGRESO PARTIDO ————— -->
     <div data-role="page" id="add-partido" data-title="Dportes" data-theme="a">
         <div data-role="header" data-position="fixed" class="color-encabezado">
-            <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <a onclick="backHome()" href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
             <h1>Datos del Juego</h1>
-            <a id="pg-registro-next" href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-derecha"></div></a>
+            <a id="pg-registro-next" href="#" data-transition="fade" class="saca-estilo-boton" style="display:none;"><div class="fl-derecha"></div></a>
         </div>
     
         <div data-role="main" class="content" style="margin:20px">
@@ -211,10 +210,10 @@
                     <option value="2">Segundo Tiempo</option>
                     <option value="3">1 Tiempo Extra</option>
                     <option value="4">2 Tiempo Extra</option>                        
-                    <option value="5">Penales</option>
+                    <!--<option value="5">Penales</option>-->
                 </select>
                 <a id="pg-periodo-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Seleccione un Periodo</a>
-                <div class="ui-input-btn ui-btn btn-input">
+                <div id="pg-boton-continuar" class="ui-input-btn ui-btn btn-input">
                     Continuar
                     <input id="pg-registro" data-enhanced="true" type="submit">
                 </div>
@@ -602,6 +601,22 @@
             });*/    
         }
 
+        if(activePage === 'add-partido'){
+            $("select#pg-periodo").selectmenu("refresh");
+            if(sessionStorage.getItem('evento')){
+                document.getElementById('pg-registro-next').style.display = "block";
+                document.getElementById('pg-boton-continuar').style.display = "none";
+            } else {
+                document.getElementById('pg-registro-next').style.display = "none";
+                document.getElementById('pg-boton-continuar').style.display = "block";
+            }
+            document.getElementById('pg-nombre-error').style.display = "none";
+            document.getElementById('pg-ubicacion-error').style.display = "none";
+            document.getElementById('pg-fecha-error').style.display = "none";
+            document.getElementById('pg-hora-error').style.display = "none";
+            document.getElementById('pg-periodo-error').style.display = "none";
+        }
+
         if(activePage === 'detalle-jugador'){
             swipe('#detalle-jugador','#menu_perfil','right');
             document.getElementById('dt-nombre').innerHTML =  sessionStorage.getItem('dt_nombre');
@@ -655,6 +670,7 @@
         if(activePage === 'home'){
             //checkConnection();
             swipe('#home','#menu_perfil','right');
+            clearGame();
             sessionStorage.removeItem('evento');
             document.getElementById('jg-rel-back').href = "#home";
         }

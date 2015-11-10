@@ -106,3 +106,32 @@ function checkConnection() {
 
     alert('Connection type: ' + states[networkState]);
 }
+
+function clearGame(){
+	document.getElementById('pg-rival').value = '';
+	document.getElementById('pg-ubicacion').value = '';
+	document.getElementById('pg-hora').value = '';
+	document.getElementById('pg-hora').type = 'text';
+	document.getElementById('pg-hora').placeholder = 'Hora del partido';
+	document.getElementById('pg-fecha').value = '';
+	document.getElementById('pg-fecha').type = 'text';
+	document.getElementById('pg-fecha').placeholder = 'Fecha del partido';
+	$("select#pg-periodo")[0].selectedIndex = 0;
+
+}
+
+function backHome(){
+	if(sessionStorage.getItem('evento')){
+		navigator.notification.confirm(
+        	'Aplicar esta acción significa terminar el partido.\n ¿Realmente desea hacerlo?',
+        	function(button){
+        		if(button == 1){
+        			closeEvent();
+        		}
+        	},
+        	'Advertencia',
+        	'Si,No');
+	} else {
+		$.mobile.navigate("#home", {transition: "fade"});
+	}
+}
