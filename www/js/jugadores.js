@@ -90,7 +90,7 @@ function jugadores(){
         var send = new FormData();
         send.append('id_equipo',localStorage.getItem('equipo'));
         send.append('id_evento',sessionStorage.getItem('evento'))
-        xhr.open('POST', path + 'app/getJugadores');
+        xhr.open('POST', path + 'app/getJugadoresEstadisticas');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
