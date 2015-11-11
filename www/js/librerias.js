@@ -118,6 +118,11 @@ function clearGame(){
 	document.getElementById('pg-fecha').placeholder = 'Fecha del partido';
 	$("select#pg-periodo")[0].selectedIndex = 0;
 
+	document.getElementById('acc-marc-contra').innerHTML = 0;
+    document.getElementById('stat-marc-contra').innerHTML = 0;
+	document.getElementById('acc-marc-favor').innerHTML = 0;
+    document.getElementById('stat-marc-favor').innerHTML = 0;
+
 }
 
 function backHome(){

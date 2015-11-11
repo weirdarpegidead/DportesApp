@@ -19,7 +19,7 @@ function estadisticas(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
         			var inc = '';
-        			//document.getElementById('acc-tipo-stat').innerHTML = inc;
+        			document.getElementById('acc-tipo-stat').innerHTML = inc;
         			for(var i = 0; i < json.length; i++ ){
         				inc += "<div class='jugadas'><span class='texto_jugada'>"+json[i].nombre+"</span>";
                         if(json[i].id_estadistica_futbol != 5){
@@ -269,7 +269,7 @@ document.getElementById('acc-terminar-periodo').addEventListener('click',functio
     );
 });
 
-$(document).on("pagecreate","#acciones",function(){
+$(document).on("pagebeforeshow","#acciones",function(){
 	var ev = new eventos();
 	ev.getEquipoAndRival();
     var jg = new jugadores();

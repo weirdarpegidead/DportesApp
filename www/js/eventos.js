@@ -221,11 +221,12 @@ function closeEvent(){
     sessionStorage.removeItem('nPeriodo');
     sessionStorage.removeItem('evento');
     sessionStorage.removeItem('accIDTitular');
+    $("#set-titulares").html('').trigger('create');
     $.mobile.navigate("#home", {transition: "fade"});
 }
 
 
-$(document).on("pagecreate","#panel-juego",function(){
+$(document).on("pagebeforeshow","#panel-juego",function(){
     var pg = new eventos();
     pg.getPeriodos();
     delete pg;
