@@ -45,7 +45,7 @@ function eventos(){
                 $.mobile.loading('hide');
                 //alert('asdasd' + this.status);
                 if(this.status == 200){
-                    alert(this.response);
+                    //alert(this.response);
                     if(isNumeric(this.response)){
                         //alert(this.response);
                         sessionStorage.evento = this.response;
@@ -98,7 +98,7 @@ function eventos(){
         xhr.open('POST', path + 'app/getHistorial');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.timeout = 3500;
+        xhr.timeout = 5000;
         xhr.send(send);
         $.mobile.loading('show');
         xhr.ontimeout = function(e) {
