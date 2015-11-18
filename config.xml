@@ -12,7 +12,6 @@
   <preference name="webviewbounce" value="true"/>
   <preference name="prerendered-icon" value="true"/>
   <preference name="stay-in-webview" value="false"/>
-  <preference name="ios-statusbarstyle" value="black-opaque"/>
   <preference name="InAppBrowserStorageEnabled" value="true"/>
   <preference name="ShowTitle" value="true"/>
   <preference name="detect-data-types" value="true"/>
