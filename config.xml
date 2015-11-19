@@ -52,9 +52,11 @@
   <gap:plugin name="org.apache.cordova.vibration" source="pgb" version="0.3.13" />
 
 
-        <feature name="StatusBar">
-            <param name="ios-package" value="CDVStatusBar" onload="true" />
-        </feature>
+  <feature name="StatusBar">
+    <param name="ios-package" value="CDVStatusBar" onload="true" />
+  </feature>
+  
+  <feature name="http://api.phonegap.com/1.0/network" />
 
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
