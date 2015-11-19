@@ -6,9 +6,8 @@
   <content src="index.html"/>
   <platform name="android">
     <preference name="Fullscreen" value="false" />
-    <preference name="BackgroundColor" value="0xff0000ff"/>
     <preference name="Orientation" value="default" />
-    <preference name="ShowTitle" value="true"/>
+    <preference name="ShowTitle" value="false"/>
     <preference name="InAppBrowserStorageEnabled" value="true"/>
   </platform>
   <platform name="ios">
