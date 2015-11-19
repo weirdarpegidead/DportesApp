@@ -569,7 +569,11 @@
             document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady(){
+                if(StatusBar){
                 StatusBar.hide();
+                } else {
+                    alert('plugin statusbar no detectado');
+                }
                 //StatusBar.overlaysWebView(false);
                 //StatusBar.backgroundColorByName("black");
                 //StatusBar.styleLightContent();
