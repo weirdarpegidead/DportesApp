@@ -5,7 +5,7 @@
   <author href="http://ilia.cl" email="savendano@ilia.cl">Sergio Avendaño</author>
   <content src="index.html"/>
   <platform name="android">
-    <preference name="Fullscreen" value="false" />
+    <preference name="Fullscreen" value="true" />
     <preference name="Orientation" value="default" />
     <preference name="ShowTitle" value="false"/>
     <preference name="InAppBrowserStorageEnabled" value="true"/>
@@ -48,7 +48,7 @@
   <gap:plugin name="org.apache.cordova.media-capture" source="pgb" version="0.3.6" />
   <gap:plugin name="org.apache.cordova.network-information" source="pgb" version="0.2.15" />
   <gap:plugin name="org.apache.cordova.splashscreen" source="pgb" version="1.0.0" />
-  <gap:plugin name="org.apache.cordova.statusbar" version="0.1.9" source="plugins.cordova.io" / > 
+  <gap:plugin name="org.apache.cordova.statusbar" source="pgb" version="0.1.4" />
   <gap:plugin name="org.apache.cordova.vibration" source="pgb" version="0.3.13" />
 
 
