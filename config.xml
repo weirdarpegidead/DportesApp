@@ -48,7 +48,7 @@
   <gap:plugin name="org.apache.cordova.media-capture" source="pgb" version="0.3.6" />
   <gap:plugin name="org.apache.cordova.network-information" source="pgb" version="0.2.15" />
   <gap:plugin name="org.apache.cordova.splashscreen" source="pgb" version="1.0.0" />
-  <gap:plugin name="org.apache.cordova.statusbar" source="pgb" version="0.1.4" />
+  <gap:plugin name="org.apache.cordova.statusbar" version="0.1.9" source="plugins.cordova.io" / > 
   <gap:plugin name="org.apache.cordova.vibration" source="pgb" version="0.3.13" />
 
 
