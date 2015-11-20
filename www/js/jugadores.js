@@ -122,6 +122,7 @@ function jugadores(){
         var send = new FormData();
         send.append('id_usuario',this.id_jugador);
         send.append('id_evento',sessionStorage.getItem('evento'));
+        send.append('id_equipo',localStorage.getItem('equipo'));
         xhr.open('POST', path + 'app/setTitular');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
@@ -137,6 +138,7 @@ function jugadores(){
         var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_evento',sessionStorage.getItem('evento'));
+        send.append('id_equipo',localStorage.getItem('equipo'));
         xhr.open('POST', path + 'app/getTitulares');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');

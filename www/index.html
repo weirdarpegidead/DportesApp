@@ -526,6 +526,115 @@
         <!--<div data-role="footer"><p align="center">© 2015 Derechos Reservados Dportes</p></div>-->    
     </div>
 
+    <div data-role="page" id="cambio-jugador" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="accion_de_jugador.html" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Cambio de Jugador</h1>
+        </div>
+        
+        <div class="content">
+            
+            <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar Reserva..." data-inset="false">
+                
+                <li data-icon="false" class="li-padding">
+                    <input name="jugador" id="reserva1" value="ricardo-1" type="radio">
+                    <label for="reserva1">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva1.jpg"></div>
+                    <h2>RUBÉN YÁÑEZ</h2>
+                    <p>Portero</p>
+                    </label>
+                </li>
+
+                <li data-icon="false" class="li-padding">
+                    <input name="jugador" id="reserva2" value="ricardo-2" type="radio">
+                    <label for="reserva2">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva2.jpg"></div>
+                    <h2>SERGIO RAMOS</h2>
+                    <p>Defensa</p>
+                    </label>
+                </li>
+                
+                <li data-icon="false" class="li-padding">
+                    <input name="jugador" id="reserva3" value="ricardo-3" type="radio">
+                    <label for="reserva3">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva3.jpg"></div>
+                    <h2>PEPE</h2>
+                    <p>Defensa</p>
+                    </label>
+                </li>
+                
+                <li data-icon="false" class="li-padding">
+                    <input name="jugador" id="reserva4" value="ricardo-4" type="radio">
+                    <label for="reserva4">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva4.jpg"></div>
+                    <h2>VARANE</h2>
+                    <p>Defensa</p>
+                    </label>
+                </li>
+                
+                <li data-icon="false" class="li-padding">
+                    <input name="jugador" id="reserva5" value="ricardo-5" type="radio">
+                    <label for="reserva5">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva5.jpg"></div>
+                    <h2>ALBARONE</h2>
+                    <p>Defensa</p>
+                    </label>
+                </li>
+                
+                <li data-icon="false" class="li-padding">
+                    <input name="jugador" id="reserva6" value="ricardo-6" type="radio">
+                    <label for="reserva6">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva6.jpg"></div>
+                    <h2>CARBAJAL</h2>
+                    <p>Defensa</p>
+                    </label>
+                </li>
+                
+                <li data-icon="false" class="li-padding">
+                    <input name="jugador" id="reserva7" value="ricardo-7" type="radio">
+                    <label for="reserva7">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva7.jpg"></div>
+                    <h2>DANILO</h2>
+                    <p>Defensa</p>
+                    </label>
+                </li>
+                
+                <li data-icon="false" class="li-padding">
+                    <input name="jugador" id="reserva8" value="ricardo-8" type="radio">
+                    <label for="reserva8">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva8.jpg"></div>
+                    <h2>MARCELO</h2>
+                    <p>Defensa</p>
+                    </label>
+                </li>
+                
+                <li data-icon="false" class="li-padding">
+                    <input name="jugador" id="reserva9" value="ricardo-9" type="radio">
+                    <label for="reserva9">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva9.jpg"></div>
+                    <h2>NACHO</h2>
+                    <p>Defensa</p>
+                    </label>
+                </li>
+                
+                <li data-icon="false" class="li-padding">
+                    <input name="jugador" id="reserva10" value="ricardo-10" type="radio">
+                    <label for="reserva10">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva10.jpg"></div>
+                    <h2>KROOS</h2>
+                    <p>Defensa</p>
+                    </label>
+                </li>
+            </ul>
+
+            </div>
+
+        <!--<div data-role="footer"><p align="center">© 2015 Derechos Reservados Dportes</p></div>-->
+        
+        <!-- CIERRE PANEL MENU -->
+    </div>
+
     <!-- ————— PÁGINA TERMINOS Y CONDICIONES ————— -->
     <div data-role="page" id="terminosycondiciones" data-title="Dportes">
     
@@ -671,6 +780,12 @@
 
         if(activePage === 'seleccionar-titulares'){
            document.getElementById('jg-rel-back').href = "#seleccionar-titulares"; 
+        }
+
+        if(activePage === 'cambio-jugador'){
+            var jg = new jugadores();
+            jg.getJugadoresReserva();
+            delete jg;
         }
 
         if(activePage === 'home'){

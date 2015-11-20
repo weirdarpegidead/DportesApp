@@ -34,7 +34,9 @@ function estadisticas(){
                             inc += "</div>";
                         }
         			}
+                    inc += "<li data-icon='back'><a href='#cambio-jugador' class='ui-icon-user' data-transition='fade'>Cambio de Jugador</a></li>";
                     $('#acc-tipo-stat').append(inc).trigger('create');
+                    $('#acc-tipo-stat').listview('refresh');
         		}
         	}
         }

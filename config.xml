@@ -10,7 +10,7 @@
     <preference name="InAppBrowserStorageEnabled" value="true"/>
   </platform>
   <platform name="ios">
-    <preference name="Orientation" value="all" />
+    <preference name="Orientation" value="portrait" />
   </platform>
   <gap:plugin name="cordova-plugin-whitelist" source="npm" version="1.0.0" />
   <gap:plugin name="org.apache.cordova.battery-status" source="pgb" version="0.2.12" />
