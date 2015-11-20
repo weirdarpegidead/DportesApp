@@ -186,6 +186,50 @@ function jugadores(){
         }
     }
 
+    this.getJugadoresReserva = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_equipo',localStorage.getItem('equipo'));
+        send.append('id_evento',sessionStorage.getItem('evento'));
+        xhr.open('POST', path + 'app/getJugadoresReserva');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        xhr.timeout = 10000;
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+            var inc = '';
+            $("#jg-reservas").html(inc).trigger('create');
+            $("#jg-reservas").listview('refresh');
+        }
+        xhr.ontimeout = function(e){
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+        }
+        xhr.onload = function(e){
+            //alert(this.response);
+            $.mobile.loading('hide');
+            if(this.status == 200){
+                if(this.response && JSON.parse(this.response)){
+                    var json = JSON.parse(this.response);
+                    var inc = '';
+                    for(var i = 0; i < json.length; i++ ){  
+                        inc += "<li data-icon='false' class='li-padding' >";
+                        inc += "<a href='#' onclick='backAcciones("+json[i].id_usuario+")'>";
+                        inc += "<img src='jquerymobile/img-dportes/foto.png'>";
+                        inc += "<h2>"+json[i].nombre+"</h2>";
+                        inc += "<p>"+json[i].posicion+"</p></a></li>";
+                    };
+                    $("#jg-reservas").html(inc).trigger('create');
+                    $("#jg-reservas").listview('refresh');
+                } else {
+                    navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+                }
+            }
+        }
+
+
+    }
+
     this.getPosiciones = function(){
         var dporte = 1;
         var xhr = new XMLHttpRequest();
@@ -308,6 +352,37 @@ document.getElementById('jg-valida-titulares').addEventListener('click',function
     }
     delete jg;
 });
+
+function backAcciones(id){
+    var xhr = new XMLHttpRequest();
+    var send = new FormData();
+    send.append('sale',sessionStorage.getItem('accIDTitular'));
+    send.append('entra',id);
+    send.append('id_evento',sessionStorage.getItem('evento'));
+    send.append('id_equipo',localStorage.getItem('equipo'));
+    xhr.open('POST', path + 'app/cambioJugadores');
+    xhr.setRequestHeader('Cache-Control', 'no-cache');
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.send(send);
+    xhr.timeout = 10000;
+    xhr.onprogress = function(e){
+        $.mobile.loading('show');
+    }
+    xhr.ontimeout = function(e){
+        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+    }
+
+    xhr.onload = function(e){
+        //alert(this.response);
+        if(this.status == 200){
+            if(this.response){
+                $.mobile.loading('hide');
+                $.mobile.navigate("#acciones", {transition: "fade"});
+            }
+        }
+    }
+
+}
 
 function titularesDismissed(){
 
