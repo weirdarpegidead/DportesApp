@@ -251,7 +251,13 @@ document.getElementById('acc-deshacer').addEventListener('click',function(){
                         }
 
                         if(json.estadisticas_futbol_id_estadistica_futbol == 5){
-                            //$('#jgActivo'+).removeClass('ui-state-disabled');
+                            if(json.estado_accion == 1){
+                                if(dropAmarilla(json.usuarios_equipos_usuarios_id_usuario)){
+                                    $('#jgActivo'+json.usuarios_equipos_usuarios_id_usuario).removeClass('ui-state-disabled');
+                                }
+                            } else {
+                                $('#jgActivo'+json.usuarios_equipos_usuarios_id_usuario).removeClass('ui-state-disabled');
+                            }
                         }
                     }
                 }

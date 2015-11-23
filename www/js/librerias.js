@@ -157,6 +157,8 @@ function checkAmarilla(){
     	arr = JSON.parse(sessionStorage.getItem('amarillas'));
 	    for(var i = 0 ; i < arr.length ; i++){
 	        if(sessionStorage.getItem('accIDTitular') == arr[i]){
+				arr.push(sessionStorage.getItem('accIDTitular'));
+	    		sessionStorage.setItem('amarillas',JSON.stringify(arr));
 	            return true;
 	        }
 	    }
@@ -168,4 +170,19 @@ function checkAmarilla(){
 	    sessionStorage.setItem('amarillas',JSON.stringify(arr));
     	return false;
     }
+}
+
+function dropAmarilla(id){
+	var arr = JSON.parse(sessionStorage.getItem('amarillas'));
+	for(var i = 0 ; i <= arr.length ; i++){
+	    if(id == arr[i]){
+	    	//alert(arr);
+	    	arr.splice(i,1);
+	    	//alert(arr);
+	    	sessionStorage.setItem('amarillas',JSON.stringify(arr));
+	        return true;
+	    }
+	}
+	return false;
+
 }
