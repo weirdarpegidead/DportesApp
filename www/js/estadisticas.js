@@ -232,19 +232,26 @@ document.getElementById('acc-deshacer').addEventListener('click',function(){
                 xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
                 xhr.send(del);
                 xhr.onload = function(e){
+                    //alert(this.response);
                     if(this.status == 200){
-                        if(this.response == 9){
+                        var json = JSON.parse(this.response);
+                        //alert(json.estadisticas_futbol_id_estadistica_futbol );
+                        if(json.estadisticas_futbol_id_estadistica_futbol == 9){
                             var marcador = document.getElementById('acc-marc-contra').innerHTML;
                             var marcador_stat = document.getElementById('stat-marc-contra').innerHTML;
                             document.getElementById('acc-marc-contra').innerHTML = parseInt(marcador) - 1;
                             document.getElementById('stat-marc-contra').innerHTML = parseInt(marcador_stat) - 1;                             
                         }
 
-                        if(this.response == 1){
+                        if(json.estadisticas_futbol_id_estadistica_futbol == 1){
                             var marcador = document.getElementById('acc-marc-favor').innerHTML;
                             var marcador_stat = document.getElementById('stat-marc-favor').innerHTML;
                             document.getElementById('acc-marc-favor').innerHTML = parseInt(marcador) - 1;
                             document.getElementById('stat-marc-favor').innerHTML = parseInt(marcador_stat) - 1;  
+                        }
+
+                        if(json.estadisticas_futbol_id_estadistica_futbol == 5){
+                            //$('#jgActivo'+).removeClass('ui-state-disabled');
                         }
                     }
                 }
