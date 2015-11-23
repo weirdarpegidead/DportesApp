@@ -58,6 +58,7 @@ function jugadores(){
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
         }
         xhr.onload = function(e){
+            //alert(this.response);
             $.mobile.loading('hide');
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
@@ -144,6 +145,7 @@ function jugadores(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         xhr.onload = function(e){
+            alert(this.response);
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
@@ -151,6 +153,7 @@ function jugadores(){
                     var cont = 0;
                     var clase = '';
                     var inc = '';
+                    var disabled = '';
                     document.getElementById('acc-jugadores').innerHTML = inc;
                     for(var i = 0; i < json.length; i++ ){
                         if(i%4 == 0){
@@ -167,7 +170,13 @@ function jugadores(){
                         } else if(cont == 4){
                             clase = 'd';
                         }
-                        inc = "<div class='ui-block-"+clase+" centrar_jugador'><a onclick='setIDTitular("+json[i].id_usuario+")' href='#' class='ancho_grilla'><img src='jquerymobile/img-dportes/foto.png'></a><span class='nombre-jugador-accion'>"+json[i].nombre+"</span></div>";
+                        if(json[i].roja != 0){
+                            disabled = 'ui-state-disabled';
+                        } else {
+                            disabled = '';
+                        }
+
+                        inc = "<div id='jgActivo"+json[i].id_usuario+"' class='ui-block-"+clase+" centrar_jugador "+disabled+"'><a onclick='setIDTitular("+json[i].id_usuario+")' href='#' class='ancho_grilla'><img src='jquerymobile/img-dportes/foto.png'></a><span class='nombre-jugador-accion'>"+json[i].nombre+"</span></div>";
                         $('#'+id).append(inc).trigger('create');
                     }
                     /*var inc = "<div class='ui-grid-c'>";
