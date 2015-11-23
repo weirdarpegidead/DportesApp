@@ -149,3 +149,23 @@ function checkPeriodo(id,arr){
     }
     return '';
 }
+
+function checkAmarilla(){
+	var arr = [];
+    if(sessionStorage.getItem('amarillas')){
+    	//alert(sessionStorage.getItem('amarillas'));
+    	arr = JSON.parse(sessionStorage.getItem('amarillas'));
+	    for(var i = 0 ; i < arr.length ; i++){
+	        if(sessionStorage.getItem('accIDTitular') == arr[i]){
+	            return true;
+	        }
+	    }
+	    arr.push(sessionStorage.getItem('accIDTitular'));
+	    sessionStorage.setItem('amarillas',JSON.stringify(arr));
+	    return false;
+    } else {
+		arr.push(sessionStorage.getItem('accIDTitular'));
+	    sessionStorage.setItem('amarillas',JSON.stringify(arr));
+    	return false;
+    }
+}

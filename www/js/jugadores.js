@@ -170,7 +170,7 @@ function jugadores(){
                         } else if(cont == 4){
                             clase = 'd';
                         }
-                        if(json[i].roja != 0){
+                        if(json[i].roja != 0 || json[i].amarillas > 1){
                             disabled = 'ui-state-disabled';
                         } else {
                             disabled = '';

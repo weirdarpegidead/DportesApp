@@ -227,7 +227,8 @@ function closeSessionEvents(){
     sessionStorage.removeItem('nPeriodo');
     sessionStorage.removeItem('evento');
     sessionStorage.removeItem('accIDTitular');
-    sessionStorage.removeItem('periodosJugados');    
+    sessionStorage.removeItem('periodosJugados');
+    sessionStorage.removeItem('amarillas')   
 }
 
 function closeEvent(){
@@ -236,6 +237,7 @@ function closeEvent(){
     sessionStorage.removeItem('evento');
     sessionStorage.removeItem('accIDTitular');
     sessionStorage.removeItem('periodosJugados');
+    sessionStorage.removeItem('amarillas')
     $("#set-titulares").html('').trigger('create');
     $.mobile.navigate("#home", {transition: "fade"});
 }

@@ -190,6 +190,10 @@ function setAccion(tipo,accion){
         document.getElementById('stat-marc-favor').innerHTML = parseInt(marcador_stat) + 1;  
     } else if(tipo == 5 && accion == 0){
         $('#jgActivo'+sessionStorage.getItem('accIDTitular')).addClass('ui-state-disabled');
+    } else if(tipo == 5 && accion == 1){
+        if(checkAmarilla()){
+            $('#jgActivo'+sessionStorage.getItem('accIDTitular')).addClass('ui-state-disabled');    
+        }  
     }
 
     //alert("tipo de accion: " + tipo + " usuario: " + localStorage.getItem('accIDTitular') + " accion: " + accion);
