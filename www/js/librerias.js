@@ -140,3 +140,12 @@ function backHome(){
 		$.mobile.navigate("#home", {transition: "fade"});
 	}
 }
+
+function checkPeriodo(id,arr){                          
+    for(var j = 0; j < arr.length; j++){
+	    if(arr[j] == id){
+	        return "ui-state-disabled";
+	    }
+    }
+    return '';
+}

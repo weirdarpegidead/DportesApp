@@ -102,6 +102,7 @@ document.getElementById('logout').addEventListener('click', function(){
     sessionStorage.removeItem('periodo');
     sessionStorage.removeItem('nPeriodo');
     sessionStorage.removeItem('accIDTitular');
+    sessionStorage.removeItem('periodosJugados');
     $.mobile.navigate("#login", {transition: "fade"});
 });
 
@@ -114,6 +115,7 @@ function logout(){
     sessionStorage.removeItem('periodo');
     sessionStorage.removeItem('nPeriodo');
     sessionStorage.removeItem('accIDTitular');
+    sessionStorage.removeItem('periodosJugados');
     $.mobile.navigate("#login", {transition: "fade"});
 }
 

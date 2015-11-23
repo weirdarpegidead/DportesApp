@@ -626,6 +626,18 @@
             });*/    
         }
 
+        if(activePage === 'estadisticas'){
+            if(sessionStorage.getItem('periodosJugados')){
+                var hasta = document.getElementById('pg-periodo').value;
+                periodos = JSON.parse(sessionStorage.getItem('periodosJugados'));
+                if(periodos.length >= hasta){
+                    document.getElementById('stat-forward-rel').href = '#home';
+                } else {
+                    document.getElementById('stat-forward-rel').href = '#panel-juego';
+                }
+            } 
+        }
+
         if(activePage === 'add-partido'){
             $("select#pg-periodo").selectmenu("refresh");
             if(sessionStorage.getItem('evento')){
@@ -683,9 +695,9 @@
         }
 
         if(activePage === 'acciones'){
-           document.getElementById('stat-back-rel').style.display = "none";
-           document.getElementById('stat-forward-rel').style.display = "block";
-           document.getElementById('stat-forward-rel').href = '#panel-juego';
+            document.getElementById('stat-back-rel').style.display = "none";
+            document.getElementById('stat-forward-rel').style.display = "block";  
+            document.getElementById('stat-forward-rel').href = '#panel-juego';
         }
 
         if(activePage === 'seleccionar-titulares'){
@@ -702,7 +714,7 @@
             //checkConnection();
             swipe('#home','#menu_perfil','right');
             clearGame();
-            sessionStorage.removeItem('evento');
+            closeSessionEvents();
             document.getElementById('jg-rel-back').href = "#home";
         }
 

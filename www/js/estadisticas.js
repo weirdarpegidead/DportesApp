@@ -196,6 +196,14 @@ function setAccion(tipo,accion){
 function periodoConf(button){
     if(button == 1){
         $('#periodo'+sessionStorage.getItem('periodo')).addClass('ui-state-disabled');
+        var periodos = [];
+        if(sessionStorage.getItem('periodosJugados')){
+            periodos = JSON.parse(sessionStorage.getItem('periodosJugados'));
+        }
+        periodos.push(sessionStorage.getItem('periodo'));
+        sessionStorage.setItem('periodosJugados',JSON.stringify(periodos));
+        //alert(sessionStorage.getItem('periodosJugados'));
+
         sessionStorage.removeItem('periodo');
         sessionStorage.removeItem('nPeriodo');
         $.mobile.navigate("#estadisticas", {transition: "fade"});

@@ -74,18 +74,24 @@ function eventos(){
         xhr.onload = function(e){
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
+                    var periodos = [];
                     var json = JSON.parse(this.response);
                     var hasta = document.getElementById('pg-periodo').value
                     var inc = '';
+                    var disabled = '';
                     $("#set-periodos").html(inc).trigger('create');
                     for(var i = 0; i < json.length; i++ ){ 
                         if(json[i].id_periodo_futbol <= hasta){
-                            inc = '<a id="periodo'+json[i].id_periodo_futbol+'" href="#acciones" class="ui-btn color-boton" onclick="setPeriodoLocal('+json[i].id_periodo_futbol+',\''+json[i].nombre+'\')">'+json[i].nombre+'</a>';
+                            if(sessionStorage.getItem('periodosJugados')){
+                                periodos = JSON.parse(sessionStorage.getItem('periodosJugados'));
+                                disabled = checkPeriodo(json[i].id_periodo_futbol,periodos);
+                            }
+                            inc = '<a id="periodo'+json[i].id_periodo_futbol+'" href="#acciones" class="ui-btn color-boton '+disabled+'" onclick="setPeriodoLocal('+json[i].id_periodo_futbol+',\''+json[i].nombre+'\')">'+json[i].nombre+'</a>';
                             $("#set-periodos").append(inc).trigger('create');
                         }
                     }
-                    inc = '<a onclick="closeEvent()" href="#" class="ui-btn color-boton">Finalizar Partido</a>';
-                    $("#set-periodos").append(inc).trigger('create');
+                    //inc = '<a onclick="closeEvent()" href="#" class="ui-btn color-boton">Finalizar Partido</a>';
+                    //$("#set-periodos").append(inc).trigger('create');
                 }
             }
         }
@@ -216,15 +222,23 @@ function setPeriodoLocal(id,nombre){
     sessionStorage.nPeriodo = nombre;
 }
 
+function closeSessionEvents(){
+    sessionStorage.removeItem('periodo');
+    sessionStorage.removeItem('nPeriodo');
+    sessionStorage.removeItem('evento');
+    sessionStorage.removeItem('accIDTitular');
+    sessionStorage.removeItem('periodosJugados');    
+}
+
 function closeEvent(){
     sessionStorage.removeItem('periodo');
     sessionStorage.removeItem('nPeriodo');
     sessionStorage.removeItem('evento');
     sessionStorage.removeItem('accIDTitular');
+    sessionStorage.removeItem('periodosJugados');
     $("#set-titulares").html('').trigger('create');
     $.mobile.navigate("#home", {transition: "fade"});
 }
-
 
 $(document).on("pagebeforeshow","#panel-juego",function(){
     var pg = new eventos();
