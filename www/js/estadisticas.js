@@ -188,10 +188,10 @@ function setAccion(tipo,accion){
         var marcador_stat = document.getElementById('stat-marc-favor').innerHTML;
         document.getElementById('acc-marc-favor').innerHTML = parseInt(marcador) + 1;
         document.getElementById('stat-marc-favor').innerHTML = parseInt(marcador_stat) + 1;  
-    } else if(tipo == 5){
+    } else if(tipo == 5 && accion == 0){
         $('#jgActivo'+sessionStorage.getItem('accIDTitular')).addClass('ui-state-disabled');
     }
-    
+
     //alert("tipo de accion: " + tipo + " usuario: " + localStorage.getItem('accIDTitular') + " accion: " + accion);
     $( "#jugada_partido" ).panel( "close" );
 }
