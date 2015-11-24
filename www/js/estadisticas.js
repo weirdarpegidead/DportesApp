@@ -184,11 +184,17 @@ function setAccion(tipo,accion){
     xhr.send(add);
 
     if(tipo == 1){
+        var id = sessionStorage.getItem('accIDTitular');
         var marcador = document.getElementById('acc-marc-favor').innerHTML;
         var marcador_stat = document.getElementById('stat-marc-favor').innerHTML;
+        var goles = document.getElementById('jugGoles'+id).innerHTML;
         document.getElementById('acc-marc-favor').innerHTML = parseInt(marcador) + 1;
-        document.getElementById('stat-marc-favor').innerHTML = parseInt(marcador_stat) + 1;  
+        document.getElementById('stat-marc-favor').innerHTML = parseInt(marcador_stat) + 1;
+        document.getElementById('jugGoles'+id).innerHTML = parseInt(goles) + 1
+        $('#jugImg'+id).css('display','block');
+        $('#jugGoles'+id).css('display','block');
     } else if(tipo == 5 && accion == 0){
+        $("#jugTarjetaRoja"+sessionStorage.getItem('accIDTitular')).css('display','block');
         $('#jgActivo'+sessionStorage.getItem('accIDTitular')).addClass('ui-state-disabled');
     } else if(tipo == 5 && accion == 1){
         if(checkAmarilla()){
@@ -244,10 +250,17 @@ document.getElementById('acc-deshacer').addEventListener('click',function(){
                         }
 
                         if(json.estadisticas_futbol_id_estadistica_futbol == 1){
+                            var id = json.usuarios_equipos_usuarios_id_usuario;
                             var marcador = document.getElementById('acc-marc-favor').innerHTML;
                             var marcador_stat = document.getElementById('stat-marc-favor').innerHTML;
+                            var goles = document.getElementById('jugGoles'+id).innerHTML;
                             document.getElementById('acc-marc-favor').innerHTML = parseInt(marcador) - 1;
-                            document.getElementById('stat-marc-favor').innerHTML = parseInt(marcador_stat) - 1;  
+                            document.getElementById('stat-marc-favor').innerHTML = parseInt(marcador_stat) - 1;
+                            if(goles - 1 <= 0){
+                                $('#jugImg'+id).css('display','none');
+                                $('#jugGoles'+id).css('display','none'); 
+                            }
+                            document.getElementById('jugGoles'+id).innerHTML = parseInt(goles) - 1;
                         }
 
                         if(json.estadisticas_futbol_id_estadistica_futbol == 5){
@@ -256,6 +269,7 @@ document.getElementById('acc-deshacer').addEventListener('click',function(){
                                     $('#jgActivo'+json.usuarios_equipos_usuarios_id_usuario).removeClass('ui-state-disabled');
                                 }
                             } else {
+                                $("#jugTarjetaRoja"+json.usuarios_equipos_usuarios_id_usuario).css('display','none');
                                 $('#jgActivo'+json.usuarios_equipos_usuarios_id_usuario).removeClass('ui-state-disabled');
                             }
                         }

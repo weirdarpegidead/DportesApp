@@ -154,8 +154,20 @@ function jugadores(){
                     var clase = '';
                     var inc = '';
                     var disabled = '';
+                    var roja = '';
+                    var amarilla = '';
+                    var doubleAmarilla = '';
+                    var cambio = '';
+                    var goles = '';
+
                     document.getElementById('acc-jugadores').innerHTML = inc;
                     for(var i = 0; i < json.length; i++ ){
+
+                        roja = 'display:none';
+                        amarilla = 'display:none';
+                        doubleAmarilla = 'display:none';
+                        cambio = 'display:none';
+                        goles = 'display:none';
                         if(i%4 == 0){
                             id = getDivAcc(json[i].id_usuario);
                             cont = 0;
@@ -170,13 +182,63 @@ function jugadores(){
                         } else if(cont == 4){
                             clase = 'd';
                         }
-                        if(json[i].roja != 0 || json[i].amarillas > 1){
-                            disabled = 'ui-state-disabled';
+
+                        
+
+                        if(json[i].roja != 0 || json[i].amarillas > 0){
+                            
+                            if(json[i].roja != 0 && json[i].amarillas > 1){
+                                doubleAmarilla = 'display:block';
+                                amarilla = 'display:none';
+                                roja = 'display:none';
+                                disabled = 'ui-state-disabled';
+                            } else if(json[i].roja != 0 && json[i].amarillas == 0){
+                                doubleAmarilla = 'display:none';
+                                amarilla = 'display:none';
+                                roja = 'display:block';
+                                disabled = 'ui-state-disabled';
+                            } else if(json[i].roja == 0 && json[i].amarillas == 1){
+                                doubleAmarilla = 'display:none';
+                                amarilla = 'display:block';
+                                roja = 'display:none'; 
+                            } else if(json[i].roja != 0 && json[i].amarillas == 1){
+                                doubleAmarilla = 'display:none';
+                                amarilla = 'display:block';
+                                roja = 'display:block';
+                                disabled = 'ui-state-disabled';
+                            }
                         } else {
                             disabled = '';
                         }
 
-                        inc = "<div id='jgActivo"+json[i].id_usuario+"' class='ui-block-"+clase+" centrar_jugador "+disabled+"'><a onclick='setIDTitular("+json[i].id_usuario+")' href='#' class='ancho_grilla'><img src='jquerymobile/img-dportes/foto.png'></a><span class='nombre-jugador-accion'>"+json[i].nombre+"</span></div>";
+                        if(json[i].cambio == 1){
+                            cambio = 'display:block';
+                        } else {
+                            cambio = 'display:none';
+                        }
+
+                        if(json[i].goles > 0){
+                            goles = 'display:block';
+                        } else {
+                            goles = 'display:none';
+                        }
+
+                        inc = "<div id='jgActivo"+json[i].id_usuario+"' class='ui-block-"+clase+" centrar_jugador "+disabled+"'>";
+                        inc += "<div style='position:relative;'>";
+                        inc += "<a onclick='setIDTitular("+json[i].id_usuario+")' href='#' class='ancho_grilla'>";
+                        inc += "<img src='jquerymobile/img-dportes/foto.png'>";
+                        inc += "<div class='contenedor_iconos_jugadas'>";
+                        inc += "<img id='jugImg"+json[i].id_usuario+"' src='jquerymobile/img-dportes/iconos/icono_gol.png' style='"+goles+"'>";
+                        inc += "<div id='jugGoles"+json[i].id_usuario+"' class='marcador-personal-goles' style='"+goles+"'>"+json[i].goles+"</div>";
+                        inc += "<div id='jugTarjetaRoja"+json[i].id_usuario+"' style='"+roja+"'><img src='jquerymobile/img-dportes/iconos/icono_roja.png'></div>";
+                        inc += "<div id='jugTarjetaAmarilla"+json[i].id_usuario+"' style='"+amarilla+"'><img src='jquerymobile/img-dportes/iconos/icono_amarilla.png'></div>";
+                        inc += "<div id='jugCambio"+json[i].id_usuario+"' style='width:26px; "+cambio+"'><img src='jquerymobile/img-dportes/iconos/icono_cambio.png'></div>";
+                        inc += "<div id='jugDoble"+json[i].id_usuario+"' style='width:45px; "+doubleAmarilla+"'><img src='jquerymobile/img-dportes/iconos/icono_doble_amarilla.png'></div>";
+                        inc += "</div>";
+                        inc += "</a>";
+                        inc += "<span class='nombre-jugador-accion'>"+json[i].nombre+"</span>";
+                        inc += "</div>";
+                        inc += "</div>";
                         $('#'+id).append(inc).trigger('create');
                     }
                     /*var inc = "<div class='ui-grid-c'>";

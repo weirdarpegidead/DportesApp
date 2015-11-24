@@ -197,14 +197,15 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 
 /* Goles */
 .marcador {
-	font-size:28px;
-	font-weight:bold;
+	font-size:28px !important;
+	font-weight:bold !important;
 	margin-bottom:0 !important; margin-top:0 !important;
 }
 /*cierre*/
 
 /* Grilla de jugadores, aplica ACCION_DE_JUGADOR.HTML */
 .centrar_jugador {text-align:center; margin-bottom:7px;}
+.ancho_grilla {text-decoration: none;}
 .ancho_grilla img {width:100%;max-width:200px;}
 /*cierre*/
 
@@ -222,7 +223,7 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 }
 
 .jugada_buena, .jugada_mala {
-	background-image:url(img-dportes/iconos/buena.png);
+	background-image:url(img-dportes/iconos/buena.svg);
 	display: inline-block;
 	position: absolute;
 	top: 7px;
@@ -232,13 +233,13 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 }
 
 .jugada_mala {
-	background-image:url(img-dportes/iconos/mala.png);
+	background-image:url(img-dportes/iconos/mala.svg);
 	right: 0px;
 	margin-right: 15px;
 }
 
 .tarjeta_amarilla, .tarjeta_roja {
-	background-image:url(img-dportes/iconos/amarilla.png);
+	background-image:url(img-dportes/iconos/amarilla.svg);
 	display: inline-block;
 	position: absolute;
 	top: 7px;
@@ -248,7 +249,7 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 }
 
 .tarjeta_roja {
-	background-image:url(img-dportes/iconos/roja.png);
+	background-image:url(img-dportes/iconos/roja.svg);
 	right: 0px;
 	margin-right: 15px;
 }
@@ -296,9 +297,7 @@ li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border
 	margin-left: 5px;
 }
 
-.fl-derecha{ background-image: url(images/icons-png/fl-derecha.png);}
-
-.fl-izquierda{ background-image: url(images/icons-png/fl-izquierda.png);}
+.fl-derecha{ background-image: url(images/icons-svg/fl-derecha.svg);}
 
 .icono-menu-left, .icono-menu-right {
 	background-image: url(images/icons-svg/menu.svg);
@@ -320,7 +319,7 @@ li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border
 .alinea-resumen {text-align:center; margin-bottom:10px;}
 .texto-resumen-goles {font-size:16px; font-weight:bold; color:#666;}
 .contenedor-resumen-goles { margin-bottom:10px; text-align:center; color:#666;}
-.resultados-partido {width:49%;display:inline-block;}
+.resultados-partido {/*width:49%*/;display:inline-block; text-align:left; margin-left:10px;}
 
 .contenedor-resultados { text-align:center}
 .estadisticas-mi-equipo { width:20%/*width:20%*/; text-align:center; font-size:16px; color:#000; display:inline-block; margin-bottom:10px; color:#666;}
@@ -365,6 +364,10 @@ a.color-boton-notificacion, a.color-boton-notificacion:hover {
 }
 a.color-boton-notificacion:focus { box-shadow:none !important; padding-top: 0.4em; padding-bottom:0.4em;}
 
+a.cambia-color-seleccionado {background: black !important; color: red !important;}
+a.cambia-color-seleccionado:hover {background: black !important; color: red !important;}
+
+
 a.color-boton-notificacion-2, a.color-boton-notificacion-2:hover {
 	background:#008000 !important;
 	font-size:13px;
@@ -375,7 +378,27 @@ a.color-boton-notificacion-2, a.color-boton-notificacion-2:hover {
 	padding-top: 0.4em; padding-bottom:0.4em;
 }
 a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.4em; padding-bottom:0.4em;}
+.cerrar {float:right; cursor:pointer;}
+.link-color {color:#333 !important;}
 /*cierre*/
+
+/*Proximas Actividades*/
+.contenedor-general-actividades {background:#FFF;}
+.contenedor-contenido-actividades { padding:10px; font-size:12px; color:#666; text-align:left;}
+.titulo-actividades { font-size: 14px;text-align: center;font-weight: bold;color: #FFF; background:#75B100; padding:5px; text-shadow:none;}
+.saca-enlace {text-decoration:none; font-weight:normal !important;}
+.titulo-actividad {font-size:16px; color:#fff; font-weight:bold; text-align:center; background:#090; text-shadow:none; padding:8px;}
+.fecha-actividad {font-size:12px; color:#999;}
+.saca-sublinea{text-decoration:none; font-weight:normal !important;}
+.img-detalle-actividad {width:100%; text-align:center}
+.img-detalle-actividad img { max-width:100%; max-height:250px;}
+/*cierre*/
+
+/*Votaciones*/
+.contenedor-general-votaciones {background:#FFF;}
+.contenedor-contenido-votaciones { font-size:12px; color:#666; text-align:left;}
+.ui-collapsible-content {padding:0 !important;}
+/**/
 
 /* Elemento agregar jugador afecta: SELECCIONAR_TITUTALES_NUEVO_JUEGO.HTML */
 .agregar_jugador {
@@ -432,4 +455,52 @@ a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.
 .contenedor-campo {display:block;}
 /*cierre*/
 
-.fijo {
+.jugador-amarilla{display: inline-block;float: left;position: absolute;}
+.jugador-doble-amarilla {display: inline-block;float: left;position: absolute;}
+.jugador-roja {display: inline-block;float: left;position: absolute;}
+.jugador-gol {display: inline-block;float: left;position: absolute;}
+.marcador-personal-goles {color: #FFF;font-size: 16px;font-weight: bold;text-shadow: none;display: inline-block;float: left;position: absolute; top:0%; left:121%;
+
+text-shadow: 0 0 5px #000000;}
+.jugador-cambio {position:absolute; bottom:5%; left:5%;}
+
+
+.alinea-texto-goles {text-align:center !important;}
+.alinea-texto-tarjeta {text-align:right !important;}
+.sancionado-tarjeta-amarilla
+{
+	height: 21px;
+	width: 17px;
+	background-color: #FFFC00;
+	border: 1px solid #E0BB20;
+	float: right;
+	margin-left:5px;
+}
+
+.sancionado-tarjeta-roja
+{
+	height: 21px;
+	width: 17px;
+	background-color: #D00;
+	border: 1px solid #830000;
+	float: right;
+	margin-left:5px;
+}
+
+/*asistencia*/
+.asistencia-asistira {color:#090 !important; background:none; border:none; border-style:none;}
+.asistencia-no-asistira {color:#900!important; background:none; border:none; border-style:none;}
+.asistencia-sin-responder {color:#333 !important; background:none; border:none; border-style:none;}
+/*cierre*/
+
+.contenedor_iconos_jugadas {position: absolute; bottom: 5%; left: 5%; width: 1.25rem;}
+
+.agregar_nuevo_juego {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	width: 51px;
+	height: 51px;
+	background-image:url("img-dportes/iconos/icono_nuevo_juego.svg");
+	z-index: 3;
+}
