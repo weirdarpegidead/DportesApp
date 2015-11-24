@@ -437,6 +437,10 @@
             <ul id="custom-format-listview" data-role="listview" data-filter="true" data-filter-placeholder="Buscar Fechas Anteriores..." data-inset="false" >
             </ul>
 
+            <div class="detalle">
+                <a href="#" onclick="setMore();" class="ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon color-boton">Ver más</a>
+            </div>
+
         </div>
 
         <!--<div data-role="footer"><p align="center">© 2015 Derechos Reservados Dportes</p></div>-->
@@ -670,6 +674,7 @@
         if(activePage === 'historial-stat'){
            var partidos = new eventos();
            partidos.equipo = localStorage.getItem('equipo');
+           partidos.bool = true;
            partidos.getHistorialPartidos();
            delete partidos;
 

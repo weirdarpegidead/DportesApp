@@ -11,6 +11,7 @@ function eventos(){
     this.hora
     this.tipo
     this.periodo
+    this.bool = true;
 
     this.addEvento = function(){
     	if(this.validaEvento()){
@@ -98,17 +99,24 @@ function eventos(){
     }
 
     this.getHistorialPartidos = function(){
+        var offset = 0;
+        if ( $('#custom-format-listview li').length > 0 && this.bool == false) {
+            offset = $('#custom-format-listview li').length;
+        } else {
+            $('#custom-format-listview').html('').listview('refresh');
+        }
         var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_equipo',this.equipo);
+        send.append('offset',offset);
         xhr.open('POST', path + 'app/getHistorial');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.timeout = 5000;
+        xhr.timeout = 10000;
         xhr.send(send);
         $.mobile.loading('show');
         xhr.ontimeout = function(e) {
-            $('#custom-format-listview').html('').listview('refresh');
+            //$('#custom-format-listview').html('').listview('refresh');
             $.mobile.loading('hide');
             navigator.notification.alert('No se recibe respuesta del servidor',function(){},'Atención','OK');
         }
@@ -135,7 +143,7 @@ function eventos(){
                         inc += '</a>';
                         inc += '</li>';
                     }
-                    $('#custom-format-listview').html(inc).listview('refresh');
+                    $('#custom-format-listview').append(inc).listview('refresh');
                 }
             } else {
                 navigator.notification.alert('No hay respuesta desde el servidor, intentelo nuevamente',function(){},'Atención','OK');

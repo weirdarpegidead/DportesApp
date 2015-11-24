@@ -186,3 +186,12 @@ function dropAmarilla(id){
 	return false;
 
 }
+
+
+function setMore(){
+    var partidos = new eventos();
+    partidos.equipo = localStorage.getItem('equipo');
+    partidos.bool = false;
+    partidos.getHistorialPartidos();
+    delete partidos;	
+}
