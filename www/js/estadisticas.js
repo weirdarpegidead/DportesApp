@@ -194,7 +194,12 @@ function setAccion(tipo,accion){
         $('#jugImg'+id).css('display','block');
         $('#jugGoles'+id).css('display','block');
     } else if(tipo == 5 && accion == 0){
-        $("#jugTarjetaRoja"+sessionStorage.getItem('accIDTitular')).css('display','block');
+        $("#jugTarjetaAmarilla"+sessionStorage.getItem('accIDTitular')).css('display','none');
+        if(checkAmarillaRoja(sessionStorage.getItem('accIDTitular'))){
+            $("#jugTarjetaAmarillaRoja"+sessionStorage.getItem('accIDTitular')).css('display','block');
+        } else {
+            $("#jugTarjetaRoja"+sessionStorage.getItem('accIDTitular')).css('display','block');
+        }
         $('#jgActivo'+sessionStorage.getItem('accIDTitular')).addClass('ui-state-disabled');
     } else if(tipo == 5 && accion == 1){
         if(checkAmarilla()){
@@ -269,6 +274,9 @@ document.getElementById('acc-deshacer').addEventListener('click',function(){
                                     $('#jgActivo'+json.usuarios_equipos_usuarios_id_usuario).removeClass('ui-state-disabled');
                                 }
                             } else {
+                                if(checkAmarillaRoja(json.usuarios_equipos_usuarios_id_usuario)){
+                                    $("#jugTarjetaAmarillaRoja"+sessionStorage.getItem('accIDTitular')).css('display','block');
+                                }
                                 $("#jugTarjetaRoja"+json.usuarios_equipos_usuarios_id_usuario).css('display','none');
                                 $('#jgActivo'+json.usuarios_equipos_usuarios_id_usuario).removeClass('ui-state-disabled');
                             }

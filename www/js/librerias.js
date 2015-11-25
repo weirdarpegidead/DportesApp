@@ -176,6 +176,16 @@ function checkAmarilla(){
     }
 }
 
+function checkAmarillaRoja(id){
+	var arr = JSON.parse(sessionStorage.getItem('amarillas'));
+	for(var i = 0 ; i <= arr.length ; i++){
+		if(id == arr[i]){
+			return true
+		}
+	}
+	return false;
+}
+
 function dropAmarilla(id){
 	var arr = JSON.parse(sessionStorage.getItem('amarillas'));
 	for(var i = 0 ; i <= arr.length ; i++){
@@ -187,6 +197,7 @@ function dropAmarilla(id){
 	        } else {
 	        	$("#jugTarjetaRoja"+id).css('display','none');
 	        	$("#jugTarjetaAmarilla"+id).css('display','none');
+	        	$("#jugTarjetaAmarillaRoja"+id).css('display','none');
 	        }
 	    	sessionStorage.setItem('amarillas',JSON.stringify(arr));
 	        return true;
