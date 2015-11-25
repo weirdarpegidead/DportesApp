@@ -4,6 +4,7 @@
 function jugadores(){
 
     this.id_jugador
+    this.id_equipo
     this.nombre
     this.email
 
@@ -79,6 +80,43 @@ function jugadores(){
                         $("#set-titulares").append(inc).trigger('create');
                     };
                     //document.getElementById('set-titulares').innerHTML = inc;
+                } else {
+                    navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+                }
+            }
+        }
+    }
+
+    this.getJugadoresEquipo = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_equipo',this.id_equipo);
+        xhr.open('POST', path + 'app/getJugadoresByEquipo');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        xhr.timeout = 10000;
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+        }
+        xhr.ontimeout = function(e){
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+        }
+        xhr.onload = function(e){
+            if(this.status == 200){
+                if(this.response && JSON.parse(this.response)){
+                    var json = JSON.parse(this.response);
+                    var inc = '';
+                    for(var i = 0; i < json.length; i++ ){
+                        inc += "<li>";
+                        inc += "<a href='#' class='color-boton-equipo'><img src='jquerymobile/img-dportes/foto.png'>";
+                        inc += "<h2>"+json[i].nombre+"</h2>";
+                        inc += "<p>"+json[i].posicion+"</p>";
+                        inc += "</a>";
+                        inc += "</li>";
+                    };
+                    $("#jug-list").append(inc).listview('refresh');
+                    $.mobile.loading('hide');
                 } else {
                     navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
                 }

@@ -548,6 +548,21 @@
         <!-- CIERRE PANEL MENU -->
     </div>
 
+    <!-- ————— PAGINA LISTA DE ESTADISTICAS DE JUGADORES EQUIPO TITULAR ————— -->
+    <div data-role="page" id="jugadores-equipo" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Equipo <span id="jug-nom-eq"></span></h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+        </div>
+        
+        <div class="content">
+            <ul id="jug-list" data-role="listview" data-inset="false">
+            </ul>
+        </div><!--CIERRE DE CONTENIDO-->
+    </div>
+
     <!-- ————— PÁGINA TERMINOS Y CONDICIONES ————— -->
     <div data-role="page" id="terminosycondiciones" data-title="Dportes">
     
@@ -565,15 +580,13 @@
         </div>
     </div>
 
-        <!-- PANEL MENU -->
+    <!-- PANEL MENU -->
     <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu_perfil">
-
         <ul data-role="listview">
+            <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
         </ul>
-
     </div>
-        <!-- CIERRE PANEL MENU -->
 
     <script type="text/javascript" src="js/pageinit.js"></script>
     <script type="text/javascript" src="js/librerias.js"></script>
@@ -684,6 +697,15 @@
            //$( "#menu_perfil" ).panel( "option", "position", "right" );
 
            swipe('#historial-stat','#menu_perfil','right');        
+        }
+
+        if(activePage === 'jugadores-equipo'){
+            var jg = new jugadores();
+            jg.id_equipo = localStorage.getItem('equipo');
+            jg.getJugadoresEquipo();
+            swipe('#jugadores','#menu_perfil','right'); 
+            document.getElementById('jug-nom-eq').innerHTML = String(localStorage.getItem('nombre_equipo'));
+            delete jg;
         }
 
         if(activePage === 'stat-jugadores'){
