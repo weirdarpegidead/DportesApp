@@ -15,6 +15,7 @@ function jugadores(){
 	        add.append('nombre_usuario',this.nombre);
 	        add.append('email_usuario',this.email);
 	        add.append('equipo',localStorage.getItem('equipo'));
+            add.append('nombre_equipo',localStorage.getItem('nombre_equipo'))
             if(document.querySelector('input[name="jg-radio-posicion"]:checked') !== null){
                 add.append('posicion',document.querySelector('input[name="jg-radio-posicion"]:checked').value);
             } else {
@@ -33,7 +34,7 @@ function jugadores(){
                     	//alert("El jugador fue agregado satisfactoriamente");
                         //document.getElementById('reg-email-duplicate-error').style.display = "block";
                     } else {
-                        navigator.notification.alert('Ocurrio un error, intentelo nuevamente',function(){},'Atención','OK');
+                        navigator.notification.alert('Este jugador ya pertenece al equipo',function(){},'Atención','OK');
                     	//alert("ocurrio un error, intentelo nuevamente");
                         //$.mobile.navigate("#registro-equipo", {transition: "slide"});
                     }
