@@ -229,14 +229,14 @@ function setMore(){
 
 function jugDelete(){
     var startLoc = null; 
-    $('#jugadores').on( "touchstart", function(e){ 
+    $(document).on( "touchstart", function(e){ 
 	    if( e.originalEvent.touches.length == 1 ) { // one finger touch 
 	        var touch = e.originalEvent.touches[ 0 ]; 
 	        startLoc = { x : touch.pageX, y : touch.pageY }; 
 	    } 
    	}); 
 
-    $('#jugadores').on( "touchmove", function(e){  
+    $(document).on( "touchmove", function(e){  
         if( startLoc ) { 
 	        var touch = e.originalEvent.touches[ 0 ];  
 	        if( Math.abs( startLoc.x - touch.pageX ) >  Math.abs( startLoc.y - touch.pageY ) ) { 
