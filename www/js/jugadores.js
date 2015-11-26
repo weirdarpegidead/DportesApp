@@ -163,7 +163,9 @@ function jugadores(){
                     }).blur();
                 });
             });
-        }); 
+        }).on("click","#jug-borrar", function(){
+            alert("pendiente la seleccion a traves de checkbox");
+        });
     }
 
     this.getJugadoresEquipo = function(){
@@ -213,7 +215,7 @@ function jugadores(){
                         inc += "<a href='#' class='ui-icon-borrar'>Delete</a>";
                         inc += "</li>";*/
                     };
-                    $("#jug-list").append(inc).listview('refresh');
+                    $("#jug-list").html(inc).listview('refresh');
                     $.mobile.loading('hide');
                 } else {
                     navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
