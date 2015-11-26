@@ -228,6 +228,23 @@ function setMore(){
 }
 
 function jugDelete(){
+    var startLoc = null; 
+    $('#jugadores').on( "touchstart", function(e){ 
+	    if( e.originalEvent.touches.length == 1 ) { // one finger touch 
+	        var touch = e.originalEvent.touches[ 0 ]; 
+	        startLoc = { x : touch.pageX, y : touch.pageY }; 
+	    } 
+   	}); 
+
+    $('#jugadores').on( "touchmove", function(e){  
+        if( startLoc ) { 
+	        var touch = e.originalEvent.touches[ 0 ];  
+	        if( Math.abs( startLoc.x - touch.pageX ) >  Math.abs( startLoc.y - touch.pageY ) ) { 
+	            e.preventDefault(); 
+	        } 
+	        startLoc = null; 
+        } 
+    });
 $(document).on("click", "ul li span.delete", function () {
     var listview = $(this).closest("ul");
     $(".ui-content").css({
