@@ -555,12 +555,25 @@
             <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
             <h1>Equipo <span id="jug-nom-eq"></span></h1>
             <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+            <div class="tarro-basura"><a href="#"><img src="jquerymobile/img-dportes/iconos/borrar.png"></a></div>
         </div>
         
-        <div class="content">
-            <ul id="jug-list" data-role="listview" data-inset="false">
+        <div role="main" class="ui-content">
+            <ul id="jug-list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete" data-inset="false">
             </ul>
         </div><!--CIERRE DE CONTENIDO-->
+        
+        <div id="confirm" class="ui-content" data-role="popup" data-theme="a">
+            <p id="question">¿Seguro que lo quieres borrar de tu Equipo?</p>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a id="yes" class="ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Aceptar</a>
+                </div>
+                <div class="ui-block-b">
+                    <a id="cancel" class="ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Cancelar</a>
+                </div>
+            </div>
+        </div><!-- /popup -->
     </div>
 
     <!-- ————— PÁGINA TERMINOS Y CONDICIONES ————— -->
@@ -703,7 +716,8 @@
             var jg = new jugadores();
             jg.id_equipo = localStorage.getItem('equipo');
             jg.getJugadoresEquipo();
-            swipe('#jugadores','#menu_perfil','right'); 
+            swipe('#jugadores','#menu_perfil','right');
+            jugDelete();
             document.getElementById('jug-nom-eq').innerHTML = String(localStorage.getItem('nombre_equipo'));
             delete jg;
         }

@@ -109,12 +109,37 @@ function jugadores(){
                     var json = JSON.parse(this.response);
                     var inc = '';
                     for(var i = 0; i < json.length; i++ ){
-                        inc += "<li>";
-                        inc += "<a href='#' class='color-boton-equipo'><img src='jquerymobile/img-dportes/foto.png'>";
+
+                    inc +=  "<li>";
+                    inc += "<span class='delete'>";
+                    inc += "<p class='btn'>";
+                    inc += "Trash";
+                    inc += "</p>";
+                    inc += "</span>";
+                    inc += "<span class='flag'>";
+                    inc += "<p class='btn'>";
+                    inc += "Flag";
+                    inc += "</p>";
+                    inc += "</span>";
+                    inc += "<span class='more'>";
+                    inc += "<p class='btn'>";
+                    inc += "More"
+                    inc += "</p>";
+                    inc += "</span>";
+                    inc += "<a href='#' draggable='false'><img src='jquerymobile/img-dportes/foto.png'>";
+                    inc += "<h2>"+json[i].nombre+"</h2>";
+                    inc += "<p>"+json[i].posicion+"</p>";
+                    inc += "<span class='flagged ui-screen-hidden'>";
+                    inc += "</span>";
+                    inc += "</a>";
+                    inc += "</li>";
+                    /*    inc += "<li>";
+                        inc += "<a href='#'><img src='jquerymobile/img-dportes/foto.png'>";
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p>"+json[i].posicion+"</p>";
                         inc += "</a>";
-                        inc += "</li>";
+                        inc += "<a href='#' class='ui-icon-borrar'>Delete</a>";
+                        inc += "</li>";*/
                     };
                     $("#jug-list").append(inc).listview('refresh');
                     $.mobile.loading('hide');

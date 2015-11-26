@@ -308,6 +308,11 @@ li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border
 }
 
 .icono-menu-right { background-image: url(images/icons-svg/menu.svg);}
+.tarro-basura { 
+	display: block;
+	float: right;
+	margin-right: 38px;
+	margin-top: -33px;}
 /*cierre*/
 
 /* Estilos para todos los encabezados o header */
@@ -330,6 +335,7 @@ li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border
 /* Iconos personalizados para botones con iconos */
 .ui-icon-gol-encontra:after {background-image:url(img-dportes/iconos/gol-encontra.png);}
 .ui-icon-fin-tiempo:after {background-image:url(img-dportes/iconos/tiempo.png);}
+.ui-icon-borrar:after {background-image:url(img-dportes/iconos/mala.png);}
 /*cierre*/
 
 /* Iconos pertenecientes al resumen del partido RESUMEN_1_TIEMPO.HTML, RESUMEN_2_TIEMPO.HTML ...etc */
@@ -459,9 +465,8 @@ a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.
 .jugador-doble-amarilla {display: inline-block;float: left;position: absolute;}
 .jugador-roja {display: inline-block;float: left;position: absolute;}
 .jugador-gol {display: inline-block;float: left;position: absolute;}
-.marcador-personal-goles {color: #FFF;font-size: 16px;font-weight: bold;text-shadow: none;display: inline-block;float: left;position: absolute; top:0%; left:121%;
-
-text-shadow: 0 0 5px #000000;}
+.marcador-personal-goles {color: #FFF;font-size: 16px;font-weight: bold;text-shadow: none;display: inline-block;float: left;position: absolute; top:0%; left:121%;text-shadow: 0 0 5px #000000;}
+.marcador-amarilla {color: #FFF;font-size: 16px;font-weight: bold;text-shadow: none;display: inline-block;float: left;position: absolute; margin-top:4px; left:121%;text-shadow: 0 0 5px #000000;}
 .jugador-cambio {position:absolute; bottom:5%; left:5%;}
 
 
@@ -504,3 +509,141 @@ text-shadow: 0 0 5px #000000;}
 	background-image:url("img-dportes/iconos/icono_nuevo_juego.svg");
 	z-index: 3;
 }
+
+
+/*PARA EVENTO DE BORRADO DE JUGADOR APLICA EN ESTADISTICAS DE JUGADOR */
+/* Left transition */
+li.left {
+	-webkit-transition: -webkit-transform 250ms ease;
+	-webkit-transform: translateX(-100%);
+	-moz-transition: -moz-transform 250ms ease;
+	-moz-transform: translateX(-100%);
+	-o-transition: -o-transform 250ms ease;
+	-o-transform: translateX(-100%);
+	transition: transform 250ms ease;
+	transform: translateX(-100%);
+}
+/* Right transition */
+li.right {
+	-webkit-transition: -webkit-transform 250ms ease;
+	-webkit-transform: translateX(100%);
+	-moz-transition: -moz-transform 250ms ease;
+	-moz-transform: translateX(100%);
+	-o-transition: -o-transform 250ms ease;
+	-o-transform: translateX(100%);
+	transition: transform 250ms ease;
+	transform: translateX(100%);
+}
+/* Border bottom for the previous button during the transition*/
+li.left a.ui-btn,
+li.right a.ui-btn {
+	border-top-width: 0;
+	border-left-width: 1px;
+	border-right-width: 1px;
+}
+li a.ui-btn.border-bottom {
+	border-bottom-width: 1px;
+}
+/* Hide the delete button on touch devices */
+ul.touch li.ui-li-has-alt a.delete {
+	display: none;
+}
+ul.touch li.ui-li-has-alt a.ui-btn {
+	margin-right:0;
+}
+/* Styling for the popup */
+#confirm p {
+	text-align: center;
+	font-size: inherit;
+	margin-bottom: .75em;
+
+}
+/*CIERRE */
+
+a.color-boton-presionado {
+	background-color:#333;
+/*	font-size:14px !important;
+	color:#FFF !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	text-shadow:none !important;
+	border-color:transparent !important;
+	text-decoration:none !important;*/
+}
+
+/*EXTRASS*/
+
+.ui-listview > li {
+  display: table;
+    width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.ui-listview > li > a.ui-btn {
+    overflow: initial;
+  margin-right: 0;
+    -webkit-transition: -webkit-transform 400ms ease-out;
+    -moz-transition: -moz-transform 400ms ease-out;
+    -o-transition: -o-transform 400ms ease-out;
+    transition: transform 400ms ease-out;
+}
+
+.ui-listview > li span {
+    z-index: auto;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 81px;
+    width: 0;
+    float: right;
+    display: table-cell;
+    -webkit-transition: width 380ms ease-out;
+    -moz-transition: width 380ms ease-out;
+    -o-transition: width 380ms ease-out;
+    transition: width 380ms ease-out;
+}
+
+.ui-listview > li span.show {
+    width: 70px;
+    cursor: pointer;
+}
+
+.ui-listview > li p.btn {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1em;
+    text-shadow: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+    text-overflow: clip;
+}
+
+.ui-listview > li span.delete {
+    background-color: #FF3B30;
+}
+
+.ui-listview > li span.flag {
+    background-color: #FF9500;
+}
+
+.ui-listview > li span.more {
+    background-color: #D6CEC3;
+}
+
+.ui-listview > li .ui-btn span.flagged {
+  padding: 0;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto 35px auto auto;
+  background-image: url(http://discovercoronadwp.com/img/yellowflag.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
