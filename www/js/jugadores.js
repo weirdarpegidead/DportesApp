@@ -88,6 +88,84 @@ function jugadores(){
         }
     }
 
+    this.getDeleteFunction = function(){
+        var startLoc = null; 
+        $(document).on( "touchstart", function(e){ 
+            if( e.originalEvent.touches.length == 1 ) { // one finger touch 
+                var touch = e.originalEvent.touches[ 0 ]; 
+                startLoc = { x : touch.pageX, y : touch.pageY }; 
+            } 
+        }); 
+
+        $(document).on( "touchmove", function(e){  
+            if( startLoc ) { 
+                var touch = e.originalEvent.touches[ 0 ];  
+                if( Math.abs( startLoc.x - touch.pageX ) >  Math.abs( startLoc.y - touch.pageY ) ) { 
+                    e.preventDefault(); 
+                } 
+                startLoc = null; 
+            } 
+        });
+
+        $(document).on("click", "ul li span.delete", function () {
+            var xhr = new XMLHttpRequest();
+            var send = new FormData();
+            var span = $(this);
+            send.append('equipo',localStorage.getItem('equipo'));
+            send.append('usuario',$(this).parent().val());
+            xhr.open('POST', path + 'app/dropJugadorEquipo');
+            xhr.timeout = 10000;
+            xhr.setRequestHeader('Cache-Control', 'no-cache');
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.send(send);
+
+            xhr.onprogress = function(e){
+                $.mobile.loading('show');
+            }
+            xhr.ontimeout = function(e){
+                navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+            }
+            xhr.onload = function(e){
+                if(this.response){
+                    var listview = span.closest("ul");
+                    $(".ui-content").css({
+                        overflow: "hidden"
+                    });
+                    span.parent().css({
+                        display: "block"
+                    }).animate({
+                        opacity: 0
+                    }, {
+                        duration: 250,
+                        queue: false
+                    }).animate({
+                        height: 0
+                    }, 300, function () {
+                        $(this).remove();
+                        listview.listview("refresh");
+                        $(".ui-content").removeAttr("style");
+                    });
+                    $.mobile.loading('hide');
+                }
+            }
+        }).on("click", "ul li span.more", function () {
+            alert("nothing");
+        }).on("swipeleft", "ul li a", function (e) {
+            $(this).prevAll("span").addClass("show");
+            $(this).off("click").blur();
+            $(this).css({
+                transform: "translateX(-75px)" //139
+            }).one("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
+                $(this).one("swiperight", function () {
+                    $(this).prevAll("span").removeClass("show");
+                    $(this).css({
+                        transform: "translateX(0)"
+                    }).blur();
+                });
+            });
+        }); 
+    }
+
     this.getJugadoresEquipo = function(){
         var xhr = new XMLHttpRequest();
         var send = new FormData();
@@ -108,24 +186,18 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
+                    var disabled = '';
                     for(var i = 0; i < json.length; i++ ){
-
-                    inc +=  "<li>";
-                    inc += "<span class='delete'>";
-                    inc += "<p class='btn'>";
-                    inc += "Trash";
-                    inc += "</p>";
+                        disabled = (json[i].rol == 1) ? 'ui-state-disabled' : '';
+                    inc +=  "<li value='"+json[i].id_usuario+"'>";
+                    inc += "<span class='delete "+disabled+"'>";
+                    inc += "<div class='centra_texto'>Borrar</div>";
                     inc += "</span>";
-                    inc += "<span class='flag'>";
-                    inc += "<p class='btn'>";
-                    inc += "Flag";
-                    inc += "</p>";
-                    inc += "</span>";
-                    inc += "<span class='more'>";
+                    /*inc += "<span class='more'>";
                     inc += "<p class='btn'>";
                     inc += "More"
                     inc += "</p>";
-                    inc += "</span>";
+                    inc += "</span>";*/
                     inc += "<a href='#' draggable='false'><img src='jquerymobile/img-dportes/foto.png'>";
                     inc += "<h2>"+json[i].nombre+"</h2>";
                     inc += "<p>"+json[i].posicion+"</p>";

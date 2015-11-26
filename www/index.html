@@ -716,8 +716,9 @@
             var jg = new jugadores();
             jg.id_equipo = localStorage.getItem('equipo');
             jg.getJugadoresEquipo();
+            jg.getDeleteFunction();
             swipe('#jugadores','#menu_perfil','right');
-            jugDelete();
+            
             document.getElementById('jug-nom-eq').innerHTML = String(localStorage.getItem('nombre_equipo'));
             delete jg;
         }
