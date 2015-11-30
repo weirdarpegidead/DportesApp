@@ -605,21 +605,7 @@
             document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady(){
-                //StatusBar.show();
-               /* if(StatusBar){
-                StatusBar.hide();
-                } else {
-                    alert('plugin statusbar no detectado');
-                }*/
-                //StatusBar.overlaysWebView(false);
-                //StatusBar.backgroundColorByName("black");
-                //StatusBar.styleLightContent();
-                //localStorage.removeItem('periodo');
-                //localStorage.removeItem('nPeriodo');
-                //localStorage.removeItem('evento');
-                //localStorage.removeItem('accIDTitular');
-                //alert('asdsadas');
-                //StatusBar.show();
+
                 setTimeout(function(){ 
                     if(localStorage.getItem('login')){
                         $.mobile.navigate("#home", {transition: "fade"});
@@ -631,6 +617,8 @@
                 var dp = new dportes();
                 dp.getDportes();
                 delete dp;
+
+                //StatusBar.show();
             }
         }
 
