@@ -568,7 +568,7 @@
     <div data-role="page" id="terminosycondiciones" data-title="Dportes">
     
         <div data-role="header" data-position="fixed" class="color-encabezado">
-            <a href="#registro-equipo" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <a id="tyc-back" href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
             <h1>Términos Servicios</h1>
         </div>
         
@@ -584,7 +584,18 @@
     <!-- PANEL MENU -->
     <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu_perfil">
         <ul data-role="listview">
+           
+            <li data-icon="home"><a href="#home">Home</a></li>
+            <li data-icon="user"><a href="#" data-rel="close">Mi Perfil</a></li>
             <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
+            <li data-icon="grid"><a href="#">Equipo</a></li>
+            <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
+            <li data-icon="clock"><a href="notificaciones.html" data-transition="fade">Notificaciones</a></li>
+                    <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
+                    <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
+            <li data-icon="info"><a href="#">Como se Usa</a></li>
+            <li data-icon="eye"><a href="#terminosycondiciones">Acerca de Dportes</a></li>
+            <li data-icon="mail"><a href="#" >FAQ</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
         </ul>
     </div>
@@ -683,6 +694,7 @@
            document.getElementById('stat-back-rel').style.display = "block";
            document.getElementById('stat-forward-rel').style.display = "none";
            document.getElementById('stat-back-rel').href = '#historial-stat';
+           document.getElementById('tyc-back').href = '#'+activePage;
            //$('#menu_perfil').attr('data-position','right');
            //$( "#menu_perfil" ).panel( "option", "position", "right" );
 
@@ -695,7 +707,7 @@
             jg.getJugadoresEquipo();
             jg.getDeleteFunction();
             swipe('#jugadores','#menu_perfil','right');
-            
+            document.getElementById('tyc-back').href = '#'+activePage;
             document.getElementById('jug-nom-eq').innerHTML = String(localStorage.getItem('nombre_equipo'));
             delete jg;
         }
@@ -733,6 +745,7 @@
             swipe('#home','#menu_perfil','right');
             clearGame();
             closeSessionEvents();
+            document.getElementById('tyc-back').href = '#'+activePage;
             document.getElementById('jg-rel-back').href = "#home";
         }
 
