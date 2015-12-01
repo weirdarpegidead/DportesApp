@@ -243,7 +243,6 @@ document.getElementById('acc-deshacer').addEventListener('click',function(){
                 xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
                 xhr.send(del);
                 xhr.onload = function(e){
-                    //alert(this.response);
                     if(this.status == 200){
                         var json = JSON.parse(this.response);
                         //alert(json.estadisticas_futbol_id_estadistica_futbol );

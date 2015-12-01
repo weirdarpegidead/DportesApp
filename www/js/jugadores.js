@@ -24,19 +24,66 @@ function jugadores(){
 	        xhr.open('POST', path + 'app/addJugador');
 	        xhr.setRequestHeader('Cache-Control', 'no-cache');
 	        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-	        xhr.send(add);
+	        xhr.timeout = 10000;
+            xhr.send(add);
+            xhr.onprogress = function(e){
+                $.mobile.loading('show');
+            }
+            xhr.ontimeout = function(e){
+                navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+            }
 	        xhr.onload = function(e){
+                //$('#add-jg').removeClass('ui-disabled');
+                $.mobile.loading('hide');
 	            if(this.status == 200){
-                    if(this.response){
+                    if(this.response == 1){
                     	document.getElementById('jg-nombre').value = '';
     					document.getElementById('jg-email').value = '';
-                        navigator.notification.alert('El jugador se agrego satisfactoriamente',function(){},'Atención','OK');
-                    	//alert("El jugador fue agregado satisfactoriamente");
-                        //document.getElementById('reg-email-duplicate-error').style.display = "block";
-                    } else {
-                        navigator.notification.alert('Este jugador ya pertenece al equipo',function(){},'Atención','OK');
-                    	//alert("ocurrio un error, intentelo nuevamente");
-                        //$.mobile.navigate("#registro-equipo", {transition: "slide"});
+                        navigator.notification.alert('Se agrego y notifico correctamente el jugador',function(){},'Atención','OK');
+                    } else if(this.response == 2){
+                        document.getElementById('jg-nombre').value = '';
+                        document.getElementById('jg-email').value = '';
+                        navigator.notification.alert('Se agrego e invito correctamente el jugador',function(){},'Atención','OK');
+                    } else if(this.response == 3){
+                        navigator.notification.alert('Lo sentimos pero este usuario fue eliminado en dportes.\n No se pudo agregar',function(){},'Atención','OK');
+                    } else if(this.response == 4){
+                        navigator.notification.alert('Este jugador ya es parte del equipo',function(){},'Atención','OK');
+                    } else if(this.response == 5){
+                        navigator.notification.confirm(
+                            'Hemos detectado que este jugador ya formaba parte del equipo.\n ¿Desea reintegrarlo?',
+                            function(button){
+                                if(button == 1){
+                                    var xhr = new XMLHttpRequest();
+                                    var send = new FormData();
+                                    send.append('email_usuario',document.getElementById('jg-email').value);
+                                    send.append('equipo',localStorage.getItem('equipo'));
+                                    send.append('nombre_usuario',document.getElementById('jg-nombre').value);
+                                    if(document.querySelector('input[name="jg-radio-posicion"]:checked') !== null){
+                                        send.append('posicion',document.querySelector('input[name="jg-radio-posicion"]:checked').value);
+                                    } else {
+                                        send.append('posicion',1);
+                                    }
+                                    xhr.open('POST', path + 'app/refundJugador');
+                                    xhr.setRequestHeader('Cache-Control', 'no-cache');
+                                    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                                    xhr.timeout = 10000;
+                                    xhr.send(add);
+                                    xhr.onprogress = function(e){
+                                        $.mobile.loading('show');
+                                    }
+                                    xhr.ontimeout = function(e){
+                                        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+                                    }
+                                    xhr.onload = function(e){
+                                        $.mobile.loading('hide');
+                                        if(this.status == 200){
+                                            navigator.notification.alert('El jugador se reintegro correctamente',function(){},'Atención','OK');
+                                        }
+                                    }
+                                }
+                            },
+                            'Advertencia',
+                            'Si,No');
                     }
 	            }
 	        }
@@ -490,6 +537,7 @@ function jugadores(){
     	if(bNombre && bEmail){
     		return true;
     	} else {
+            $.mobile.loading('hide');
     		return false;
     	}
     }
@@ -544,6 +592,7 @@ $(document).on("pagebeforeshow","#seleccionar-titulares",function(){
 document.getElementById('add-jg').addEventListener('click',function(){
 
     event.preventDefault();
+    $.mobile.loading('show');
     var jg = new jugadores();
     jg.nombre 	= document.getElementById('jg-nombre').value;
     jg.email 	= document.getElementById('jg-email').value;
