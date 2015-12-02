@@ -564,6 +564,21 @@
         </div><!--CIERRE DE CONTENIDO-->
     </div>
 
+    <!-- ————— PAGINA PERFIL EQUIPO RIVAL ————— -->
+    <div data-role="page" id="mis-equipos" data-url="mis_equipos" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Mi Equipo</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+        </div>
+        
+        <div role="main" class="ui-content">
+            <ul id="eq-list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete" data-inset="false">
+            </ul>
+        </div>
+    </div>
+
     <!-- ————— PÁGINA TERMINOS Y CONDICIONES ————— -->
     <div data-role="page" id="terminosycondiciones" data-title="Dportes">
     
@@ -588,9 +603,9 @@
             <li data-icon="home"><a href="#home">Home</a></li>
             <li data-icon="user"><a href="#" data-rel="close">Mi Perfil</a></li>
             <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
-            <li data-icon="grid"><a href="#">Equipo</a></li>
+            <li data-icon="grid"><a href="#mis-equipos">Mis Equipos</a></li>
             <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
-            <li data-icon="clock"><a href="notificaciones.html" data-transition="fade">Notificaciones</a></li>
+            <li data-icon="clock"><a href="#" data-transition="fade">Notificaciones</a></li>
                     <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
                     <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
             <li data-icon="info"><a href="#">Como se Usa</a></li>
@@ -738,6 +753,13 @@
             var jg = new jugadores();
             jg.getJugadoresReserva();
             delete jg;
+        }
+
+        if(activePage === 'mis-equipos'){
+            var eq = new equipos();
+            eq.setSwipe();
+            eq.getMisEquipos();
+            delete eq;
         }
 
         if(activePage === 'home'){

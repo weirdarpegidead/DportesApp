@@ -169,7 +169,7 @@ table tr:nth-child(even) {background:#FFF;}
 /*cierre*/
 
 /* Caja contenedora de encuentros */
-.contenedor-fechas {padding-top:15px; padding-bottom:10px;text-align:center;width:100%;}
+.contenedor-fechas {padding-top:15px;text-align:center;width:100%;}
 
 /* Caja con un ancho fijo */
 .centrado-fechas {display:inline-block;width:230px;}
@@ -264,11 +264,13 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 /*cierre*/
 
 /* Alineamiento cuando se escoge el jugador en los titulares, SELECCIONAR_TITULARES_NUEVO_JUEGO.HTML */
-.imagen_jugador { float:left; margin-right:10px;}
+.imagen_jugador { float:left; margin-right:10px; height:80px;}
 .imagen_jugador img { max-width:68px;}
 .li-padding {padding:0 !important; border-top:hidden !important;} /*este aplica tambien a SELECCIONAR_RESERVAS.HTML*/
 li.li-padding div.ui-checkbox { margin:0 !important;}
 li.li-padding div.ui-checkbox label { border-top:hidden; border-left:hidden; border-right:hidden;}
+.quita_margenes_para_check {padding: 0px 0px 0px 0px; height: 80px;}
+.quita_margenes_para_check_2 {padding: 0px 0px 0px 47px;}
 /*cierre*/
 
 /* Afecta a SELECCIONAR_RESERVAS.HTML */
@@ -571,50 +573,59 @@ a.color-boton-presionado {
 }
 
 
-
-
-
-
-.ui-listview#jug-list> li {
-  display: table;
+/*efecto slide de abrir o cerrar para eliminar*/
+.ui-listview > li {
+  	display: table;
     width: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
 }
 
-.ui-listview#jug-list> li > a.ui-btn {
+.ui-listview > li > a.ui-btn {
     overflow: initial;
-  margin-right: 0;
-    -webkit-transition: -webkit-transform 150ms ease-out;
-    -moz-transition: -moz-transform 150ms ease-out;
-    -o-transition: -o-transform 150ms ease-out;
-    transition: transform 150ms ease-out;
+  	margin-right: 0;
+    -webkit-transition: -webkit-transform 300ms ease-in-out;
+    -moz-transition: -moz-transform 300ms ease-in-out;
+    -o-transition: -o-transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
 }
 
-.ui-listview#jug-list> li span {
+.ui-listview > li span {
     z-index: auto;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     height: 5.063em;
-    width: 0;
+    width: 5.5%;
     float: right;
     display: table;
-    -webkit-transition: width 150ms ease-out;
-    -moz-transition: width 150ms ease-out;
-    -o-transition: width 150ms ease-out;
-    transition: width 150ms ease-out;
+    -webkit-transition: width 300ms ease-in-out;
+    -moz-transition: width 300ms ease-in-out;
+    -o-transition: width 300ms ease-in-out;
+    transition: width 300ms ease-in-out;
 }
 
-.ui-listview#jug-list> li span.show {
+.ui-listview > li span.show {
     width: 70px;
     cursor: pointer;
-    height: 5.063em;
+	height: 5.063em;
+}
+
+
+.ui-listview > li span.delete {
+    background-color: #FF3B30;
+}
+
+.ui-listview > li span.flag {
+    background-color: #FF9500;
+}
+
+.ui-listview > li span.more {
+    background-color: #D6CEC3;
 }
 
 .centra_texto {
-
 	text-align: center;
     vertical-align: middle;
     font-size: 1em;
@@ -624,42 +635,8 @@ a.color-boton-presionado {
     text-rendering: optimizeLegibility;
     text-overflow: clip;
     display: table-cell;
-width: 100%;
+	width: 100%;
 }
-/*.ui-listview#jug-list> li p.btn {
-    text-align: center;
-    vertical-align: middle;
-    font-size: 1em;
-    text-shadow: none;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-rendering: optimizeLegibility;
-    text-overflow: clip;
-}*/
+/*cierre*/
 
-.ui-listview#jug-list> li span.delete {
-    background-color: #FF3B30;
-}
-
-.ui-listview#jug-list> li span.flag {
-    background-color: #FF9500;
-}
-
-.ui-listview#jug-list> li span.more {
-    background-color: #D6CEC3;
-}
-
-.ui-listview#jug-list> li .ui-btn span.flagged {
-  padding: 0;
-  height: 25px;
-  width: 25px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  margin: auto 35px auto auto;
-  background-image: url(http://discovercoronadwp.com/img/yellowflag.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+.saca_elemento {display: none !important;}
