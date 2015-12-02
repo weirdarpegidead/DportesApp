@@ -119,6 +119,7 @@ function estadisticas(){
                     var quites = json.quites;
                     var faltas = json.faltas;
                     var gol_contra = json.gol_contra;
+                    var rival = json.rival;
 
                     if(goles.length>0){
                         document.getElementById('stat-goles-content').style.display = "block";
@@ -146,7 +147,18 @@ function estadisticas(){
                         document.getElementById('stat-resumen-text').style.display = "none";
                         document.getElementById('stat-penales').style.display = "none";
                     }
+                    var equipo = localStorage.getItem('nombre_equipo');
 
+                    if(equipo.length>16){
+                        equipo = equipo.slice(0,13) + '...';
+                    }
+
+                    if(rival.length>16){
+                        rival = rival.slice(0,13) + '...';
+                    }
+
+                    document.getElementById('stat-equipo').innerHTML = equipo;
+                    document.getElementById('stat-rival').innerHTML = rival;
                     document.getElementById('stat-tiro-arco').innerHTML = tiros_arco;
                     document.getElementById('stat-tiro-libre').innerHTML = tiros_libre;
                     document.getElementById('stat-tiro-esquina').innerHTML = tiros_esquina;
