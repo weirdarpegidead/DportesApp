@@ -37,6 +37,7 @@ function authentication(){
                     if(this.response && JSON.parse(this.response)){
                         var json =  JSON.parse(this.response);
                         localStorage.setItem("id", json.usuario);
+                        localStorage.setItem("rol_equipo",json.rol);
                         localStorage.setItem("equipo", json.equipo);
                         localStorage.setItem("nombre_equipo", json.nombre_equipo);
                         localStorage.setItem("login", json.login);

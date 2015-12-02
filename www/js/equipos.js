@@ -50,17 +50,33 @@ function equipos(){
 	    		if(this.response){
 	    			var json = JSON.parse(this.response);
 	    			var inc = '';
+	    			var flagged = '';
+	    			var disabled = '';
+	    			var deleteDisabled = '';
 	    			for(var i = 0; i < json.length; i++ ){
-	                    inc += "<li>";
-	                    inc += "<span class='delete'>";
+	    				if(json[i].id_equipo == localStorage.getItem('equipo')){
+	    					flagged = '';
+	    					disabled = 'ui-state-disabled';
+	    				} else {
+	    					flagged = 'ui-screen-hidden';
+	    					disabled = '';
+	    				}
+	    				if(json[i].rol == 1){
+	    					deleteDisabled = 'ui-state-disabled';
+	    				} else {
+	    					deleteDisabled = '';
+	    				}
+	                    inc += "<li value='"+json[i].id_equipo+"'>";
+	                    inc += "<input id='eq_r"+json[i].id_equipo+"' type='hidden' value='"+json[i].rol+"'>";
+	                    inc += "<span class='delete "+deleteDisabled+"'>";
 	                    inc += "<div class='centra_texto'>Salir</div>";
 	                    inc += "</span>";
-	                    inc += "<span class='more'>";
+	                    inc += "<span class='flag "+disabled+"'>";
 	                    inc += "<div class='centra_texto'>Actual</div>";
 	                    inc += "</span>";
 	                    inc += "<a href='#' draggable='false'><img src='jquerymobile/img-dportes/logo-encuentro.png'>";
 	                    inc += "<h2>"+json[i].nombre+"</h2>";
-	                    inc += "<span class='flagged'>";
+	                    inc += "<span class='flagged "+flagged+"'>";
 	                    inc += "</span>";
 	                    inc += "</a>";
 	                    inc += "</li>";
@@ -86,7 +102,22 @@ function equipos(){
 		        	}).blur();
 		    	});
 	    	});
-		});
+		}).on("click", "ul li span.flag", function () {
+		    var text = $("div", this),
+		        button = $(this).siblings("a"),
+		        flagged = button.find(".flagged").hasClass("ui-screen-hidden") ? false : true;
+		    if (!flagged) {
+		    	$("ul#eq-list li span.flag").removeClass("ui-state-disabled");
+		    	$("ul#eq-list li span.flagged").addClass("ui-screen-hidden");
+		        //button.find(".flagged").removeClass("ui-screen-hidden");
+		        $(this).addClass('ui-state-disabled');
+		        button.find(".flagged").removeClass("ui-screen-hidden");
+		        localStorage.setItem('equipo',$(this).parent().val());
+		        localStorage.setItem('rol_equipo',$("#eq_r"+$(this).parent().val()).val());
+		        localStorage.setItem('nombre_equipo',$(this).parent().find("h2").html());
+		        //text.text("");
+		    }
+	});
 	}
 
 }

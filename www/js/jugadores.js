@@ -195,8 +195,8 @@ function jugadores(){
                     $.mobile.loading('hide');
                 }
             }
-        }).on("click", "ul li span.more", function () {
-            alert("nothing");
+        //}).on("click", "ul li span.more", function () {
+         //   alert("nothing");
         }).on("swipeleft", "ul#jug-list li a", function (e) {
             $(this).prevAll("span").addClass("show");
             $(this).off("click").blur();
@@ -237,7 +237,12 @@ function jugadores(){
                     var inc = '';
                     var disabled = '';
                     for(var i = 0; i < json.length; i++ ){
-                        disabled = (json[i].rol == 1) ? 'ui-state-disabled' : '';
+                        if(localStorage.getItem('rol_equipo') == 1){
+                          disabled = (json[i].rol == 1) ? 'ui-state-disabled' : '';  
+                        } else {
+                            disabled = 'ui-state-disabled';
+                        }
+                        
                     inc += "<li value='"+json[i].id_usuario+"'>";
                     inc += "<span class='delete "+disabled+"'>";
                     inc += "<div class='centra_texto'>Borrar</div>";

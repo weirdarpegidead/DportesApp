@@ -136,12 +136,12 @@
         <div class="content centrado-iconos-inicio">
         
             <div class="contenedor-iconos-inicio">
-                <div class="icono-inicio-1"><a href="#add-jugadores" data-transition="fade"><img src="jquerymobile/img-dportes/iconos/icono_agregar_jugadores.svg" ></a></div>
+                <div id="home-jg" class="icono-inicio-1"><a href="#add-jugadores" data-transition="fade"><img src="jquerymobile/img-dportes/iconos/icono_agregar_jugadores.svg" ></a></div>
                 <div class="icono-inicio-2"><a href="#historial-stat" data-transition="fade"><img src="jquerymobile/img-dportes/iconos/icono_estadisticas.svg"></a></div>
             </div>
                 
             <div class="contenedor-iconos-inicio">
-                <div class="icono-inicio-4"><a href="#add-partido" data-transition="fade"><img src="jquerymobile/img-dportes/iconos/icono_comenzar_juego.svg"></a></div>
+                <div id="home-pg" class="icono-inicio-4"><a href="#add-partido" data-transition="fade"><img src="jquerymobile/img-dportes/iconos/icono_comenzar_juego.svg"></a></div>
             </div>
 
         </div>
@@ -764,6 +764,13 @@
 
         if(activePage === 'home'){
             //checkConnection();
+            if(localStorage.getItem("rol_equipo") != 1){
+                $('#home-pg').addClass('ui-state-disabled');
+                $('#home-jg').addClass('ui-state-disabled');
+            } else {
+                $('#home-pg').removeClass('ui-state-disabled');
+                $('#home-jg').removeClass('ui-state-disabled');            
+            }
             swipe('#home','#menu_perfil','right');
             clearGame();
             closeSessionEvents();

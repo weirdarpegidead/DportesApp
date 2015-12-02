@@ -622,7 +622,7 @@ a.color-boton-presionado {
 }
 
 .ui-listview > li span.more {
-    background-color: #D6CEC3;
+    background-color: #FF9500;
 }
 
 .centra_texto {
@@ -638,5 +638,20 @@ a.color-boton-presionado {
 	width: 100%;
 }
 /*cierre*/
+
+.ui-listview > li .ui-btn span.flagged {
+  padding: 0;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto 35px auto auto;
+  background-image: url(http://discovercoronadwp.com/img/yellowflag.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .saca_elemento {display: none !important;}
