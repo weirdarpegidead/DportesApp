@@ -40,7 +40,7 @@ function eventos(){
                 alert('progress');
             };*/
             xhr.onerror = function(e){
-                alert("Ocurrio un error inesperado");
+                navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
             };
             xhr.onload = function(e){
                 $.mobile.loading('hide');
@@ -63,6 +63,7 @@ function eventos(){
             };
         } 
     }
+
 
     this.getPeriodos = function(){
         var xhr = new XMLHttpRequest();
@@ -283,3 +284,5 @@ document.getElementById('pg-registro').addEventListener('click',function(){
     pg.addEvento();
     delete pg;
 });
+
+

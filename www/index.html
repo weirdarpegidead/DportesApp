@@ -184,6 +184,108 @@
         </div>-->      
     </div>
 
+    <!-- ————— PAGINA FECHAS PASADAS ————— -->
+    <div data-role="page" id="ev-pro" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Próximos Partidos</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+        
+        </div>
+        
+        <div class="content">
+            <div data-role="tabs">
+              
+              <!--<div data-role="navbar">
+                <ul>
+                  <li><a href="#partidos_amistosos" data-ajax="false" class="ui-btn-active">Partidos Amistosos</a></li>
+                  <li><a href="#partidos_liga" data-ajax="false">Partidos Liga</a></li>
+                </ul>
+              </div> -->
+        
+                <a href="#add-partido"><div class="agregar_nuevo_juego"></div></a>
+                <div id="partidos_amistosos">
+                    <ul id="custom-format-listview" data-role="listview" data-inset="false" >
+                        <h3 align="center">Partidos Programados</h3>
+                        <li data-icon="false">
+                        <a href="#edit-ev" data-transition="fade" class="fechas" id="contenedor-fechas">
+                            <div class="contenedor-fechas">
+                                <div class="centrado-fechas">
+                                        <div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p class="nombre-equipo">R. Madrid</p></div>
+                                        <div class="vs">VS</div>
+                                        <div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p class="nombre-equipo">Barcelona</p></div>
+                                        <div class="fecha-partido">Programado: 20 diciembre 2015 - 18:30</div>
+                                </div>
+                            </div>
+                        </a>
+                        </li>
+                    
+                        <a href="#" class="ui-btn ui-icon-plus ui-btn-icon-left color-boton">Cargar Más</a>
+                    </ul>
+                </div>
+            </div><!--cierre de tabs-->
+         </div><!--cierre de content-->        
+    </div>
+
+    <!-- ————— PAGINA PARTIDOS GUARDADOS ————— -->
+    <div data-role="page" id="edit-ev" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="perfil.html" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Datos del Juego</h1>
+            <a href="seleccionar_titulares_nuevo_juego.html" data-transition="fade" class="ui-btn-right">Jugar</a>
+        </div>
+        
+        <div class="content" style="margin:20px">
+
+                <table data-role="table" id="table-column-toggle" data-mode="" class="ui-responsive table-stroke">
+                         <tbody>
+                           <tr>
+                             <th>Rival</th>
+                             <td>Santiago Morning</td>
+                           </tr>
+                           <tr>
+                             <th>Lugar</th>
+                             <td>Santa Elena 2392.</td>
+                           </tr>
+                           <tr>
+                             <th>Comuna</th>
+                             <td>San Joaquin</td>
+                           </tr>
+                           <tr>
+                             <th>Fecha</th>
+                             <td>20 - diciembre -2015</td>
+                           </tr>
+                           <tr>
+                             <th>Hora</th>
+                             <td>20:30</td>
+                           </tr>
+                           <tr>
+                             <th>Tiempo a jugarse</th>
+                             <td>primer y segundo tiempo</td>
+                           </tr>
+                         </tbody>
+          </table>
+              
+          <div class="ancho-botones">
+            <a href="editar_datos_de_partido_guardado.html" class="color-boton" data-transition="fade"><button class="ui-btn btn-input">Editar</button></a>
+          </div>
+          <div class="ancho-botones">
+            <a href="#eliminar_partido" data-rel="popup" data-position-to="window" data-transition="pop" class="color-boton"><button class="ui-btn btn-input">Eliminar</button></a>
+            <div data-role="popup" id="eliminar_partido" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+              <div data-role="header" data-theme="a">
+                <h1>Elimar Partido</h1>
+              </div>
+              <div role="main" class="ui-content">
+                <h4 class="ui-title">Se le enviará una Notificación a sus jugadores que el partido ha sido eliminado.</h4>
+                <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancelar</a>
+                <a href="partidos_guardados.html" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b">Aceptar</a>
+              </div>
+            </div>
+          </div>   
+          </div>   
+    </div>
     <!-- ————— PAGINA INGRESO PARTIDO ————— -->
     <div data-role="page" id="add-partido" data-title="Dportes" data-theme="a">
         <div data-role="header" data-position="fixed" class="color-encabezado">
@@ -608,7 +710,7 @@
         <ul data-role="listview">
            
             <li data-icon="home"><a href="#home">Home</a></li>
-            <li data-icon="user"><a href="#" data-rel="close">Mi Perfil</a></li>
+            <li data-icon="user"><a href="#ev-pro" data-rel="close">Mi Perfil</a></li>
             <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
             <li data-icon="grid"><a href="#mis-equipos">Mis Equipos</a></li>
             <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
