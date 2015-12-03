@@ -195,7 +195,7 @@ function setAccion(tipo,accion){
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(add);
 
-    if(tipo == 1){
+    if(tipo == 1 && accion == 1){
         var id = sessionStorage.getItem('accIDTitular');
         var marcador = document.getElementById('acc-marc-favor').innerHTML;
         var marcador_stat = document.getElementById('stat-marc-favor').innerHTML;
@@ -205,6 +205,11 @@ function setAccion(tipo,accion){
         document.getElementById('jugGoles'+id).innerHTML = parseInt(goles) + 1
         $('#jugImg'+id).css('display','block');
         $('#jugGoles'+id).css('display','block');
+    } else if(tipo == 1 && accion == 0){
+        var marcador = document.getElementById('acc-marc-contra').innerHTML;
+        var marcador_stat = document.getElementById('stat-marc-contra').innerHTML;
+        document.getElementById('acc-marc-contra').innerHTML = parseInt(marcador) + 1;
+        document.getElementById('stat-marc-contra').innerHTML = parseInt(marcador_stat) + 1;      
     } else if(tipo == 5 && accion == 0){
         $("#jugTarjetaAmarilla"+sessionStorage.getItem('accIDTitular')).css('display','none');
         if(checkAmarillaRoja(sessionStorage.getItem('accIDTitular'))){
