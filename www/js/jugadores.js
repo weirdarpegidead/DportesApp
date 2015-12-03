@@ -112,7 +112,11 @@ function jugadores(){
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
-                    var inc = '<a href="#add-jugadores"><div class="agregar_jugador"></div></a>';
+                    if(localStorage.getItem('rol') == 1){
+                        var inc = '<a href="#add-jugadores"><div class="agregar_jugador"></div></a>';
+                    } else {
+                        var inc = '';
+                    }
                     var checked = '';
                     $("#set-titulares").html(inc).trigger('create');
                     for(var i = 0; i < json.length; i++ ){
