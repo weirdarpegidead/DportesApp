@@ -80,8 +80,6 @@ function estadisticas(){
                     var tarjetas_rojas = json.tarjetas_rojas;
                     var quites = json.quites;
                     var faltas = json.faltas;
-                    var asistencias = json.asistencias;
-
                     document.getElementById('dt-goles').innerHTML = goles;
                     document.getElementById('dt-tiros-arco').innerHTML = tiros_arco;
                     document.getElementById('dt-tiros-libres').innerHTML = tiros_libre;
@@ -90,7 +88,6 @@ function estadisticas(){
                     document.getElementById('dt-faltas').innerHTML = faltas;
                     document.getElementById('dt-tarjetas-amarillas').innerHTML = tarjetas_amarillas;
                     document.getElementById('dt-tarjetas-rojas').innerHTML = tarjetas_rojas;
-                    document.getElementById('dt-asistencias').innerHTML = asistencias;
                 }
             }
         }
@@ -123,7 +120,6 @@ function estadisticas(){
                     var faltas = json.faltas;
                     var gol_contra = json.gol_contra;
                     var rival = json.rival;
-                    var asistencias = json.asistencias;
 
                     if(goles.length>0){
                         document.getElementById('stat-goles-content').style.display = "block";
@@ -172,7 +168,6 @@ function estadisticas(){
                     document.getElementById('stat-marc-contra').innerHTML = gol_contra;
                     document.getElementById('stat-tarjeta-roja').innerHTML = tarjetas_rojas;
                     document.getElementById('stat-tarjeta-amarilla').innerHTML = tarjetas_amarillas;
-                    document.getElementById('stat-asistencias').innerHTML = asistencias;
                 }
             }
         } 
