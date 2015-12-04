@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Generator: Adobe Fireworks 10, Export SVG Extension by Aaron Beall (http://fireworks.abeall.com) . Version: 0.6.1  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="icono_comenzar_juego.fw%20-%20copia-P%E1gina%201" viewBox="0 0 51 51" style="background-color:#ffffff00" version="1.1"
+	xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+	x="0px" y="0px" width="51px" height="51px"
+>
+	<path id="Elipse" d="M 0.5 25.5 C 0.5 11.6927 11.6927 0.5 25.5 0.5 C 39.3073 0.5 50.5 11.6927 50.5 25.5 C 50.5 39.3073 39.3073 50.5 25.5 50.5 C 11.6927 50.5 0.5 39.3073 0.5 25.5 Z" stroke="#00680a" stroke-width="1" fill="#ffffff"/>
+	<g>
+		<path d="M 15.8586 26.4566 C 15.8586 21.0538 20.3697 16.6741 25.9345 16.6741 C 31.4993 16.6741 36.0103 21.0538 36.0103 26.4566 C 36.0103 31.8594 31.4993 36.2392 25.9345 36.2392 C 20.3697 36.2392 15.8586 31.8594 15.8586 26.4566 ZM 12.5 26.4566 C 12.5 33.6604 18.5147 39.5 25.9345 39.5 C 33.3542 39.5 39.3689 33.6604 39.3689 26.4566 C 39.3689 19.2529 33.3542 13.4133 25.9345 13.4133 C 18.5147 13.4133 12.5 19.2529 12.5 26.4566 Z" fill="#268b1e"/>
+		<path d="M 24.591 20.5871 L 24.591 25.1523 L 19.889 25.1523 L 19.889 27.761 L 24.591 27.761 L 24.591 32.3261 L 27.2779 32.3261 L 27.2779 27.761 L 31.98 27.761 L 31.98 25.1523 L 27.2779 25.1523 L 27.2779 20.5871 L 24.591 20.5871 Z" fill="#268b1e"/>
+		<path id="L%EDnea" d="M 35.1832 11.5 L 41.5 17.7222 " stroke="#268b1e" stroke-width="3" fill="none"/>
+	</g>
+</svg>

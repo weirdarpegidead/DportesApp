@@ -3,6 +3,7 @@
 
 function eventos(){
 
+    this.id_evento
     this.nombre
     this.descripcion
     this.ubicacion
@@ -48,10 +49,24 @@ function eventos(){
                 if(this.status == 200){
                     //alert(this.response);
                     if(isNumeric(this.response)){
-                        //alert(this.response);
-                        sessionStorage.evento = this.response;
-                        //alert(sessionStorage.evento);
-                        $.mobile.navigate("#seleccionar-titulares", {transition: "fade"});
+                        if(!sessionStorage.getItem('evento')){
+                            sessionStorage.evento = this.response;
+                            navigator.notification.confirm(
+                                '¿Desea jugar el partido ahora',
+                                function(button){
+                                    if(button == 1){
+                                        $.mobile.navigate("#seleccionar-titulares", {transition: "fade"});
+                                    } else {
+                                        sessionStorage.removeItem('evento');
+                                        $.mobile.navigate("#home", {transition: "fade"});
+                                    }
+                                },
+                                'Atención',
+                                'Si,No'
+                            );
+                        } else {
+                            $.mobile.navigate("#seleccionar-titulares", {transition: "fade"});
+                        }
                         //document.getElementById('reg-email-duplicate-error').style.display = "block";
                     } else {
                         navigator.notification.alert('Ocurrio un error, intentelo nuevamente',function(){},'Atención','OK');
@@ -64,6 +79,41 @@ function eventos(){
         } 
     }
 
+    this.getEvento = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_evento',this.id_evento);
+        xhr.open('POST', path + 'app/getEvento');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        $.mobile.loading('show');
+        xhr.timeout = 10000;
+        xhr.ontimeout = function () {
+            $.mobile.loading('hide');
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+        };
+        xhr.onerror = function(e){
+             $.mobile.loading('hide');
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+        };
+        xhr.onload = function(e){
+            if(this.status == 200){
+                if(this.response && JSON.parse(this.response)){
+                    var json = JSON.parse(this.response);
+                    var s = json.fecha_evento;
+                    var bits = s.split(/\D/);
+                    var date = new Date(bits[0], --bits[1], bits[2], bits[3], bits[4]);
+                    document.getElementById('pg-rival').value = json.nombre;
+                    document.getElementById('pg-ubicacion').value = json.ubicacion;
+                    document.getElementById('pg-hora').value = date.getHours() +':'+('0'+date.getMinutes()).slice(-2);;
+                    //document.getElementById('pg-fecha').value = date.getDate() + '-' + ('0'+(date.getMonth() + 1)).slice(-2) + '-' + date.getFullYear(); 
+                    document.getElementById('pg-fecha').value = ('0'+date.getDate()).slice(-2) + '-' + ('0'+(date.getMonth() + 1)).slice(-2) + '-' + date.getFullYear(); 
+
+                }
+            }
+        }
+    }
 
     this.getPeriodos = function(){
         var xhr = new XMLHttpRequest();
@@ -174,6 +224,98 @@ function eventos(){
         }
     }
 
+    this.getProgramados = function(){
+        var offset = 0;
+        if ( $('#pro-list li').length > 0 && this.bool == false) {
+            offset = $('#pro-list li').length;
+        } else {
+            $('#pro-list').html('').listview('refresh');
+        }
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_equipo',this.equipo);
+        send.append('offset',offset);
+        xhr.open('POST', path + 'app/getProgramados');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.timeout = 10000;
+        xhr.send(send);   
+        xhr.ontimeout = function(e) {
+            $.mobile.loading('hide');
+            navigator.notification.alert('No se recibe respuesta del servidor',function(){},'Atención','OK');
+        }
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+        }
+        xhr.onload = function(){
+            if(this.status == 200){
+                if(this.response && JSON.parse(this.response)){
+                    var json = JSON.parse(this.response);
+                    var inc = '';
+                    for(var i = 0; i < json.length; i++ ){
+                        inc += '<li data-icon="false">';
+                        inc += '<a href="#" data-transition="fade" class="fechas" onclick="setParametrosProgramados('+json[i].id_evento+')" id="contenedor-fechas">';
+                        inc += '<div class="contenedor-fechas">';
+                        inc += '<div class="centrado-fechas">';
+                        inc += '<div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p class="nombre-equipo">'+localStorage.getItem('nombre_equipo')+'</p></div>';
+                        inc += '<div class="vs">VS</div>';
+                        inc += '<div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p class="nombre-equipo">'+json[i].nombre+'</p></div>';
+                        inc += '<div class="fecha-partido">Programado: '+getFecha(json[i].fecha_evento)+'</div>';
+                        inc += '</div>';
+                        inc += '</div>';
+                        inc += '</a>';
+                        inc += '</li>';                    
+                    }
+                    $('#pro-list').append(inc).listview('refresh');
+                    $.mobile.loading('hide');
+                }
+            }
+        }   
+    }
+
+    this.cambiaTipo = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_evento',this.id_evento);
+        send.append('id_tipo',this.tipo);
+        xhr.open('POST', path + 'app/cambioTipoEvento');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.timeout = 10000;
+        xhr.send(send);
+    }
+
+    this.checkProgramados = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_equipo',this.equipo);
+        xhr.open('POST', path + 'app/checkProgramados');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.timeout = 10000;
+        xhr.send(send);
+        xhr.ontimeout = function(e) {
+            $.mobile.loading('hide');
+            navigator.notification.alert('No se recibe respuesta del servidor',function(){},'Atención','OK');
+        }
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+        }
+        xhr.onload = function(e){
+            $.mobile.loading('hide');
+            if(this.status == 200){
+                if(this.response){
+                    $.mobile.navigate("#p-pro", {transition: "fade"});
+                } else {
+                    $.mobile.navigate("#add-partido", {transition: "fade"});                   
+                }
+            } else {
+                navigator.notification.alert('Se detectaron problemas con el servidor\nIntentelo más tarde',function(){},'Atención','OK');
+            }
+        }  
+
+    }
+
     this.validaEvento = function(){
     	var bNombre 	= false;
     	var bUbicacion	= false;
@@ -225,6 +367,11 @@ function eventos(){
 
 }
 
+function setParametrosProgramados(evento){
+    sessionStorage.evento = evento;
+    $.mobile.navigate("#add-partido", {transition: "fade"});
+}
+
 
 function setPeriodoLocal(id,nombre){
     sessionStorage.periodo = id;
@@ -241,6 +388,11 @@ function closeSessionEvents(){
 }
 
 function closeEvent(){
+    var ev = new eventos();
+    ev.id_evento = sessionStorage.getItem('evento');
+    ev.tipo = 3;
+    ev.cambiaTipo();
+    delete ev;   
     sessionStorage.removeItem('periodo');
     sessionStorage.removeItem('nPeriodo');
     sessionStorage.removeItem('evento');
@@ -284,5 +436,14 @@ document.getElementById('pg-registro').addEventListener('click',function(){
     pg.addEvento();
     delete pg;
 });
+
+function checkProgramados(){
+    $.mobile.loading('show');
+    event.preventDefault();
+    var ev = new eventos();
+    ev.equipo = localStorage.getItem('equipo');
+    ev.checkProgramados();
+    delete ev;
+}
 
 

@@ -141,7 +141,7 @@
             </div>
                 
             <div class="contenedor-iconos-inicio">
-                <div id="home-pg" class="icono-inicio-4"><a href="#add-partido" data-transition="fade"><img src="jquerymobile/img-dportes/iconos/icono_comenzar_juego.svg"></a></div>
+                <div id="home-pg" class="icono-inicio-4"><a href="#" onclick="checkProgramados()" data-transition="fade"><img src="jquerymobile/img-dportes/iconos/icono_comenzar_juego.svg"></a></div>
             </div>
 
         </div>
@@ -183,6 +183,7 @@
          <div class="publicidad"><a href="#"><img src="jquerymobile/img-dportes/banner-publicidad.jpg"></a></div>
         </div>-->      
     </div>
+
     <!-- ————— PAGINA INGRESO PARTIDO ————— -->
     <div data-role="page" id="add-partido" data-title="Dportes" data-theme="a">
         <div data-role="header" data-position="fixed" class="color-encabezado">
@@ -220,6 +221,31 @@
             </form>
 
         </div> 
+    </div>
+
+    <!-- ————— PAGINA FECHAS PASADAS ————— -->
+    <div data-role="page" id="p-pro" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Próximos Partidos</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+        
+        </div>
+        
+        <div class="content">
+            <div data-role="tabs">
+        
+            <a href="#add-partido"><div class="agregar_nuevo_juego"></div></a>
+            <div>
+                <h3 align="center">Partidos Programados</h3>
+                <ul id="pro-list" data-role="listview" data-inset="false" >
+                </ul>
+                <a href="#" onclick="setMorePro();" class="ui-btn ui-icon-plus ui-btn-icon-left color-boton">Cargar Más</a>
+            </div>
+            
+            </div><!--cierre de tabs-->
+        </div><!--cierre de content-->      
     </div>
 
     <!-- ————— PAGINA ELECCION DE TITULARES JUEGO NUEVO ————— -->
@@ -262,10 +288,10 @@
         <div class="content">
         
             <div class="contenedor-fechas">
-                <div class="centrado-fechas">
-                        <div class="block"><p id="acc-marc-favor" class="marcador">0</p><p id="acc-equipo" class="nombre-equipo"></p></div>
-                        <div class="vs">VS</div>
-                        <div class="block"><p id="acc-marc-contra" class="marcador">0</p><p id="acc-rival" class="nombre-equipo"></p></div>
+                <div class="row centrado-fechas">
+                        <div class="small-4 columns block"><p id="acc-marc-favor" class="marcador">0</p><p id="acc-equipo" class="nombre-equipo"></p></div>
+                        <div class="small-4 columns vs">VS</div>
+                        <div class="small-4 columns block"><p id="acc-marc-contra" class="marcador">0</p><p id="acc-rival" class="nombre-equipo"></p></div>
                 </div>
             </div>
 
@@ -328,10 +354,10 @@
             <ul data-role="listview">
            
                 <div class="contenedor-fechas">
-                    <div class="centrado-fechas">
-                            <div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p id="stat-equipo" class="nombre-equipo"></p><p id="stat-marc-favor" class="marcador">0</p></div>
-                            <div class="vs">VS</div>
-                            <div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p id="stat-rival" class="nombre-equipo"></p><p id="stat-marc-contra" class="marcador">0</p></div>
+                    <div class="row">
+                            <div class="small-4 columns block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p id="stat-equipo" class="nombre-equipo"></p><p id="stat-marc-favor" class="marcador">0</p></div>
+                            <div class="small-4 columns vs">VS</div>
+                            <div class="small-4 columns block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p id="stat-rival" class="nombre-equipo"></p><p id="stat-marc-contra" class="marcador">0</p></div>
                     </div>
                 </div>
                 
@@ -377,6 +403,9 @@
 
                     <div class="campos">Tiros de Esquina</div>
                     <div id="stat-tiro-esquina" class="estadisticas-mi-equipo"></div>
+
+                    <div class="campos">Asistencias</div>
+                    <div id="stat-asistencias" class="estadisticas-mi-equipo"></div>
 
                     <div class="campos">Quites</div>
                     <div id="stat-quite" class="estadisticas-mi-equipo"></div>
@@ -478,8 +507,8 @@
                 <li data-icon="false">
                 <a href="#" class="color-boton-equipo-dark">
                     <img src="jquerymobile/img-dportes/foto.png">
-                    <h2><span id="dt-nombre"></span></h2>
-                    <p>Posición: <span id="dt-posicion"></span></p>
+                    <h2 id="dt-nombre"></h2>
+                    <p id="dt-posicion"></p>
                 </a>
                 </li>
                 
@@ -501,6 +530,10 @@
                        <tr>
                          <th>Tiros de Esquina</th>
                          <td id="dt-tiros-esquina"></td>
+                       </tr>
+                       <tr>
+                         <th>Asistencias</th>
+                         <td id="dt-asistencias"></td>
                        </tr>
                        <tr>
                          <th>Quites</th>
@@ -578,6 +611,98 @@
         </div>
     </div>
 
+    <div data-role="page" id="acerca" class="jqm-demos background-login" data-title="Dportes" data-theme="a">
+
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#home" data-transition="fade" class="saca-estilo-boton">
+                <div class="fl-izquierda"></div>
+            </a>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+        </div>
+        
+        <div class="content" style="margin:20px;">
+            
+            
+            <div class="alineacion-centro-vertical contenedor_logo_dportes acerca">
+                <h2>Dportes</h2>
+                <p>Versión 1.11.1111</p>
+                <img src="jquerymobile/img-dportes/logo-dportes.svg">
+                <p>® 2015-2016 Ilia Consultores Ingenieria y Capacitacion.</p>
+                <p>Todos los derechos reservados.</p>
+            </div>
+            
+        </div>      
+    </div>
+
+    <div data-role="page" id="como-usar" data-title="Dportes">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Como se Usa</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+        </div>
+        
+        <div class="content" style="margin:20px">
+            <div data-role="collapsibleset" data-theme="a" data-content-theme="a">
+                <div data-role="collapsible">
+                    <h3>Primeros pasos</h3>
+                    <p>Cómo utilizar Dportes Tus primeros pasos fácil y rápido </p>
+                    <ol>
+                        <li><p><img src="jquerymobile/img-dportes/iconos/icono_agregar_jugadores.svg" width="20px"> Ingresa los jugadores de tu equipo</p></li>
+                        <li><p><img src="jquerymobile/img-dportes/iconos/icono_comenzar_juego.svg" width="20px"> Ahora ya puedes programar un partido.</p></li>
+                        <li><p>Selecciona a los jugadores que comenzarán jugando el partido (“los titulares”) y presiona <img src="jquerymobile/images/icons-svg/fl-derecha.svg" width="20px"> para continuar.</p></li>
+                        <li><p>Elige que tiempo registrarás y… Comienza el Partido</p></li>
+                        <li><p>Aparecerán los titulares en pantalla. Presiona sobre ellos y aparecerán las jugadas que puedes asignarle al elegido.<br>-   Gol  <img src="jquerymobile/img-dportes/iconos/gol.png" width="20px"><br>-   Autogol <img src="jquerymobile/img-dportes/iconos/gol-encontra.png" width="20px"></p></li>
+                    </ol>
+                    <p>Las jugadas te darán la opción VERDE sí estuvo bien ejecutada, ROJA mal ejecutada.</p>
+                    <ul>
+                        <li><p>Tiro al arco</p></li>
+                        <li><p>Tiro Libre</p></li>
+                        <li><p>Tiro de Esquina</p></li>
+                        <li><p>Asistencia</p></li>
+                    </ul>
+                    <p>Otras jugadas serían a favor <img src="jquerymobile/img-dportes/iconos/buena.png" width="20px">, o en contra <img src="jquerymobile/img-dportes/iconos/mala.png" width="20px">.</p>
+                    <ul>
+                        <li><p>Penal</p></li>
+                        <li><p>Quite</p></li>
+                        <li><p>Falta</p></li>
+                    </ul>
+                    <p>Si hay un cambio en el equipo, es igual, selecciona al jugador que saldrá y luego elige de la lista de reservas el que lo reemplazará.<br>Si a tu jugador elegido le ponen tarjeta podrás registrarla, peo CUIDADO, dos amarillas es ROJA y quedará bloqueado, lo mismo que una  ROJA DIRECTA. El jugador no podrá ser sustituido.</p>
+                    <p>GOL EN CONTRA – <img src="jquerymobile/img-dportes/iconos/gol-encontra.png" width="20px"> NO MARCAS JUGADOR.</p>
+                    <h5>TERMINO DEL TIEMPO</h5>
+                    <p>Dependiendo si elegiste un tiempo o dos, al presionar <img src="jquerymobile/img-dportes/iconos/tiempo.png" width="20px">, obtendrás las estadísticas detalladas del tiempo que acabas de cerrar. Si el partido es de dos tiempos, se bloqueará el primero y mantendrá habilitado el segundo tiempo para que ingreses el registro.</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Administra tus jugadores</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Administra tus equipos</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>El Menú</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ————— PÁGINA TERMINOS Y CONDICIONES ————— -->
     <div data-role="page" id="terminosycondiciones" data-title="Dportes">
     
@@ -600,15 +725,15 @@
         <ul data-role="listview">
            
             <li data-icon="home"><a href="#home">Home</a></li>
-            <li data-icon="user"><a href="#ev-pro" data-rel="close">Mi Perfil</a></li>
+            <li data-icon="user"><a href="#" data-rel="close">Mi Perfil</a></li>
             <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
             <li data-icon="grid"><a href="#mis-equipos">Mis Equipos</a></li>
             <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
             <li data-icon="clock"><a href="#" data-transition="fade">Notificaciones</a></li>
                     <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
                     <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
-            <li data-icon="info"><a href="#">Como se Usa</a></li>
-            <li data-icon="eye"><a href="#terminosycondiciones">Acerca de Dportes</a></li>
+            <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
+            <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
             <li data-icon="mail"><a href="#" >FAQ</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
         </ul>
@@ -669,9 +794,21 @@
             } 
         }
 
+        if(activePage === 'p-pro'){
+            var ev = new eventos();
+            ev.equipo  = localStorage.getItem('equipo');
+            ev.getProgramados();
+            delete ev;
+        }
+
         if(activePage === 'add-partido'){
             $("select#pg-periodo").selectmenu("refresh");
             if(sessionStorage.getItem('evento')){
+                document.getElementById('pg-fecha').type = "text";
+                var ev = new eventos();
+                ev.id_evento = sessionStorage.getItem('evento');
+                ev.getEvento();
+                delete ev;
                 document.getElementById('pg-registro-next').style.display = "block";
                 document.getElementById('pg-boton-continuar').style.display = "none";
             } else {
@@ -688,7 +825,7 @@
         if(activePage === 'detalle-jugador'){
             swipe('#detalle-jugador','#menu_perfil','right');
             document.getElementById('dt-nombre').innerHTML =  sessionStorage.getItem('dt_nombre');
-            document.getElementById('dt-posicion').innerHTML = sessionStorage.getItem('dt_posicion');
+            document.getElementById('dt-posicion').innerHTML = 'Posición: '+sessionStorage.getItem('dt_posicion');
             var stat = new estadisticas;
             stat.evento = sessionStorage.getItem('evento');
             stat.equipo = localStorage.getItem('equipo');

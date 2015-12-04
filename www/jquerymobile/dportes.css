@@ -172,11 +172,11 @@ table tr:nth-child(even) {background:#FFF;}
 .contenedor-fechas {padding-top:15px;text-align:center;width:100%;}
 
 /* Caja con un ancho fijo */
-.centrado-fechas {display:inline-block;width:230px;}
+.centrado-fechas {display:inline-block;width:100%;}
 
 /* Contenedores de logo de equipo, el versus y la fecha */
-.block { display:inline-block;}
-.vs { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px;  }
+.block { display:inline-block; width: 40%;}
+.vs { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px; width: 20%; }
 .fecha-partido {text-align:center;font-size:11px;}
 
 /* Afecta a los textos de las fechas de encuentros o el versus*/
@@ -192,6 +192,9 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 	margin: 5px 0 5px 0;
 	font-size:12px;
 	text-align:center;
+	overflow:inherit !important;
+    text-overflow: string!important;
+	white-space:normal !important;
 }
 /*cierre*/
 
@@ -655,3 +658,160 @@ a.color-boton-presionado {
 }
 
 .saca_elemento {display: none !important;}
+
+/*=== adicion ===*/
+
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0; }
+  .row:first-child {
+  	margin-top: 1rem; }
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+  .row:after {
+    clear: both; }
+  .row.collapse > .column,
+  .row.collapse > .columns {
+    padding-left: 0;
+    padding-right: 0; }
+  .row.collapse .row {
+    margin-left: 0;
+    margin-right: 0; }
+  .row .row {
+    width: auto;
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: none; }
+    .row .row:before, .row .row:after {
+      content: " ";
+      display: table; }
+    .row .row:after {
+      clear: both; }
+    .row .row.collapse {
+      width: auto;
+      margin: 0;
+      max-width: none; }
+      .row .row.collapse:before, .row .row.collapse:after {
+        content: " ";
+        display: table; }
+      .row .row.collapse:after {
+        clear: both; }
+
+.column,
+.columns {
+  width: 100%;
+  float: left; }
+
+[class*="column"] + [class*="column"]:last-child {
+  float: right; }
+
+[class*="column"] + [class*="column"].end {
+  float: left; }
+
+  .small-1 {
+    width: 8.33333%; }
+
+  .small-2 {
+    width: 16.66667%; }
+
+  .small-3 {
+    width: 25%; }
+
+  .small-4 {
+    width: 33.33333%; }
+
+  .small-5 {
+    width: 41.66667%; }
+
+  .small-6 {
+    width: 50%; }
+
+  .small-7 {
+    width: 58.33333%; }
+
+  .small-8 {
+    width: 66.66667%; }
+
+  .small-9 {
+    width: 75%; }
+
+  .small-10 {
+    width: 83.33333%; }
+
+  .small-11 {
+    width: 91.66667%; }
+
+  .small-12 {
+    width: 100%; }
+
+  .column.small-centered,
+  .columns.small-centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
+  .column.small-centered:last-child,
+  .columns.small-centered:last-child {
+    float: none; }
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.text-justify {
+  text-align: justify !important; }
+
+.left {
+  float: left !important; }
+
+.right {
+  float: right !important; }
+
+.vs {
+	margin-left: 0px;
+	margin-right: 0px; }
+
+.marcador-personal-goles-2 {
+	background: url("../jquerymobile/img-dportes/iconos/roja.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	color: #FFF;
+	font-size: 12px;
+	padding: 0.2rem 0.28rem 0.29rem 0.2rem;
+	font-weight: normal;
+	text-align: center;
+	display: inline-block;
+	text-shadow:none;
+	margin-bottom: 0.25rem;}
+
+.ui-collapsible-content p {
+	margin-top: 0;
+	padding: 0.75rem 0.75rem 0 0.75rem;
+	font-size: 0.85rem; }
+.ui-collapsible-content h5 {
+	margin-bottom: 0;
+	margin-left: 0.75rem; }
+
+.ui-collapsible-content {
+    border-width: 0px 1px 1px 1px !important; }
+.ui-collapsible-heading-toggle {
+	border-top: 1px solid;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-bottom: 1px solid; }
+
+.acerca h2 {
+	color: white;
+	text-shadow:none; }
+.acerca p {
+	text-shadow:none;
+	color: rgba(255, 255, 255, 0.9); }

@@ -227,3 +227,11 @@ function setMore(){
     delete partidos;	
 }
 
+function setMorePro(){
+    var partidos = new eventos();
+    partidos.equipo = localStorage.getItem('equipo');
+    partidos.bool = false;
+	partidos.getProgramados();
+    delete partidos;
+}
+
