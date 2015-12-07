@@ -66,7 +66,7 @@ function equipos(){
 	    				} else {
 	    					deleteDisabled = '';
 	    				}
-	                    inc += "<li value='"+json[i].id_equipo+"'>";
+	                    inc += "<li value='"+json[i].id_equipo+"' class='li-padding'>";
 	                    inc += "<input id='eq_r"+json[i].id_equipo+"' type='hidden' value='"+json[i].rol+"'>";
 	                    inc += "<span class='delete "+deleteDisabled+"'>";
 	                    inc += "<div class='centra_texto'>Salir</div>";

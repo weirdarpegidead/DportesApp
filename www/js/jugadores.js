@@ -247,7 +247,7 @@ function jugadores(){
                             disabled = 'ui-state-disabled';
                         }
                         
-                    inc += "<li value='"+json[i].id_usuario+"'>";
+                    inc += "<li value='"+json[i].id_usuario+"' class='li-padding'>";
                     inc += "<span class='delete "+disabled+"'>";
                     inc += "<div class='centra_texto'>Borrar</div>";
                     inc += "</span>";

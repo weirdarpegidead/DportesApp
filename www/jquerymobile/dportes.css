@@ -576,25 +576,24 @@ a.color-boton-presionado {
 }
 
 
-/*efecto slide de abrir o cerrar para eliminar*/
-.ui-listview > li {
-  	display: table;
+.ui-listview > li.li-padding {
+                display: table;
     width: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
 }
-
-.ui-listview > li > a.ui-btn {
+ 
+.ui-listview > li.li-padding > a.ui-btn {
     overflow: initial;
-  	margin-right: 0;
+                margin-right: 0;
     -webkit-transition: -webkit-transform 300ms ease-in-out;
     -moz-transition: -moz-transform 300ms ease-in-out;
     -o-transition: -o-transform 300ms ease-in-out;
     transition: transform 300ms ease-in-out;
 }
-
-.ui-listview > li span {
+ 
+.ui-listview > li.li-padding span {
     z-index: auto;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -608,39 +607,25 @@ a.color-boton-presionado {
     -o-transition: width 300ms ease-in-out;
     transition: width 300ms ease-in-out;
 }
-
-.ui-listview > li span.show {
+ 
+.ui-listview > li.li-padding span.show {
     width: 70px;
     cursor: pointer;
-	height: 5.063em;
+                height: 5.063em;
 }
-
-
-.ui-listview > li span.delete {
+ 
+ 
+.ui-listview > li.li-padding span.delete {
     background-color: #FF3B30;
 }
-
-.ui-listview > li span.flag {
+ 
+.ui-listview > li.li-padding span.flag {
     background-color: #FF9500;
 }
-
-.ui-listview > li span.more {
-    background-color: #FF9500;
+ 
+.ui-listview > li.li-padding span.more {
+    background-color: #D6CEC3;
 }
-
-.centra_texto {
-	text-align: center;
-    vertical-align: middle;
-    font-size: 1em;
-    text-shadow: none;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-rendering: optimizeLegibility;
-    text-overflow: clip;
-    display: table-cell;
-	width: 100%;
-}
-/*cierre*/
 
 .ui-listview > li .ui-btn span.flagged {
   padding: 0;
@@ -659,6 +644,18 @@ a.color-boton-presionado {
 
 .saca_elemento {display: none !important;}
 
+.centra_texto {
+	text-align: center;
+    vertical-align: middle;
+    font-size: 1em;
+    text-shadow: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+    text-overflow: clip;
+    display: table-cell;
+	width: 100%;
+}
 /*=== adicion ===*/
 
 .row {
