@@ -379,6 +379,13 @@ function setPeriodoLocal(id,nombre){
 }
 
 function closeSessionEvents(){
+    if(sessionStorage.getItem('evento')){
+        var ev = new eventos();
+        ev.id_evento = sessionStorage.getItem('evento');
+        ev.tipo = 3;
+        ev.cambiaTipo();
+        delete ev;
+    }   
     sessionStorage.removeItem('periodo');
     sessionStorage.removeItem('nPeriodo');
     sessionStorage.removeItem('evento');
@@ -388,11 +395,13 @@ function closeSessionEvents(){
 }
 
 function closeEvent(){
-    var ev = new eventos();
-    ev.id_evento = sessionStorage.getItem('evento');
-    ev.tipo = 3;
-    ev.cambiaTipo();
-    delete ev;   
+    if(sessionStorage.getItem('evento')){
+        var ev = new eventos();
+        ev.id_evento = sessionStorage.getItem('evento');
+        ev.tipo = 3;
+        ev.cambiaTipo();
+        delete ev;
+    } 
     sessionStorage.removeItem('periodo');
     sessionStorage.removeItem('nPeriodo');
     sessionStorage.removeItem('evento');

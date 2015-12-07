@@ -427,8 +427,8 @@ function jugadores(){
                         inc += "<a onclick='setIDTitular("+json[i].id_usuario+")' href='#' class='ancho_grilla'>";
                         inc += "<img src='jquerymobile/img-dportes/foto.png'>";
                         inc += "<div class='contenedor_iconos_jugadas'>";
-                        inc += "<img id='jugImg"+json[i].id_usuario+"' src='jquerymobile/img-dportes/iconos/icono_gol.png' style='"+goles+"'>";
-                        inc += "<div id='jugGoles"+json[i].id_usuario+"' class='marcador-personal-goles' style='"+goles+"'>"+json[i].goles+"</div>";
+                        //inc += "<img id='jugImg"+json[i].id_usuario+"' src='jquerymobile/img-dportes/iconos/icono_gol.png' style='"+goles+"'>";
+                        inc += "<div id='jugGoles"+json[i].id_usuario+"' class='marcador-personal-goles-2' style='"+goles+"'>"+json[i].goles+"</div>";
                         inc += "<div id='jugTarjetaRoja"+json[i].id_usuario+"' style='"+roja+"'><img src='jquerymobile/img-dportes/iconos/icono_roja.png'></div>";
                         inc += "<div id='jugTarjetaAmarilla"+json[i].id_usuario+"' style='"+amarilla+"'><img src='jquerymobile/img-dportes/iconos/icono_amarilla.png'></div>";
                         inc += "<div id='jugTarjetaAmarillaRoja"+json[i].id_usuario+"' style='"+amarillaRoja+"'><img src='jquerymobile/img-dportes/iconos/icono_amarilla_roja.png'></div>";
@@ -436,10 +436,26 @@ function jugadores(){
                         inc += "<div id='jugDoble"+json[i].id_usuario+"' style='width:45px; "+doubleAmarilla+"'><img src='jquerymobile/img-dportes/iconos/icono_doble_amarilla.png'></div>";
                         inc += "</div>";
                         inc += "</a>";
+                        inc += "</div>";
                         inc += "<span class='nombre-jugador-accion'>"+json[i].nombre+"</span>";
                         inc += "</div>";
-                        inc += "</div>";
                         $('#'+id).append(inc).trigger('create');
+
+
+               /*<div class="ui-block-a centrar_jugador">
+                <div style="position:relative;">
+                    <a href="#jugada_partido" class="ancho_grilla">
+                            <img src="jquerymobile/img-dportes/jugador1.jpg">
+                            <div class="contenedor_iconos_jugadas">
+                                <div class="marcador-personal-goles-2">11</div>
+                                <img src="jquerymobile/img-dportes/iconos/icono_amarilla.png"><div class="marcador-amarilla">1</div>
+                                <div><img src="jquerymobile/img-dportes/iconos/icono_amarilla_roja.png"></div>
+                            </div>
+                    </a>
+                 </div>
+                 <span class="nombre-jugador-accion">Francisco quezada</map></span>
+               </div>*/
+
                     }
                     /*var inc = "<div class='ui-grid-c'>";
                     for(var i = 0; i < json.length; i++ ){
