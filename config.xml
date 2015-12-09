@@ -24,6 +24,10 @@
   <platform name="ios">
     <preference name="Orientation" value="portrait" />
   </platform>
+  
+  <feature name="SplashScreen">
+    <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+  </feature>
 
   <plugin name="cordova-plugin-whitelist" spec="1.0.0" />
   <plugin name="cordova-plugin-whitelist" spec="1.0.0" />
