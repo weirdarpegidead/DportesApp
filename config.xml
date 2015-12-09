@@ -29,6 +29,9 @@
     <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
   </feature>
 
+  <preference name="SplashScreen" value="splash" />
+  <preference name="SplashScreenDelay" value="10000" />
+
   <plugin name="cordova-plugin-whitelist" spec="1.0.0" />
   <plugin name="cordova-plugin-whitelist" spec="1.0.0" />
   <plugin name="org.apache.cordova.battery-status" source="pgb" spec="0.2.12" />
