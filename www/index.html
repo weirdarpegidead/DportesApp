@@ -20,14 +20,14 @@
 
 <body>
 
-    <!-- ————— INDEX ——————————  
+    <!-- ————— INDEX ——————————  -->
     <div data-role="page" id="index" class="jqm-demos background-login" data-title="Dportes" data-theme="a"> 
-        <div class="content centrado-inicio-logo">
+        <!--<div class="content centrado-inicio-logo">
             <div class="contenedor-inicio-logo">
-                <img src="jquerymobile/img-dportes/logo-dportes.svg">
+                <img src="screen-xhdpi-portrait.png">
             </div>
-        </div>
-    </div> -->
+        </div>-->
+    </div>
 
 	<!-- ————— LOGIN ——————————  -->
     <div data-role="page" id="login" class="jqm-demos background-login" data-title="Dportes" data-theme="a"> 
@@ -621,13 +621,13 @@
                 //localStorage.removeItem('accIDTitular');
                 //alert('asdsadas');
                 //StatusBar.show();
-                //setTimeout(function(){ 
-                    //if(localStorage.getItem('login')){
-                        //$.mobile.navigate("#home", {transition: "fade"});
-                    //} else {
-                        //$.mobile.navigate("#login", {transition: "fade"});
-                    //}
-                //}, 4000);
+                setTimeout(function(){ 
+                    if(localStorage.getItem('login')){
+                        $.mobile.navigate("#home", {transition: "fade"});
+                    } else {
+                       $.mobile.navigate("#login", {transition: "fade"});
+                    }
+                }, 4000);
 
                 //navigator.splashscreen.show();
 

@@ -112,7 +112,10 @@ a.enlace_footer:hover {
 /*cierre*/
 
 /* COLOR DE FONDO Y ANCHO DE BOTONES PARA EL LOGIN INDEX.HTML */
-.background-login {background:#6BC43C;}
+/*.background-login {background:#6BC43C;}*/
+.background-login {
+	background-image: url("../res/screen/android/screen-xhdpi-portrait.png");
+}
 .ancho-botones {width:50%;float:left;}
 /*cierre*/
 
