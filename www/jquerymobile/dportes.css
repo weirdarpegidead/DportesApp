@@ -115,6 +115,7 @@ a.enlace_footer:hover {
 .background-login {background:#6BC43C;}
 .background-login-image {
 	background-image: url("../res/screen/android/screen-xhdpi-portrait.png");
+	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover; }
 .ancho-botones {width:50%;float:left;}
