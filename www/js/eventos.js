@@ -24,6 +24,7 @@ function eventos(){
             add.append('fecha_evento',this.fecha);
             add.append('tipo_evento',this.tipo);
             add.append('id_equipo',localStorage.getItem('equipo'));
+            add.append('notification',this.bool)
             if(sessionStorage.getItem('evento')){
                 add.append('id',sessionStorage.getItem('evento'));
             }
@@ -50,20 +51,7 @@ function eventos(){
                     //alert(this.response);
                     if(isNumeric(this.response)){
                         if(!sessionStorage.getItem('evento')){
-                            sessionStorage.evento = this.response;
-                            navigator.notification.confirm(
-                                '¿Desea jugar el partido ahora',
-                                function(button){
-                                    if(button == 1){
-                                        $.mobile.navigate("#seleccionar-titulares", {transition: "fade"});
-                                    } else {
-                                        sessionStorage.removeItem('evento');
-                                        $.mobile.navigate("#home", {transition: "fade"});
-                                    }
-                                },
-                                'Atención',
-                                'Si,No'
-                            );
+                            $.mobile.navigate("#p-pro", {transition: "fade"});       
                         } else {
                             $.mobile.navigate("#seleccionar-titulares", {transition: "fade"});
                         }
@@ -150,12 +138,21 @@ function eventos(){
     }
 
     this.getHistorialPartidos = function(){
+        $.mobile.loading('show');
+        var inc = '';
         var offset = 0;
         if ( $('#custom-format-listview li').length > 0 && this.bool == false) {
             offset = $('#custom-format-listview li').length;
         } else {
+            inc = '<ul id="custom-format-listview" data-role="listview" data-filter="true" data-filter-placeholder="Buscar Fechas Anteriores..." data-inset="false" ></ul>';
+            $("#historial-content").html(inc).trigger('create');
+            inc = '<div class="detalle">';
+            inc += '<a href="#" onclick="setMore();" class="ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon color-boton">Ver más</a>';
+            inc += '</div>';
+            $("#historial-content").append(inc).trigger('create');
             $('#custom-format-listview').html('').listview('refresh');
         }
+
         var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_equipo',this.equipo);
@@ -165,9 +162,7 @@ function eventos(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.timeout = 10000;
         xhr.send(send);
-        $.mobile.loading('show');
         xhr.ontimeout = function(e) {
-            //$('#custom-format-listview').html('').listview('refresh');
             $.mobile.loading('hide');
             navigator.notification.alert('No se recibe respuesta del servidor',function(){},'Atención','OK');
         }
@@ -175,11 +170,11 @@ function eventos(){
             $.mobile.loading('show');
         }
         xhr.onload = function(e){
-            $.mobile.loading('hide');
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
+
                     for(var i = 0; i < json.length; i++ ){
                         inc += '<li data-icon="false">';
                         inc += '<a onclick="setParametrosEstadisticos('+json[i].id_evento+','+json[i].equipos_id_equipo+')" data-transition="fade" class="fechas" id="contenedor-fechas">';
@@ -199,6 +194,7 @@ function eventos(){
             } else {
                 navigator.notification.alert('No hay respuesta desde el servidor, intentelo nuevamente',function(){},'Atención','OK');
             }
+            $.mobile.loading('hide');
         }
     }
 
@@ -419,31 +415,71 @@ $(document).on("pagebeforeshow","#panel-juego",function(){
 });
 
 document.getElementById('pg-registro-next').addEventListener('click',function(){
-
     event.preventDefault();
-    var pg = new eventos();
-    pg.nombre 		= document.getElementById('pg-rival').value;
-    pg.ubicacion 	= document.getElementById('pg-ubicacion').value;
-    pg.fecha 		= document.getElementById('pg-fecha').value;
-    pg.hora 		= document.getElementById('pg-hora').value;
-    pg.periodo 		= document.getElementById('pg-periodo').value;
-    pg.tipo 		= 1;
-    pg.addEvento();
-    delete pg;
+    navigator.notification.confirm(
+        '¿Desea notificar a sus jugadores?',
+            function(button){
+                if(button == 1){
+                    var pg = new eventos();
+                    pg.nombre       = document.getElementById('pg-rival').value;
+                    pg.ubicacion    = document.getElementById('pg-ubicacion').value;
+                    pg.fecha        = document.getElementById('pg-fecha').value;
+                    pg.hora         = document.getElementById('pg-hora').value;
+                    pg.periodo      = document.getElementById('pg-periodo').value;
+                    pg.tipo         = 1;
+                    pg.bool         = true;
+                    pg.addEvento();
+                    delete pg;
+                } else {
+                    var pg = new eventos();
+                    pg.nombre       = document.getElementById('pg-rival').value;
+                    pg.ubicacion    = document.getElementById('pg-ubicacion').value;
+                    pg.fecha        = document.getElementById('pg-fecha').value;
+                    pg.hora         = document.getElementById('pg-hora').value;
+                    pg.periodo      = document.getElementById('pg-periodo').value;
+                    pg.tipo         = 1;
+                    pg.bool         = false;
+                    pg.addEvento();
+                    delete pg;
+                }
+            },
+        'Advertencia',
+        'Si,No'
+    );
 });
 
 document.getElementById('pg-registro').addEventListener('click',function(){
-
     event.preventDefault();
-    var pg = new eventos();
-    pg.nombre 		= document.getElementById('pg-rival').value;
-    pg.ubicacion 	= document.getElementById('pg-ubicacion').value;
-    pg.fecha 		= document.getElementById('pg-fecha').value;
-    pg.hora 		= document.getElementById('pg-hora').value;
-    pg.periodo 		= document.getElementById('pg-periodo').value;
-    pg.tipo 		= 1;
-    pg.addEvento();
-    delete pg;
+    navigator.notification.confirm(
+        '¿Desea notificar a sus jugadores?',
+            function(button){
+                if(button == 1){
+                    var pg = new eventos();
+                    pg.nombre       = document.getElementById('pg-rival').value;
+                    pg.ubicacion    = document.getElementById('pg-ubicacion').value;
+                    pg.fecha        = document.getElementById('pg-fecha').value;
+                    pg.hora         = document.getElementById('pg-hora').value;
+                    pg.periodo      = document.getElementById('pg-periodo').value;
+                    pg.tipo         = 1;
+                    pg.bool         = true;
+                    pg.addEvento();
+                    delete pg;
+                } else {
+                    var pg = new eventos();
+                    pg.nombre       = document.getElementById('pg-rival').value;
+                    pg.ubicacion    = document.getElementById('pg-ubicacion').value;
+                    pg.fecha        = document.getElementById('pg-fecha').value;
+                    pg.hora         = document.getElementById('pg-hora').value;
+                    pg.periodo      = document.getElementById('pg-periodo').value;
+                    pg.tipo         = 1;
+                    pg.bool         = false;
+                    pg.addEvento();
+                    delete pg;
+                }
+            },
+        'Advertencia',
+        'Si,No'
+    );
 });
 
 function checkProgramados(){

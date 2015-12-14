@@ -141,7 +141,7 @@ a.olvidemiclave, a.olvidemiclave:hover, a.olvidemiclave:visited {
 
 /* PUBLICIDAD */
 .contenedor_publicidad { width:100%; text-align:center; bottom: 0px; position: fixed; height:auto; margin-bottom:0px !important}
-.contenedor_publicidad a img {width: 100%; max-width: 500px; margin-bottom:0px !important}
+.contenedor_publicidad a img {width: 100%; max-width: 334px; max-height:100px; margin-bottom:-5px !important}
 /*cierre*/
 
 /* lista de numero de jugador, aplica ESTADISTICAS_JUGADORES.HTML*/

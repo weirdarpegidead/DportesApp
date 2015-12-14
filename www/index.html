@@ -7,6 +7,7 @@
             <script src="jquerymobile/jquery.min.js"></script>
             <script src="jquerymobile/jquery.mobile-1.4.5.js"></script>
             <script type="text/javascript" src="cordova.js"></script>
+            <script type="text/javascript" src="js/pageinit.js"></script>
             <link rel="stylesheet" href="./jquerymobile/jquery.mobile.structure-1.4.5.css" />
             <link rel="stylesheet" href="./jquerymobile/jquery.mobile.theme-1.4.5.css" />
             <link rel="stylesheet" href="./jquerymobile/jquery.mobile-1.4.5.css" />
@@ -40,7 +41,7 @@
                     <input id="log-email" name="email_usuario" placeholder="tu-correo@correo.cl" type="email">
                     <a id="log-email-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Ingrese un correo valido</a>
                     <input id="log-password" name="password_usuario" placeholder="contraseña" type="password">
-                    <a id="log-pass-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Ingrese su contraseña</a>
+                    <a id="log-pass-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Ingrese una contraseña valida</a>
                     <a id="log-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Su combinación usuario/password es incorrecta</a>
                     <div class="ancho-botones">
                         <div class="ui-input-btn ui-btn btn-input">
@@ -145,6 +146,9 @@
             </div>
 
         </div>
+        <!--<div class="contenedor_publicidad">
+            <a href="#"><img src="jquerymobile/img-dportes/banners/banner_publicitario4.jpg"></a>
+        </div> -->
     </div>
 
     <!-- ————— PAGINA AGREGAR JUGADORES ————— -->
@@ -460,15 +464,7 @@
         
         </div>
         
-        <div class="content" style="margin-top:20px">
-    
-            <ul id="custom-format-listview" data-role="listview" data-filter="true" data-filter-placeholder="Buscar Fechas Anteriores..." data-inset="false" >
-            </ul>
-
-            <div class="detalle">
-                <a href="#" onclick="setMore();" class="ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon color-boton">Ver más</a>
-            </div>
-
+        <div id="historial-content" class="content" style="margin-top:20px">
         </div>
 
         <!--<div data-role="footer"><p align="center">© 2015 Derechos Reservados Dportes</p></div>-->
@@ -513,43 +509,59 @@
                 </li>
                 
             <h4 align="center">Datos Estadísticos:</h4>
-                <table data-role="table" id="table-column-toggle" data-mode="" class="ui-responsive table-stroke">
+                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="" data-column-popup-theme="a">
+                    <thead>
+                       <tr class="ui-bar-d">
+                         <th data-priority="critical"></th>
+                         <th data-priority="1">Buenas</th>
+                         <th data-priority="2">Malas</th>
+                       </tr>
+                     </thead>     
                      <tbody>
                         <tr>
                          <th>Goles</th>
                          <td id="dt-goles"></td>
+                         <td id="dt-goles-c"></td>
                        </tr>
                        <tr>
                          <th>Tiros al Arco</th>
                          <td id="dt-tiros-arco"></td>
+                         <td id="dt-tiros-arco-c"></td>
                        </tr>
                        <tr>
                          <th>Tiros Libres</th>
                          <td id="dt-tiros-libres"></td>
+                         <td id="dt-tiros-libres-c"></td>
                        </tr>
                        <tr>
                          <th>Tiros de Esquina</th>
                          <td id="dt-tiros-esquina"></td>
+                         <td id="dt-tiros-esquina-c"></td>
                        </tr>
                        <tr>
                          <th>Asistencias</th>
                          <td id="dt-asistencias"></td>
+                         <td id="dt-asistencias-c"><hr></td>
                        </tr>
                        <tr>
                          <th>Quites</th>
                          <td id="dt-quites"></td>
+                         <td id="dt-quites-c"></td>
                        </tr>
                         <tr>
                          <th>Faltas</th>
                          <td id="dt-faltas"></td>
+                         <td id="dt-faltas-c"></td>
                        </tr>
                        <tr>
                          <th>Tarjetas Amarillas</th>
                          <td id="dt-tarjetas-amarillas"></td>
+                         <td><hr></td>
                        </tr>
                        <tr>
                          <th>Tarjetas Rojas</th>
                          <td id="dt-tarjetas-rojas"></td>
+                         <td><hr></td>
                        </tr>
                      </tbody>
                    </table>
@@ -587,9 +599,9 @@
             <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
             <h1>Equipo <span id="jug-nom-eq"></span></h1>
             <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
-            <div class="tarro-basura"><a id="jug-borrar" href="#"><img src="jquerymobile/img-dportes/iconos/borrar.png"></a></div>
+            <!--<div class="tarro-basura"><a id="jug-borrar" href="#"><img src="jquerymobile/img-dportes/iconos/borrar.png"></a></div> -->
         </div>
-        
+        <a href="#add-jugadores"><div class="agregar_jugador"></div></a>
         <div role="main" class="ui-content">
             <ul id="jug-list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete" data-inset="false">
             </ul>
@@ -720,6 +732,22 @@
         </div>
     </div>
 
+    <!-- ————— PAGINA NOTIFICACIONES ————— -->
+    <div data-role="page" id="notificaciones" class="jqm-demos" style="background:#6BC43C;">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+          <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a><!--ABRE MENU-->
+          <h1>Notificaciones</h1>
+          <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
+        
+        <div class="content" style="margin:20px;">
+        
+        <p style="text-align:center; color:#FFF; font-size:22px;">Sección en Construcción<p>
+             
+        </div>      
+    </div>
+
     <!-- PANEL MENU -->
     <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu_perfil">
         <ul data-role="listview">
@@ -729,7 +757,7 @@
             <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
             <li data-icon="grid"><a href="#mis-equipos">Mis Equipos</a></li>
             <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
-            <li data-icon="clock"><a href="#" data-transition="fade">Notificaciones</a></li>
+            <li data-icon="clock"><a href="#notificaciones" data-transition="fade">Notificaciones</a></li>
                     <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
                     <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
@@ -738,184 +766,13 @@
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
         </ul>
     </div>
-
-    <script type="text/javascript" src="js/pageinit.js"></script>
-    <script type="text/javascript" src="js/librerias.js"></script>
-    <script type="text/javascript" src="js/dportes.js"></script>
-    <script type="text/javascript" src="js/equipos.js"></script>
-    <script type="text/javascript" src="js/estadisticas.js"></script>
-    <script type="text/javascript" src="js/jugadores.js"></script>
-    <script type="text/javascript" src="js/eventos.js"></script>
-    <script type="text/javascript" src="js/registro.js"></script>
-    <script type="text/javascript" src="js/auth.js"></script>
-    <script type="text/javascript">
-    $(document).on('pagecontainerbeforeshow', function (e, ui) {
-        var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
-        if(activePage === 'index') {
-            document.addEventListener("deviceready", onDeviceReady, false);
-
-            function onDeviceReady(){
-
-                setTimeout(function(){ 
-                    if(localStorage.getItem('login')){
-                        $.mobile.navigate("#home", {transition: "fade"});
-                    } else {
-                        $.mobile.navigate("#login", {transition: "fade"});
-                    }
-                }, 4000);
-
-                var dp = new dportes();
-                dp.getDportes();
-                delete dp;
-
-                //StatusBar.show();
-            }
-        }
-
-        if(activePage === 'login'){
-            /*$(window).bind("orientationchange", function(){
-                var orientation = window.orientation;
-                var new_orientation = (orientation) ? 0 : 180 + orientation;
-                $('body').css({
-                    "-webkit-transform": "rotate(" + new_orientation + "deg)"
-                });
-            });*/    
-        }
-
-        if(activePage === 'estadisticas'){
-            if(sessionStorage.getItem('periodosJugados')){
-                var hasta = document.getElementById('pg-periodo').value;
-                periodos = JSON.parse(sessionStorage.getItem('periodosJugados'));
-                if(periodos.length >= hasta){
-                    document.getElementById('stat-forward-rel').href = '#home';
-                } else {
-                    document.getElementById('stat-forward-rel').href = '#panel-juego';
-                }
-            } 
-        }
-
-        if(activePage === 'p-pro'){
-            var ev = new eventos();
-            ev.equipo  = localStorage.getItem('equipo');
-            ev.getProgramados();
-            delete ev;
-        }
-
-        if(activePage === 'add-partido'){
-            $("select#pg-periodo").selectmenu("refresh");
-            if(sessionStorage.getItem('evento')){
-                document.getElementById('pg-fecha').type = "text";
-                var ev = new eventos();
-                ev.id_evento = sessionStorage.getItem('evento');
-                ev.getEvento();
-                delete ev;
-                document.getElementById('pg-registro-next').style.display = "block";
-                document.getElementById('pg-boton-continuar').style.display = "none";
-            } else {
-                document.getElementById('pg-registro-next').style.display = "none";
-                document.getElementById('pg-boton-continuar').style.display = "block";
-            }
-            document.getElementById('pg-nombre-error').style.display = "none";
-            document.getElementById('pg-ubicacion-error').style.display = "none";
-            document.getElementById('pg-fecha-error').style.display = "none";
-            document.getElementById('pg-hora-error').style.display = "none";
-            document.getElementById('pg-periodo-error').style.display = "none";
-        }
-
-        if(activePage === 'detalle-jugador'){
-            swipe('#detalle-jugador','#menu_perfil','right');
-            document.getElementById('dt-nombre').innerHTML =  sessionStorage.getItem('dt_nombre');
-            document.getElementById('dt-posicion').innerHTML = 'Posición: '+sessionStorage.getItem('dt_posicion');
-            var stat = new estadisticas;
-            stat.evento = sessionStorage.getItem('evento');
-            stat.equipo = localStorage.getItem('equipo');
-            stat.usuario = sessionStorage.getItem('jugador');
-            stat.getEstadisticasByJugador();
-            //sessionStorage.removeItem('dt_nombre');
-            //sessionStorage.removeItem('dt_posicion');
-        }
-
-        if(activePage === 'historial-stat'){
-           var partidos = new eventos();
-           partidos.equipo = localStorage.getItem('equipo');
-           partidos.bool = true;
-           partidos.getHistorialPartidos();
-           delete partidos;
-
-           document.getElementById('stat-back-rel').style.display = "block";
-           document.getElementById('stat-forward-rel').style.display = "none";
-           document.getElementById('stat-back-rel').href = '#historial-stat';
-           document.getElementById('tyc-back').href = '#'+activePage;
-           //$('#menu_perfil').attr('data-position','right');
-           //$( "#menu_perfil" ).panel( "option", "position", "right" );
-
-           swipe('#historial-stat','#menu_perfil','right');        
-        }
-
-        if(activePage === 'jugadores-equipo'){
-            var jg = new jugadores();
-            jg.id_equipo = localStorage.getItem('equipo');
-            jg.getJugadoresEquipo();
-            jg.getDeleteFunction();
-            swipe('#jugadores','#menu_perfil','right');
-            document.getElementById('tyc-back').href = '#'+activePage;
-            document.getElementById('jug-nom-eq').innerHTML = String(localStorage.getItem('nombre_equipo'));
-            delete jg;
-        }
-
-        if(activePage === 'stat-jugadores'){
-            swipe('#stat-jugadores','#menu_perfil','right'); 
-            document.getElementById('stat-jg-nom-eq').innerHTML = String(localStorage.getItem('nombre_equipo'));
-            var jg = new jugadores();
-            jg.getJugadoresEstadisticas();
-            delete jg;
-        }
-
-        if(activePage === 'panel-juego'){
-            swipe('#panel-juego','#menu_perfil','right');        
-        }
-
-        if(activePage === 'acciones'){
-            document.getElementById('stat-back-rel').style.display = "none";
-            document.getElementById('stat-forward-rel').style.display = "block";  
-            document.getElementById('stat-forward-rel').href = '#panel-juego';
-        }
-
-        if(activePage === 'seleccionar-titulares'){
-           document.getElementById('jg-rel-back').href = "#seleccionar-titulares"; 
-        }
-
-        if(activePage === 'cambio-jugador'){
-            var jg = new jugadores();
-            jg.getJugadoresReserva();
-            delete jg;
-        }
-
-        if(activePage === 'mis-equipos'){
-            var eq = new equipos();
-            eq.setSwipe();
-            eq.getMisEquipos();
-            delete eq;
-        }
-
-        if(activePage === 'home'){
-            //checkConnection();
-            if(localStorage.getItem("rol_equipo") != 1){
-                //$('#home-pg').addClass('ui-state-disabled');
-                $('#home-jg').addClass('ui-state-disabled');
-            } else {
-                $('#home-pg').removeClass('ui-state-disabled');
-                $('#home-jg').removeClass('ui-state-disabled');            
-            }
-            swipe('#home','#menu_perfil','right');
-            clearGame();
-            closeSessionEvents();
-            document.getElementById('tyc-back').href = '#'+activePage;
-            document.getElementById('jg-rel-back').href = "#home";
-        }
-
-    });
-    </script>
-    
+            <script type="text/javascript" src="js/librerias.js"></script>
+            <script type="text/javascript" src="js/dportes.js"></script>
+            <script type="text/javascript" src="js/equipos.js"></script>
+            <script type="text/javascript" src="js/estadisticas.js"></script>
+            <script type="text/javascript" src="js/jugadores.js"></script>
+            <script type="text/javascript" src="js/eventos.js"></script>
+            <script type="text/javascript" src="js/registro.js"></script>
+            <script type="text/javascript" src="js/auth.js"></script>
 </body>
 </html>

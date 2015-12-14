@@ -72,22 +72,34 @@ function estadisticas(){
                     var json = JSON.parse(this.response);
                     var inc = '';
                     var goles = json.goles;
+                    var goles_c = json.goles_c;
                     var penales = json.penales;
                     var tiros_arco = json.tiros_arco;
+                    var tiros_arco_c = json.tiros_arco_c;
                     var tiros_libre = json.tiros_libre;
+                    var tiros_libre_c = json.tiros_libre_c;
                     var tiros_esquina = json.tiros_esquina;
+                    var tiros_esquina_c = json.tiros_esquina_c;
                     var tarjetas_amarillas = json.tarjetas_amarillas;
                     var tarjetas_rojas = json.tarjetas_rojas;
                     var quites = json.quites;
+                    var quites_c = json.quites_c;
                     var faltas = json.faltas;
+                    var faltas_c = json.faltas_c;
                     var asistencias = json.asistencias;
 
-                    document.getElementById('dt-goles').innerHTML = goles;
+                    document.getElementById('dt-goles').innerHTML = goles
+                    document.getElementById('dt-goles-c').innerHTML = goles_c;
                     document.getElementById('dt-tiros-arco').innerHTML = tiros_arco;
+                    document.getElementById('dt-tiros-arco-c').innerHTML = tiros_arco_c;
                     document.getElementById('dt-tiros-libres').innerHTML = tiros_libre;
+                    document.getElementById('dt-tiros-libres-c').innerHTML = tiros_libre_c;
                     document.getElementById('dt-tiros-esquina').innerHTML = tiros_esquina;
+                    document.getElementById('dt-tiros-esquina-c').innerHTML = tiros_esquina_c;
                     document.getElementById('dt-quites').innerHTML = quites;
+                    document.getElementById('dt-quites-c').innerHTML = quites_c;
                     document.getElementById('dt-faltas').innerHTML = faltas;
+                    document.getElementById('dt-faltas-c').innerHTML = faltas_c;
                     document.getElementById('dt-tarjetas-amarillas').innerHTML = tarjetas_amarillas;
                     document.getElementById('dt-tarjetas-rojas').innerHTML = tarjetas_rojas;
                     document.getElementById('dt-asistencias').innerHTML = asistencias;
@@ -355,12 +367,4 @@ $(document).on("pagebeforeshow","#acciones",function(){
     delete ev;
 });
 
-
-$(document).on("pagebeforeshow","#estadisticas",function(){
-    var stat = new estadisticas();
-    stat.evento = sessionStorage.getItem('evento');
-    stat.equipo = localStorage.getItem('equipo');
-    stat.getEstadisticasPage();
-    delete stat;
-});
 

@@ -32,6 +32,7 @@ function authentication(){
                 $.mobile.loading('show');
             }
             xhr.onload = function(e){
+                //alert(this.response);
                 $.mobile.loading('hide');
                 if(this.status == 200){
                     if(this.response && JSON.parse(this.response)){
