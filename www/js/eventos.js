@@ -144,7 +144,7 @@ function eventos(){
         if ( $('#custom-format-listview li').length > 0 && this.bool == false) {
             offset = $('#custom-format-listview li').length;
         } else {
-            inc = '<ul id="custom-format-listview" data-role="listview" data-filter="true" data-filter-placeholder="Buscar Fechas Anteriores..." data-inset="false" ></ul>';
+            inc = '<ul id="custom-format-listview" data-role="listview" data-filter="false" data-filter-placeholder="Buscar Fechas Anteriores..." data-inset="false" ></ul>';
             $("#historial-content").html(inc).trigger('create');
             inc = '<div class="detalle">';
             inc += '<a href="#" onclick="setMore();" class="ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon color-boton">Ver más</a>';
