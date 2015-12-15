@@ -298,13 +298,17 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
-                    for(var i = 0; i < json.length; i++ ){
-                        inc += "<li>";
-                        inc += "<a onclick='setHistorialJG("+json[i].id_usuario+",\""+json[i].nombre+"\",\""+json[i].posicion+"\")' href='#' class='color-boton-equipo'><img src='jquerymobile/img-dportes/foto.png'>";
-                        inc += "<h2>"+json[i].nombre+"</h2>";
-                        inc += "<p>"+json[i].posicion+"</p>";
-                        inc += "</a>";
-                        inc += "</li>";
+                    if(json.length != 0){
+                        for(var i = 0; i < json.length; i++ ){
+                            inc += "<li>";
+                            inc += "<a onclick='setHistorialJG("+json[i].id_usuario+",\""+json[i].nombre+"\",\""+json[i].posicion+"\")' href='#' class='color-boton-equipo'><img src='jquerymobile/img-dportes/foto.png'>";
+                            inc += "<h2>"+json[i].nombre+"</h2>";
+                            inc += "<p>"+json[i].posicion+"</p>";
+                            inc += "</a>";
+                            inc += "</li>";
+                        }
+                    } else {
+                        inc += "<li><h2>No se detectaron estadisticas para los jugadores</h2></li>";
                     }
                     $("#stat-jg-list").html(inc).listview('refresh');
                 }
