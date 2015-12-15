@@ -634,3 +634,5 @@ a.color-boton-presionado {
 .acerca p {
 	text-shadow:none;
 	color: rgba(255, 255, 255, 0.9); }
+.mensaje {
+	white-space: normal !important; }
