@@ -22,16 +22,21 @@ function estadisticas(){
         			document.getElementById('acc-tipo-stat').innerHTML = inc;
         			for(var i = 0; i < json.length; i++ ){
         				inc += "<div class='jugadas'><span class='texto_jugada'>"+json[i].nombre+"</span>";
-                        if(json[i].id_estadistica_futbol != 5){
+                        if(json[i].id_estadistica_futbol != 5 && json[i].id_estadistica_futbol != 1){
             				inc += "<a href='#' onclick='setAccion("+json[i].id_estadistica_futbol+",1)' data-rel='close'><div class='jugada_buena'></div></a>";
                             if(json[i].tipo == 1)
             				    inc += "<a href='#' onclick='setAccion("+json[i].id_estadistica_futbol+",0)' data-rel='close'><div class='jugada_mala'></div></a>";
             				inc += "</div>";
-                        } else {
+                        } else if(json[i].id_estadistica_futbol == 5) {
                             inc += "<a href='#' onclick='setAccion("+json[i].id_estadistica_futbol+",1)' data-rel='close'><div class='tarjeta_amarilla'></div></a>";
                             if(json[i].tipo == 1)
                                 inc += "<a href='#' onclick='setAccion("+json[i].id_estadistica_futbol+",0)' data-rel='close'><div class='tarjeta_roja'></div></a>";
                             inc += "</div>";
+                        } else {
+                            inc += "<a href='#' onclick='setAccion("+json[i].id_estadistica_futbol+",1)' data-rel='close'><div class='gol_a_favor'></div></a>";
+                            if(json[i].tipo == 1)
+                                inc += "<a href='#' onclick='setAccion("+json[i].id_estadistica_futbol+",0)' data-rel='close'><div class='gol_en_contra'></div></a>";
+                            inc += "</div>";                           
                         }
         			}
                     inc += "<li data-icon='back'><a href='#cambio-jugador' class='ui-icon-user' data-transition='fade'>Cambio de Jugador</a></li>";
