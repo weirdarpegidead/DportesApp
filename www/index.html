@@ -126,7 +126,7 @@
         </div>
     </div>
 
-    <!-- ———— PERFIL ————— -->
+    <!-- ———— HOME ————— -->
     <div data-role="page" id="home" class="jqm-demos" data-title="Dportes" data-theme="a" style="background-color:#6BC43C !important;">
     
         <div data-role="header" data-position="fixed" class="color-encabezado">
@@ -150,6 +150,65 @@
         <!--<div class="contenedor_publicidad">
             <a href="#"><img src="jquerymobile/img-dportes/banners/banner_publicitario4.jpg"></a>
         </div> -->
+    </div>
+
+    <!-- ————— PERFIL USUARIO ————— -->
+    <div data-role="page" id="mi-perfil" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+        <a href="perfil.html" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+        <h1>Mi Perfil</h1>
+        <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+        </div>
+        
+        <div class="content" style="margin:0px">
+    
+            <ul data-role="listview" data-inset="false">
+            
+                <li data-icon="false">
+                <a href="#" class="color-boton-equipo-dark">
+                    <img src="jquerymobile/img-dportes/foto.png">
+                    <h2>KEYLOR NAVAS</h2>
+                </a>
+                </li>
+                
+                <div style="margin:20px">
+                <form action="" method="post">
+                        <label id="2"><strong>Tu Nombre:</strong></label>
+                        <input name="nombre" id="2" value="Francisco Vargas" type="text">
+                        <label id="3"><strong>Tu Correo:</strong></label>
+                        <input name="correo" id="3" value="furrea@ilia.cl" type="text">
+                        <!--<label id="4"><strong>Tu Clave Actual:</strong></label>
+                        <input name="clave" id="4" value="145$dge" type="text">-->
+                
+                        <!--<fieldset data-role="collapsible" >
+                            <legend>Tu Posición Actual</legend>
+                            <div data-role="controlgroup">
+                                <input name="posicion" id="checkbox-1-a" type="radio">
+                                <label for="checkbox-1-a">Portero</label>
+                                <input name="posicion" id="checkbox-2-a" type="radio" checked>
+                                <label for="checkbox-2-a">Lateral</label>
+                                <input name="posicion" id="checkbox-3-a" type="radio">
+                                <label for="checkbox-3-a">Central</label>
+                                <input name="posicion" id="checkbox-3-a" type="radio">
+                                <label for="checkbox-3-a">Medio Campista</label>
+                                <input name="posicion" id="checkbox-3-a" type="radio">
+                                <label for="checkbox-3-a">Delantero</label>
+                                <input name="posicion" id="checkbox-3-a" type="radio">
+                                <label for="checkbox-3-a">Extremo</label>
+                            </div>
+                        </fieldset> -->
+                            
+                        <br><br>
+                        <label for="file">Cambiar Foto de Perfil:</label>
+                        <input name="foto" id="file" value="" type="file">
+                        <a href="perfil.html" class="color-boton" data-transition="fade"><button class="ui-btn btn-input">Guardar</button></a>
+                    </form>
+                </div>
+
+            </ul>
+
+        </div>
     </div>
 
     <!-- ———— AGREGAR JUGADORES ————— -->
@@ -761,7 +820,7 @@
     <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu_perfil">
         <ul data-role="listview">
             <li data-icon="home"><a href="#home">Home</a></li>
-            <li data-icon="user"><a href="#" data-rel="close">Mi Perfil</a></li>
+            <li data-icon="user"><a href="#mi-perfil" data-rel="close">Mi Perfil</a></li>
             <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
             <li data-icon="grid"><a href="#mis-equipos">Mis Equipos</a></li>
             <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
