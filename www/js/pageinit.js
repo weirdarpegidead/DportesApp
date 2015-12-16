@@ -49,7 +49,7 @@
                 } else {
                     document.getElementById('stat-forward-rel').href = '#panel-juego';
                 }
-            } 
+            }
         }
 
         if(activePage === 'p-pro'){
@@ -102,7 +102,8 @@
             delete partidos;
 
             document.getElementById('stat-back-rel').style.display = "block";
-            document.getElementById('stat-forward-rel').style.display = "none";
+            document.getElementById('stat-forward-rel').href = "#menu_perfil";
+            document.getElementById('stat-forward-rel').innerHTML = "<div class='icono-menu-right'></div>";
             document.getElementById('stat-back-rel').href = '#historial-stat';
             document.getElementById('tyc-back').href = '#'+activePage;
            swipe('#historial-stat','#menu_perfil','right');        
@@ -133,13 +134,17 @@
         }
 
         if(activePage === 'acciones'){
-            document.getElementById('stat-back-rel').style.display = "none";
-            document.getElementById('stat-forward-rel').style.display = "block";  
+            document.getElementById('stat-back-rel').style.display = "none"; 
+            document.getElementById('stat-forward-rel').innerHTML = "<div class='fl-derecha'></div>";
             document.getElementById('stat-forward-rel').href = '#panel-juego';
         }
 
         if(activePage === 'seleccionar-titulares'){
            document.getElementById('jg-rel-back').href = "#seleccionar-titulares"; 
+        }
+
+        if(activePage === 'add-jugadores'){
+           swipe('#add-jugadores','#menu_perfil','right'); 
         }
 
         if(activePage === 'cambio-jugador'){

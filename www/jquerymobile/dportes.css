@@ -1,6 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-
 /* BOTON DE COLOR VERDE OSCURO */
 a.color-boton, a.color-boton:hover {
 	background:#008000 !important;
@@ -9,12 +8,9 @@ a.color-boton, a.color-boton:hover {
 	font-family:Arial, Helvetica, sans-serif !important;
 	text-shadow:none !important;
 	border-color:transparent !important;
-	text-decoration:none;
-}
+	text-decoration:none; }
 a.color-boton:hover { background:#94E100 !important;}
 a.color-boton:focus { box-shadow:none !important;}
-/*cierre*/
-
 /* BOTON AZUL DE COMENZAR PARTIDO, PERFIL.HTML */
 a.boton-partido, a.boton-partido:hover {
 	background:#06F !important;
@@ -23,12 +19,9 @@ a.boton-partido, a.boton-partido:hover {
 	font-family:Arial, Helvetica, sans-serif !important;
 	text-shadow:none !important;
 	border-color:transparent !important;
-	border-color:
-}
+	border-color: }
 a.boton-partido:hover { background:#09F !important;}
 a.boton-partido:focus { box-shadow:none !important;}
-/*cierre*/
-
 /* BOTONES PARA FACEBOOK Y TWITTER, DE MOMENTO NO SE ESTAN UTILIZANDO */
 /*a.color-boton-facebook, a.color-boton-facebook:hover {
 	background:#3A5795 !important;
@@ -37,11 +30,8 @@ a.boton-partido:focus { box-shadow:none !important;}
 	font-family:Arial, Helvetica, sans-serif !important;
 	text-shadow:none !important;
 	border:hidden !important;
-	text-shadow:none !important;
-}
-
+	text-shadow:none !important; }
 a.color-boton-facebook:hover {background:#3A5795 !important;}
-
 a.color-boton-twitter, a.color-boton-twitter:hover {
 	background:#659FCB !important;
 	font-size:14px;
@@ -49,12 +39,8 @@ a.color-boton-twitter, a.color-boton-twitter:hover {
 	font-family:Arial, Helvetica, sans-serif !important;
 	text-shadow:none !important;
 	border:hidden !important;
-	text-shadow:none !important;
-}
-
+	text-shadow:none !important; }
 a.color-boton-twitter:hover {background:#659FCB !important;}*/
-/*cierre*/
-
 /* BOTÓN DE ERROR, BOTON DE COLOR ROJO QUE MARCA ERRORES POR ALGUNA VALIDACION */
 a.color-boton-error-validacion, a.color-boton-error-validacion:hover {
 	background:#900 !important;
@@ -63,38 +49,36 @@ a.color-boton-error-validacion, a.color-boton-error-validacion:hover {
 	font-family:Arial, Helvetica, sans-serif !important;
 	text-shadow:none !important;
 	border:hidden !important;
-	text-shadow:none !important;
-}
-/*cierre*/
-
+	text-shadow:none !important; }
 /* CLASE PARA BOTONES SUBMIT */
-.btn-input { background: #008000 !important; color: white !important; text-shadow: none !important; border-color:transparent !important;}
-/*cierre*/
-
+.btn-input { 
+	background: #008000 !important;
+	color: white !important;
+	text-shadow: none !important;
+	border-color:transparent !important; }
 /* INICIO DE LOGO ANTES DE QUE SE HABRA LA APLICACION */
-.centrado-inicio-logo  { width:100%;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);}
-.contenedor-inicio-logo {text-align:center; width:100%;}
-/*cierre*/
-
+.centrado-inicio-logo  {
+	width:100%;
+	position:absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%); }
+.contenedor-inicio-logo {
+	text-align:center;
+	width:100%; }
 /* ES PARA CUANDO SE UTLICE EL FOOTER EN LA PLANTILLA DE DPORTES, DE MOMENTO NO SE ESTA UTILIZANDO EL FOOTER */
 /*a.enlace_footer {
 	color:#666 !important;
 	font-family:Arial, Helvetica, sans-serif !important;
 	text-shadow:none !important;
-	text-decoration:none !important;
-}
-
+	text-decoration:none !important; }
 a.enlace_footer:hover {
 	color:#666 !important;
 	font-family:Arial, Helvetica, sans-serif !important;
 	text-shadow:none !important;
-	text-decoration:none !important;
-}
-
+	text-decoration:none !important; }
 .footer-background { background-color:transparent !important; border-color:transparent !important; }*/
-/*cierre*/
-
-
 /* ALINEACIÓN CENTRADO DE FORMA VERTICAL PARA BOTONES Y CAMPOS DEL LOGIN INDEX.HTML, COMENZAR_PARTIDA.HTML, DETALLE_ESTADISTICAS.HTML */
 .alineacion-centro-vertical {
     position: absolute;
@@ -102,91 +86,62 @@ a.enlace_footer:hover {
     top: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
-	width:90%;
-}
-/*cierre*/
-
+	width:90%; }
 /* LE DA LA POSICIÓN CENTRADA HORIZONTALMENTE DEL LOGO EN EL LOGIN INDEX.HTML*/
 .contenedor_logo_dportes{ width:100%; text-align:center;}
 .contenedor_logo_dportes img {max-width: 258px;}
-/*cierre*/
-
 /* COLOR DE FONDO Y ANCHO DE BOTONES PARA EL LOGIN INDEX.HTML */
 .background-login {background:#6BC43C;}
 .ancho-botones {width:50%;float:left;}
-/*cierre*/
-
 /* ESTILO TEXTO REGISTRARSE.HTML, REGISTRAR-EQUIPO.HTML */
-.cantidad-jugadores {color:#666; margin-top:15px !important;}
-
+.cantidad-jugadores {
+	color:#666;
+	margin-top:15px !important; }
 .nombre-disponible, .falta-campo {
 	font-size:14px;
 	color:#090;
 	text-align:left;
 	margin-top:0;
 	margin-bottom:0;
-	margin-left:25px;
-}
-.falta-campo { color:#900;}
-/*cierre*/
-
+	margin-left:25px; }
+.falta-campo { color:#900; }
 /* ENLACE DE RECUPERAR CLAVE INDEX.HTML */
 a.olvidemiclave, a.olvidemiclave:hover, a.olvidemiclave:visited {
 	font-size:12px;
 	color:#FFF;
 	text-decoration:none;
-	text-shadow:none;
-}
-/*cierre*/
-
+	text-shadow:none; }
 /* PUBLICIDAD */
 .contenedor_publicidad { width:100%; text-align:center; bottom: 0px; position: fixed; height:auto; margin-bottom:0px !important}
 .contenedor_publicidad a img {width: 100%; max-width: 334px; max-height:100px; margin-bottom:-5px !important}
-/*cierre*/
-
 /* lista de numero de jugador, aplica ESTADISTICAS_JUGADORES.HTML*/
 /*.numero-jugador {font-size:30px; float:left;}*/
-/*cierre*/
-
 /* Separador o raya vertical que separa el número y el nombre del jugador, de momento no se esta utilizando*/
 /*.separador-numero-jugador {height:30px; background:#FFF; width:1px; float:left; margin:10px 10px 0 10px;}*/
-/*cierre*/
-
 /* Alineación de textos checkbox en partido en juego: PENDIENTE */
 /*.leyenda-checkbox{
 	font-size:14px;
 	font-weight:bold;
 	text-align:left;
 }*/
-/*cierre*/
-
-
 /*---- BLOQUE DE ENCUENTROS O EL VERSUS AFECTA A: FECHAS_JUGADAS.HTML ----*/
 
 /* ESTE ES UNA ALTERNANCIA DE COLORES APLICADO A LA TABLA ODD = IMPAR, EVEN = PAR, AFECTA A FECHAS_JUGADAS.HTML Y LAS TABLAS DE LAS ESTADISTICAS DE LOS PARTIDOS */
 table tr:nth-child(odd) {background-color:#EFEFEF;}
 table tr:nth-child(even) {background:#FFF;}
-/*cierre*/
-
 /* Caja contenedora de encuentros */
 .contenedor-fechas {padding-top:15px;text-align:center;width:100%;}
-
 /* Caja con un ancho fijo */
 .centrado-fechas {display:inline-block;width:100%;}
-
 /* Contenedores de logo de equipo, el versus y la fecha */
 .block { display:inline-block; width: 40%;}
 .vs { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px; width: 20%; }
 .fecha-partido {text-align:center;font-size:11px;}
-
 /* Afecta a los textos de las fechas de encuentros o el versus*/
 a.fechas, a.fechas:hover, a.fechas:visited {
 	color:#333 !important;
 	text-decoration:none !important;
-	text-shadow:none !important;
-}
-/*cierre*/
-
+	text-shadow:none !important; }
 /* Nombre del equipo que esta debajo de la imagen del equipo o en el versus */
 .nombre-equipo {
 	margin: 5px 0 5px 0;
@@ -194,37 +149,24 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 	text-align:center;
 	overflow:inherit !important;
     text-overflow: string!important;
-	white-space:normal !important;
-}
-/*cierre*/
-
+	white-space:normal !important; }
 /* Goles */
 .marcador {
 	font-size:28px !important;
 	font-weight:bold !important;
-	margin-bottom:0 !important; margin-top:0 !important;
-}
-/*cierre*/
-
+	margin-bottom:0 !important; margin-top:0 !important; }
 /* Grilla de jugadores, aplica ACCION_DE_JUGADOR.HTML */
 .centrar_jugador {text-align:center; margin-bottom:7px;}
 .ancho_grilla {text-decoration: none;}
-.ancho_grilla img {width:100%;max-width:200px;}
-/*cierre*/
-
+.ancho_grilla img {width:100%;max-width:200px; }
 /*----cierre----*/
-
 /* Panel o menu de jugadas ACCION_DE_JUGADOR.HTML */
 .jugadas {
 	position: relative;
-	padding: 12px 90px 12px 12px;
-}
-
+	padding: 12px 90px 12px 12px; }
 .texto_jugada {
 	font-size:17px;
-	font-weight:bold;
-}
-
+	font-weight:bold; }
 .jugada_buena, .jugada_mala {
 	background-image:url(img-dportes/iconos/buena.svg);
 	display: inline-block;
@@ -232,14 +174,27 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 	top: 7px;
 	right: 58px;
 	width:30px;
-	height:30px;
-}
-
+	height:30px; }
 .jugada_mala {
 	background-image:url(img-dportes/iconos/mala.svg);
 	right: 0px;
-	margin-right: 15px;
-}
+	margin-right: 15px; }
+
+.gol_a_favor, .gol_en_contra {
+	background-image:url(img-dportes/iconos/gol.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 58px;
+	width:30px;
+	height:30px; }
+.gol_en_contra {
+	background-image:url(img-dportes/iconos/gol-encontra.png);
+	background-repeat: no-repeat;
+	right: 0px;
+	margin-right: 15px; }
 
 .tarjeta_amarilla, .tarjeta_roja {
 	background-image:url(img-dportes/iconos/amarilla.svg);
@@ -248,24 +203,19 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 	top: 7px;
 	right: 58px;
 	width:30px;
-	height:30px;
-}
-
+	height:30px; }
 .tarjeta_roja {
 	background-image:url(img-dportes/iconos/roja.svg);
 	right: 0px;
-	margin-right: 15px;
-}
-
+	margin-right: 15px; }
 .quita_margenes_iconos{margin:0 !important;}
-
-.nombre-jugador-accion {font-size:12px; color:#666; font-weight:bold; display:block;}
-/*cierre*/
-
+.nombre-jugador-accion {
+	font-size:12px;
+	color:#666;
+	font-weight:bold;
+	display:block; }
 /* Alineamiento de avatar cuando se sube una foto del jugador nuevo jugadores AGREGAR_JUGADORES.HTML */
 .avatar {text-align:center; display:block;}
-/*cierre*/
-
 /* Alineamiento cuando se escoge el jugador en los titulares, SELECCIONAR_TITULARES_NUEVO_JUEGO.HTML */
 .imagen_jugador { float:left; margin-right:10px; height:80px;}
 .imagen_jugador img { max-width:68px;}
@@ -274,83 +224,60 @@ li.li-padding div.ui-checkbox { margin:0 !important;}
 li.li-padding div.ui-checkbox label { border-top:hidden; border-left:hidden; border-right:hidden;}
 .quita_margenes_para_check {padding: 0px 0px 0px 0px; height: 80px;}
 .quita_margenes_para_check_2 {padding: 0px 0px 0px 47px;}
-/*cierre*/
-
 /* Afecta a SELECCIONAR_RESERVAS.HTML */
 li.li-padding div.ui-radio { margin:0 !important;}
 li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border-right:hidden;}
-/*cierre*/	
-
 /*.espaciado_marcador{margin:0 12px 0 12px;}
 .logo-equipos {width:100%; max-width:180px;}
 .alinea-centro-checkbox {text-align:inherit;}*/
-
 /* Saca los estilos a boton predeterminado, para poner icono de flecha avanzar o retroceder e icono menu */
 .saca-estilo-boton {
 	padding: 0 !important;
 	text-shadow:none !important;
 	border:hidden !important;
 	box-shadow:none !important;
-	background-color:transparent !important;
-}
-
+	background-color:transparent !important; }
 .fl-izquierda, .fl-derecha {
 	background-image: url(images/icons-svg/fl-izquierda.svg);
 	width:22px;
 	height:22px;
 	margin-top: 8px;
-	margin-left: 5px;
-}
-
+	margin-left: 5px; }
 .fl-derecha{ background-image: url(images/icons-svg/fl-derecha.svg);}
-
 .icono-menu-left, .icono-menu-right {
 	background-image: url(images/icons-svg/menu.svg);
 	width:22px;
 	height:22px;
 	margin-top: 8px;
-	margin-left: 5px;
-}
-
+	margin-left: 5px; }
 .icono-menu-right { background-image: url(images/icons-svg/menu.svg);}
 .tarro-basura { 
 	display: block;
 	float: right;
 	margin-right: 38px;
-	margin-top: -33px;}
-/*cierre*/
-
+	margin-top: -33px; }
 /* Estilos para todos los encabezados o header */
 .color-encabezado { background-color:#6BC43C !important; }
 .color-encabezado h1 { color:#FFF !important; text-shadow:none !important; font-weight:normal !important;}
-/*cierre*/
-
 /* Contenedor de resumen de goles RESUMEN_1_TIEMPO.HTML, RESUMEN_2_TIEMPO.HTML*/
 .alinea-resumen {text-align:center; margin-bottom:10px;}
 .texto-resumen-goles {font-size:16px; font-weight:bold; color:#666;}
 .contenedor-resumen-goles { margin-bottom:10px; text-align:center; color:#666;}
 .resultados-partido {/*width:49%*/;display:inline-block; text-align:left; margin-left:10px;}
-
 .contenedor-resultados { text-align:center}
 .estadisticas-mi-equipo { width:20%/*width:20%*/; text-align:center; font-size:16px; color:#000; display:inline-block; margin-bottom:10px; color:#666;}
 .campos { width:45%/*width:57%*/; text-align:center; font-size:16px; color:#000; display:inline-block; margin-bottom:10px; color:#666; margin-left:5px;}
 .estadisticas-equipo-contrario { width:20%; text-align:center; font-size:14px; color:#000; display:inline-block; margin-bottom:16px; color:#666;}
-/*cierre*/
-
 /* Iconos personalizados para botones con iconos */
 .ui-icon-gol-encontra:after {background-image:url(img-dportes/iconos/gol-encontra.png);}
 .ui-icon-fin-tiempo:after {background-image:url(img-dportes/iconos/tiempo.png);}
 .ui-icon-borrar:after {background-image:url(img-dportes/iconos/mala.png);}
-/*cierre*/
-
 /* Iconos pertenecientes al resumen del partido RESUMEN_1_TIEMPO.HTML, RESUMEN_2_TIEMPO.HTML ...etc */
 .contenedor-gol {display:block; width:100%}
 .icono-gol {background-image:url(img-dportes/iconos/gol.png); width:22px; height:22px; display:inline-block;}
 .icono-fallado {background-image:url(img-dportes/iconos/fallado.png); width:22px; height:22px; display:inline-block;}
 .jugador {display: inline-block; vertical-align: top; margin-left: 4px;}
 .detalle { margin:10px auto;}
-/*cierre*/
-
 /* Notificaciones, afecta NOTIFICACIONES.HTML */
 .boton-participar {width:50%; float:left;}
 .contenedor-general-notificaciones {overflow:auto; margin-bottom:15px; background:#FFF;}
@@ -362,7 +289,6 @@ div.boton-participar a {margin-top:0px; margin-bottom:0px;}
 .nombre-equipo-notificacion {margin: 5px 0 5px 0;font-size:12px; font-weight:bold; text-align:center;}
 .fecha-notificacion { font-size: 12px;text-align: center;font-weight: bold;color: #FFF; background:#5C5C5C; padding:5px; text-shadow:none;}
 .block-notificacion-invitacion { float:left;}
-
 /*botones notificacion*/
 a.color-boton-notificacion, a.color-boton-notificacion:hover {
 	background:#75B100 !important;
@@ -371,14 +297,10 @@ a.color-boton-notificacion, a.color-boton-notificacion:hover {
 	font-family:Arial, Helvetica, sans-serif !important;
 	text-shadow:none !important;
 	border-color:transparent !important;
-	padding-top: 0.4em; padding-bottom:0.4em;
-}
+	padding-top: 0.4em; padding-bottom:0.4em; }
 a.color-boton-notificacion:focus { box-shadow:none !important; padding-top: 0.4em; padding-bottom:0.4em;}
-
 a.cambia-color-seleccionado {background: black !important; color: red !important;}
 a.cambia-color-seleccionado:hover {background: black !important; color: red !important;}
-
-
 a.color-boton-notificacion-2, a.color-boton-notificacion-2:hover {
 	background:#008000 !important;
 	font-size:13px;
@@ -386,13 +308,10 @@ a.color-boton-notificacion-2, a.color-boton-notificacion-2:hover {
 	font-family:Arial, Helvetica, sans-serif !important;
 	text-shadow:none !important;
 	border-color:transparent !important;
-	padding-top: 0.4em; padding-bottom:0.4em;
-}
+	padding-top: 0.4em; padding-bottom:0.4em; }
 a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.4em; padding-bottom:0.4em;}
 .cerrar {float:right; cursor:pointer;}
 .link-color {color:#333 !important;}
-/*cierre*/
-
 /*Proximas Actividades*/
 .contenedor-general-actividades {background:#FFF;}
 .contenedor-contenido-actividades { padding:10px; font-size:12px; color:#666; text-align:left;}
@@ -403,14 +322,10 @@ a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.
 .saca-sublinea{text-decoration:none; font-weight:normal !important;}
 .img-detalle-actividad {width:100%; text-align:center}
 .img-detalle-actividad img { max-width:100%; max-height:250px;}
-/*cierre*/
-
 /*Votaciones*/
 .contenedor-general-votaciones {background:#FFF;}
 .contenedor-contenido-votaciones { font-size:12px; color:#666; text-align:left;}
 .ui-collapsible-content {padding:0 !important;}
-/**/
-
 /* Elemento agregar jugador afecta: SELECCIONAR_TITUTALES_NUEVO_JUEGO.HTML */
 .agregar_jugador {
 	position: fixed;
@@ -419,11 +334,7 @@ a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.
 	width: 50px;
 	height: 50px;
 	background-image: url("img-dportes/iconos/agregar.svg");
-	z-index: 3;
-}
-/*cierre*/
-
-
+	z-index: 3; }
 /* Afecta a PENALES.HTML */
 .contenedor-penales { margin-bottom:10px; text-align:center;}
 .caja-penales {width:49%;display:inline-block; vertical-align:middle;}
@@ -432,8 +343,6 @@ a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.
 .pelota-penal-buena:active {margin-right: 12px; width:55px; height:55px; background-image:url(img-dportes/penales/tiro-bueno.png); display:inline-block;}
 .pelota-penal-mala {width:55px; height:55px; background-image:url(img-dportes/penales/tiro-malo.png); display:inline-block;}
 .tirador{ text-align:center; font-size:14px; color:#666;}
-/*cierre*/
-
 /* Afecta a PERFIL.HTML */
 .centrado-iconos-inicio  { width:100%;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);}
 .contenedor-iconos-inicio {text-align:center; width:100%;}
@@ -441,8 +350,6 @@ a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.
 .icono-inicio-2 {display:inline-block;}
 .icono-inicio-3 {display:inline-block; margin-right:10px; margin-top:10px;}
 .icono-inicio-4 {display:inline-block; margin-top:10px;}
-/*cierre*/
-
 /* Boton invitar a equipo rival, PERFIL_EQUIPO_RIVAL.HTML */
 .contenedor-invitacion-enviada {width:100%; text-align:center;}
 .imagen-ok {display:inline-block;}
@@ -452,20 +359,13 @@ a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.
 	color: #090;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	vertical-align: top;
-}
-/*cierre*/
-
+	vertical-align: top; }
 /* Página: TERMINOSYCONDICIONES.HTML */
 .titulo-terminos {color:#333;}
 .texto-terminos {font-size:16px; color:#333; text-align:justify;}
-/*cierre*/
-
 /* Contenedor de Campos para estadisticas, afecta a: RESUMEN_1_TIEMPO.HTML, RESUMEN_2_TIEMPO.HTML, RESUMEN_1Y2_TIEMPO.HTML, RESUMEN_1_TIEMPO_EXTRA.HTML
  RESUMEN_2_TIEMPO_EXTRA.HTML, RESUMEN_GENERAL_1Y2_TIEMPO_EXTRA.HTML, RESUMEN_COMPLETO_PENALES.HTML, RESUMEN_COMPLETO.HTML */
 .contenedor-campo {display:block;}
-/*cierre*/
-
 .jugador-amarilla{display: inline-block;float: left;position: absolute;}
 .jugador-doble-amarilla {display: inline-block;float: left;position: absolute;}
 .jugador-roja {display: inline-block;float: left;position: absolute;}
@@ -473,38 +373,27 @@ a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.
 .marcador-personal-goles {color: #FFF;font-size: 16px;font-weight: bold;text-shadow: none;display: inline-block;float: left;position: absolute; top:0%; left:121%;text-shadow: 0 0 5px #000000;}
 .marcador-amarilla {color: #FFF;font-size: 16px;font-weight: bold;text-shadow: none;display: inline-block;float: left;position: absolute; margin-top:4px; left:121%;text-shadow: 0 0 5px #000000;}
 .jugador-cambio {position:absolute; bottom:5%; left:5%;}
-
-
 .alinea-texto-goles {text-align:center !important;}
 .alinea-texto-tarjeta {text-align:right !important;}
-.sancionado-tarjeta-amarilla
-{
+.sancionado-tarjeta-amarilla {
 	height: 21px;
 	width: 17px;
 	background-color: #FFFC00;
 	border: 1px solid #E0BB20;
 	float: right;
-	margin-left:5px;
-}
-
-.sancionado-tarjeta-roja
-{
+	margin-left:5px; }
+.sancionado-tarjeta-roja {
 	height: 21px;
 	width: 17px;
 	background-color: #D00;
 	border: 1px solid #830000;
 	float: right;
-	margin-left:5px;
-}
-
+	margin-left:5px; }
 /*asistencia*/
 .asistencia-asistira {color:#090 !important; background:none; border:none; border-style:none;}
 .asistencia-no-asistira {color:#900!important; background:none; border:none; border-style:none;}
 .asistencia-sin-responder {color:#333 !important; background:none; border:none; border-style:none;}
-/*cierre*/
-
 .contenedor_iconos_jugadas {position: absolute; bottom: 5%; left: 5%; width: 1.25rem;}
-
 .agregar_nuevo_juego {
 	position: fixed;
 	bottom: 15px;
@@ -512,10 +401,7 @@ a.color-boton-notificacion-2:focus { box-shadow:none !important; padding-top: 0.
 	width: 51px;
 	height: 51px;
 	background-image:url("img-dportes/iconos/icono_nuevo_juego.svg");
-	z-index: 3;
-}
-
-
+	z-index: 3; }
 /*PARA EVENTO DE BORRADO DE JUGADOR APLICA EN ESTADISTICAS DE JUGADOR */
 /* Left transition */
 li.left {
@@ -526,8 +412,7 @@ li.left {
 	-o-transition: -o-transform 250ms ease;
 	-o-transform: translateX(-100%);
 	transition: transform 250ms ease;
-	transform: translateX(-100%);
-}
+	transform: translateX(-100%); }
 /* Right transition */
 li.right {
 	-webkit-transition: -webkit-transform 250ms ease;
@@ -537,34 +422,25 @@ li.right {
 	-o-transition: -o-transform 250ms ease;
 	-o-transform: translateX(100%);
 	transition: transform 250ms ease;
-	transform: translateX(100%);
-}
+	transform: translateX(100%); }
 /* Border bottom for the previous button during the transition*/
 li.left a.ui-btn,
 li.right a.ui-btn {
 	border-top-width: 0;
 	border-left-width: 1px;
-	border-right-width: 1px;
-}
+	border-right-width: 1px; }
 li a.ui-btn.border-bottom {
-	border-bottom-width: 1px;
-}
+	border-bottom-width: 1px; }
 /* Hide the delete button on touch devices */
 ul.touch li.ui-li-has-alt a.delete {
-	display: none;
-}
+	display: none; }
 ul.touch li.ui-li-has-alt a.ui-btn {
-	margin-right:0;
-}
+	margin-right:0; }
 /* Styling for the popup */
 #confirm p {
 	text-align: center;
 	font-size: inherit;
-	margin-bottom: .75em;
-
-}
-/*CIERRE */
-
+	margin-bottom: .75em; }
 a.color-boton-presionado {
 	background-color:#333;
 /*	font-size:14px !important;
@@ -572,27 +448,20 @@ a.color-boton-presionado {
 	font-family:Arial, Helvetica, sans-serif !important;
 	text-shadow:none !important;
 	border-color:transparent !important;
-	text-decoration:none !important;*/
-}
-
-
+	text-decoration:none !important;*/ }
 .ui-listview > li.li-padding {
-                display: table;
+    display: table;
     width: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
-}
- 
+    -ms-user-select: none; }
 .ui-listview > li.li-padding > a.ui-btn {
     overflow: initial;
-                margin-right: 0;
+    margin-right: 0;
     -webkit-transition: -webkit-transform 300ms ease-in-out;
     -moz-transition: -moz-transform 300ms ease-in-out;
     -o-transition: -o-transform 300ms ease-in-out;
-    transition: transform 300ms ease-in-out;
-}
- 
+    transition: transform 300ms ease-in-out; }
 .ui-listview > li.li-padding span {
     z-index: auto;
     box-sizing: border-box;
@@ -605,28 +474,17 @@ a.color-boton-presionado {
     -webkit-transition: width 300ms ease-in-out;
     -moz-transition: width 300ms ease-in-out;
     -o-transition: width 300ms ease-in-out;
-    transition: width 300ms ease-in-out;
-}
- 
+    transition: width 300ms ease-in-out; }
 .ui-listview > li.li-padding span.show {
     width: 70px;
     cursor: pointer;
-                height: 5.063em;
-}
- 
- 
+    height: 5.063em; }
 .ui-listview > li.li-padding span.delete {
-    background-color: #FF3B30;
-}
- 
+    background-color: #FF3B30; }
 .ui-listview > li.li-padding span.flag {
-    background-color: #FF9500;
-}
- 
+    background-color: #FF9500; }
 .ui-listview > li.li-padding span.more {
-    background-color: #D6CEC3;
-}
-
+    background-color: #D6CEC3; }
 .ui-listview > li .ui-btn span.flagged {
   padding: 0;
   height: 25px;
@@ -639,11 +497,8 @@ a.color-boton-presionado {
   margin: auto 35px auto auto;
   background-image: url(../jquerymobile/img-dportes/iconos/icono_gol.png);
   background-repeat: no-repeat;
-  background-size: cover;
-}
-
+  background-size: cover; }
 .saca_elemento {display: none !important;}
-
 .centra_texto {
 	text-align: center;
     vertical-align: middle;
@@ -654,10 +509,8 @@ a.color-boton-presionado {
     text-rendering: optimizeLegibility;
     text-overflow: clip;
     display: table-cell;
-	width: 100%;
-}
+	width: 100%; }
 /*=== adicion ===*/
-
 .row {
   width: 100%;
   margin-left: auto;
@@ -699,54 +552,38 @@ a.color-boton-presionado {
         display: table; }
       .row .row.collapse:after {
         clear: both; }
-
 .column,
 .columns {
   width: 100%;
   float: left; }
-
 [class*="column"] + [class*="column"]:last-child {
   float: right; }
-
 [class*="column"] + [class*="column"].end {
   float: left; }
-
   .small-1 {
     width: 8.33333%; }
-
   .small-2 {
     width: 16.66667%; }
-
   .small-3 {
     width: 25%; }
-
   .small-4 {
     width: 33.33333%; }
-
   .small-5 {
     width: 41.66667%; }
-
   .small-6 {
     width: 50%; }
-
   .small-7 {
     width: 58.33333%; }
-
   .small-8 {
     width: 66.66667%; }
-
   .small-9 {
     width: 75%; }
-
   .small-10 {
     width: 83.33333%; }
-
   .small-11 {
     width: 91.66667%; }
-
   .small-12 {
     width: 100%; }
-
   .column.small-centered,
   .columns.small-centered {
     margin-left: auto;
@@ -757,26 +594,19 @@ a.color-boton-presionado {
     float: none; }
 .text-left {
   text-align: left !important; }
-
 .text-right {
   text-align: right !important; }
-
 .text-center {
   text-align: center !important; }
-
 .text-justify {
   text-align: justify !important; }
-
 .left {
   float: left !important; }
-
 .right {
   float: right !important; }
-
 .vs {
 	margin-left: 0px;
 	margin-right: 0px; }
-
 .marcador-personal-goles-2 {
 	background: url("../jquerymobile/img-dportes/iconos/roja.png");
 	background-repeat: no-repeat;
@@ -789,7 +619,6 @@ a.color-boton-presionado {
 	display: inline-block;
 	text-shadow:none;
 	margin-bottom: 0.25rem;}
-
 .ui-collapsible-content p {
 	margin-top: 0;
 	padding: 0.75rem 0.75rem 0 0.75rem;
@@ -797,7 +626,6 @@ a.color-boton-presionado {
 .ui-collapsible-content h5 {
 	margin-bottom: 0;
 	margin-left: 0.75rem; }
-
 .ui-collapsible-content {
     border-width: 0px 1px 1px 1px !important; }
 .ui-collapsible-heading-toggle {
@@ -805,10 +633,11 @@ a.color-boton-presionado {
 	border-left: 1px solid;
 	border-right: 1px solid;
 	border-bottom: 1px solid; }
-
 .acerca h2 {
 	color: white;
 	text-shadow:none; }
 .acerca p {
 	text-shadow:none;
 	color: rgba(255, 255, 255, 0.9); }
+.mensaje {
+	white-space: normal !important; }
