@@ -339,6 +339,7 @@
                             <div class="jugada_buena"><a href="#" class="ui-btn ui-corner-all ui-icon-amarilla ui-btn-icon-notext quita_margenes_iconos" data-rel="close">Buena</a></div>
                             <div class="jugada_mala"><a href="#" class="ui-btn ui-corner-all ui-icon-roja ui-btn-icon-notext quita_margenes_iconos" data-rel="close">Mala</a></div>
                         </div>-->                       
+
                 </ul>
     
             </div>
@@ -653,7 +654,7 @@
         </div>      
     </div>
 
-	<!-- ————— PAGINA COMO SE USA ————— -->
+	<!-- ————— COMO SE USA ————— -->
     <div data-role="page" id="como-usar" data-title="Dportes">
     
         <div data-role="header" data-position="fixed" class="color-encabezado">
@@ -757,6 +758,140 @@
         </div>      
     </div>
 
+    <!-- estadisticas nuevas -->
+    <div data-role="page" id="estadisticas-nuevas" class="jqm-demos">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a><!--ABRE MENU-->
+            <h1>Estadísticas</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
+        
+        <div class="content">
+            <div data-role="tabs" id="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#uno" data-ajax="false" class="ui-btn-active" data-transition="slide">Por partido</a></li>
+                        <li><a href="#dos" data-ajax="false" data-transition="slide">Individuales</a></li>
+                        <li><a href="#tres" data-ajax="false" data-transition="slide">Grupales</a></li>
+                    </ul>
+                </div>
+                <div id="uno" class="ui-body-d ui-content">
+                    <ul id="custom-format-listview" data-role="listview" data-inset="false" >
+                        <li data-icon="false">
+                            <a href="#" data-ajax="false" class="fechas" id="contenedor-fechas">
+                                <div class="contenedor-fechas">
+                                    <div class="centrado-fechas">
+                                        <div class="block">
+                                            <img src="jquerymobile/img-dportes/realmadrid.png">
+                                            <p class="nombre-equipo">R. Madrid de portugal</p>
+
+                                            <p class="marcador">1</p>
+                                        </div>
+                                        <div class="vs">VS</div>
+                                        <div class="block">
+                                            <img src="jquerymobile/img-dportes/barcelona.png">
+                                            <p class="nombre-equipo">Barcelona de la nueva españa</p>
+                                            <p class="marcador">1</p>
+                                        </div>
+                                        <div class="fecha-partido">Jugado el: 23 octubre 2015</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="dos" class="ui-body-d ui-content">
+                    <ul data-role="listview" data-inset="false">
+                        <li>
+                            <a href="#estadisticas-individual-jugador" class="color-boton-equipo"><img src="jquerymobile/img-dportes/jugador1.jpg">
+                                <h2>KEYLOR NAVAS</h2>
+                                <p>Portero</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#estadisticas-individual-jugador" class="color-boton-equipo-dark"><img src="jquerymobile/img-dportes/jugador2.jpg">
+                                <h2>SERGIO RAMOS</h2>
+                                <p>Lateral</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#estadisticas-individual-jugador" class="color-boton-equipo"><img src="jquerymobile/img-dportes/jugador3.jpg">
+                                <h2>PEPE</h2>
+                                <p>Lateral</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="tres" class="ui-body-d ui-content">
+                    <ul data-role="listview" data-inset="false">
+                        <li data-icon="false">
+                        <a href="#" class="color-boton-equipo-dark">
+                            <img src="jquerymobile/img-dportes/rivales/cobresal.png">
+                            <h2>COBRESAL</h2>
+                            <p>RM - Santiago - Pudahuel</p>
+                        </a>
+                        </li>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">Goles<br><span style="font-size:32px;">6</span></div></div>
+                            <div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">P. Ganados<br><span style="font-size:32px;">0</span></div></div>
+                            <div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">P. Perdidos<br><span style="font-size:32px;">14</span></div></div>
+                            <div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">P. Empatados<br><span style="font-size:32px;">320</span></div></div>
+                            <div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">Tarjetas Amarillas<br><span style="font-size:32px;">3</span></div></div>
+                            <div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">Tarjetas Rojas<br><span style="font-size:32px;">3</span></div></div>
+                        </div>
+                        <h4 align="center">Datos Estadísticos:</h4>
+                        <table data-role="table" id="table-column-toggle" data-mode="" class="ui-responsive table-stroke">
+                             <tbody>
+                                <tr>
+                                    <th>P. Jugados</th>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <th>Goles recibidos</th>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ul>
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <!-- estadistica individual jugador -->
+    <div data-role="page" id="estadisticas-individual-jugador" class="jqm-demos">
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a><!--ABRE MENU-->
+            <h1>Estadísticas</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
+        <div class="content">
+            <ul data-role="listview" data-inset="false">
+                <li data-icon="false">
+                    <a href="#" class="color-boton-equipo-dark">
+                        <img src="jquerymobile/img-dportes/rivales/cobresal.png">
+                        <h2>Jugador</h2>
+                        <p>Posicion: Portero</p>
+                    </a>
+                </li>
+                <h4 align="center">Datos Estadísticos:</h4>
+                <table data-role="table" id="table-column-toggle" data-mode="" class="ui-responsive table-stroke">
+                    <tbody>
+                        <tr>
+                            <th>P. Jugados</th>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <th>Goles recibidos</th>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ul>
+        </div>      
+    </div>
+
     <!-- PANEL MENU -->
     <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu_perfil">
         <ul data-role="listview">
@@ -766,6 +901,7 @@
             <li data-icon="grid"><a href="#mis-equipos">Mis Equipos</a></li>
             <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
             <li data-icon="clock"><a href="#notificaciones" data-transition="fade">Notificaciones</a></li>
+            <li data-icon="clock"><a href="#estadisticas-nuevas" data-transition="fade">prueba</a></li>
                     <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
                     <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
