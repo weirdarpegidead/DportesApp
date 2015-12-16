@@ -641,3 +641,7 @@ a.color-boton-presionado {
 	color: rgba(255, 255, 255, 0.9); }
 .mensaje {
 	white-space: normal !important; }
+.flotante {
+	position: fixed;
+	left: 10px;
+	top: 10px; }

@@ -892,6 +892,118 @@
         </div>      
     </div>
 
+    <!-- resumen prueba -->
+    <div data-role="page" id="resumen-prueba" class="jqm-demos" data-title="Dportes" data-theme="a">
+
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a id="stat-back-rel" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Estadisticas</h1>
+            <a id="stat-forward-rel" data-transition="fade" class="saca-estilo-boton ui-btn-icon-right"><div class="fl-derecha"></div></a>
+        </div>
+        
+        <div class="content">
+            <ul data-role="listview">
+           
+                <div class="contenedor-fechas">
+                    <div class="row">
+                            <div class="small-4 columns block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p id="stat-equipo" class="nombre-equipo"></p><p id="stat-marc-favor" class="marcador">0</p></div>
+                            <div class="small-4 columns vs">VS</div>
+                            <div class="small-4 columns block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p id="stat-rival" class="nombre-equipo"></p><p id="stat-marc-contra" class="marcador">0</p></div>
+                    </div>
+                </div>
+                
+                <div class="contenedor-resumen-goles"> <!--este centra los divs-->
+                    <div id="stat-goles-content">
+                       <div class="alinea-resumen"><h4 class="texto-resumen-goles">Resumen Goles:</h4></div>
+                       <div id="stat-goles" class="resultados-partido"></div>
+                    </div>
+                    <h4 id="stat-resumen-text" class="texto-resumen-goles">Resumen de Penales:</h4>
+                    <div id="stat-penales" class="resultados-partido"></div>
+                    <h4 class="texto-resumen-goles">Estadísticas del Partido</h4>
+                    <div class="contenedor-resultados">
+                        
+                        <!--<div class="campos">Total de Remates</div>
+                        <div class="estadisticas-mi-equipo">5</div>-->
+                        
+                        <!--<div class="estadisticas-equipo-contrario">6</div>-->
+                 
+                        <div class="campos">Tiros al Arco</div>
+                        <div id="stat-tiro-arco" class="estadisticas-mi-equipo"></div>
+                        
+                        <!--<div class="estadisticas-equipo-contrario">5</div>-->
+                        
+                        <!--<div class="campos">Faltas</div>
+                        <div class="estadisticas-mi-equipo">5</div>-->
+                        
+                        <!--<div class="estadisticas-equipo-contrario">5</div>-->
+                        
+                        <!--<div class="campos">Posesión del Balón</div>
+                        <div class="estadisticas-mi-equipo">55%</div>-->
+                        
+                        <!--<div class="estadisticas-equipo-contrario">45%</div>-->
+                        <div class="campos">Tiros Libres</div>
+                        <div id="stat-tiro-libre" class="estadisticas-mi-equipo"></div>
+
+                        <div class="campos">Tiros de Esquina</div>
+                        <div id="stat-tiro-esquina" class="estadisticas-mi-equipo"></div>
+
+                        <div class="campos">Asistencias</div>
+                        <div id="stat-asistencias" class="estadisticas-mi-equipo"></div>
+
+                        <div class="campos">Quites</div>
+                        <div id="stat-quite" class="estadisticas-mi-equipo"></div>
+
+                        <div class="campos">Faltas</div>
+                        <div id="stat-falta" class="estadisticas-mi-equipo"></div>
+                        
+                        <!--<div class="estadisticas-equipo-contrario">5</div>-->
+                        
+                        <!--<div class="campos">Paradas</div>
+                        <div class="estadisticas-mi-equipo">5</div>-->
+                        
+                        <!--<div class="estadisticas-equipo-contrario">5</div>-->
+                        
+                        <!--<div class="campos">Off side</div>
+                        <div class="estadisticas-mi-equipo">5</div> -->
+                        
+                        <!--<div class="estadisticas-equipo-contrario">5</div>-->
+                        
+                        <div class="campos">Tarjetas Amarillas</div>
+                        <div id="stat-tarjeta-amarilla" class="estadisticas-mi-equipo"></div>
+                        
+                        <!--<div class="estadisticas-equipo-contrario">5</div>-->
+                        
+                        <div class="campos">Tarjetas Rojas</div>
+                        <div id="stat-tarjeta-roja" class="estadisticas-mi-equipo"></div>
+                    <div class="detalle">
+                        <a href="#stat-jugadores" class="ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon color-boton">Ver Detalle de Jugadores</a>
+                    </div>
+
+                    <div class="row flotante">
+                        <div class="small-4 columns">
+                            <a href="#" class="ui-btn ui-mini ui-btn-inline ui-icon-back ui-btn-icon-left">Deshacer Jugada</a>
+                        </div>
+                        <div class="small-4 columns">
+                            <a href="#" class="ui-btn ui-mini ui-btn-inline ui-icon-back ui-btn-icon-left">Deshacer Jugada</a>
+                        </div>
+                        <div class="small-4 columns">
+                            <a href="#" class="ui-btn ui-mini ui-btn-inline ui-icon-back ui-btn-icon-left">Deshacer Jugada</a>
+                        </div>
+                    </div>
+
+                </div>
+                   
+                   
+
+               </div> <!--cierre contenedor-resumen-goles-->
+    
+            </ul>
+
+        </div>
+
+        <!--<div data-role="footer"><p align="center">© 2015 Derechos Reservados Dportes</p></div>-->
+    </div>
+
     <!-- PANEL MENU -->
     <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu_perfil">
         <ul data-role="listview">
@@ -902,6 +1014,7 @@
             <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
             <li data-icon="clock"><a href="#notificaciones" data-transition="fade">Notificaciones</a></li>
             <li data-icon="clock"><a href="#estadisticas-nuevas" data-transition="fade">prueba</a></li>
+            <li data-icon="clock"><a href="#resumen-prueba" data-transition="fade">prueba 2</a></li>
                     <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
                     <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
