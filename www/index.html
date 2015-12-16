@@ -34,7 +34,7 @@
     <div data-role="page" id="login" class="jqm-demos background-login" data-title="Dportes" data-theme="a"> 
         <div class="content" style="margin:20px;">
             <div class="contenedor_logo_dportes">
-                <img src="jquerymobile/img-dportes/logo-dportes.svg">
+                <img src="jquerymobile/img-dportes/logo-dportes.svg" alt="hola">
             </div>
             <div data-role="main" class="alineacion-centro-vertical">           
                 <form id="form-login" method="post">
@@ -47,7 +47,6 @@
                         <div class="ui-input-btn ui-btn btn-input">
                             Login
                             <input id="logear" data-enhanced="true" value="Input value" type="submit">
-                            <p>cambio branch</p>
                         </div>
                     </div>
                     <div class="ancho-botones">
@@ -132,7 +131,7 @@
     
         <div data-role="header" data-position="fixed" class="color-encabezado">
             <a href="#" data-transition="fade" class="saca-estilo-boton"></a>
-            <h1>Bienvenido</h1>
+            <h1><img src="jquerymobile/img-dportes/logo-dportes.svg" style="width:80px"></h1>
             <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
         </div>
 
@@ -214,8 +213,8 @@
                 <select id="pg-periodo" name="select-choice-a">
                     <option value="1">Tiempo unico</option>
                     <option value="2">2 Tiempos</option>
-                    <option value="3">1 Tiempo Extra</option>
-                    <option value="4">2 Tiempo Extra</option>                        
+                    <!--<option value="3">1 Tiempo Extra</option>
+                    <option value="4">2 Tiempo Extra</option> -->                       
                     <!--<option value="5">Penales</option>-->
                 </select>
                 <a id="pg-periodo-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Seleccione un Periodo</a>
@@ -242,12 +241,12 @@
         <div class="content">
             <div data-role="tabs">
         
-            <a href="#add-partido"><div class="agregar_nuevo_juego"></div></a>
+            <a href="#add-partido"><div class="agregar_nuevo_juego"></div></a><!--boton de agregar un nuevo juego-->
             <div>
                 <h3 align="center">Partidos Programados</h3>
                 <ul id="pro-list" data-role="listview" data-inset="false" >
                 </ul>
-                <a href="#" onclick="setMorePro();" class="ui-btn ui-icon-plus ui-btn-icon-left color-boton">Cargar Más</a>
+                <a href="#" onclick="setMorePro();" class="ui-btn ui-icon-plus ui-btn-icon-left color-boton">Mostrar Más</a>
             </div>
             
             </div><!--cierre de tabs-->
@@ -353,7 +352,7 @@
         <div data-role="header" data-position="fixed" class="color-encabezado">
             <a id="stat-back-rel" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
             <h1>Estadisticas</h1>
-            <a id="stat-forward-rel" ddata-transition="fade" class="saca-estilo-boton ui-btn-icon-right"><div class="fl-derecha"></div></a>
+            <a id="stat-forward-rel" data-transition="fade" class="saca-estilo-boton ui-btn-icon-right"><div class="fl-derecha"></div></a>
             
             <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
         </div>
@@ -370,7 +369,9 @@
                 </div>
                 
                 <div class="contenedor-resumen-goles"> <!--este centra los divs-->
-                    <div id="stat-goles-content" >
+                    
+                    <div id="stat-goles-content">
+                       
                        <div class="alinea-resumen"><h4 class="texto-resumen-goles">Resumen Goles:</h4></div>
                        
                        <div id="stat-goles" class="resultados-partido">
@@ -613,12 +614,12 @@
         </div><!--CIERRE DE CONTENIDO-->
     </div>
 
-    <!-- ————— PAGINA PERFIL EQUIPO RIVAL ————— -->
+    <!-- ————— PAGINA MIS EQUIPOS ————— -->
     <div data-role="page" id="mis-equipos" data-url="mis_equipos" class="jqm-demos" data-title="Dportes" data-theme="a">
     
         <div data-role="header" data-position="fixed" class="color-encabezado">
             <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
-            <h1>Mi Equipo</h1>
+            <h1>Mis Equipos</h1>
             <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
         </div>
         
@@ -628,6 +629,7 @@
         </div>
     </div>
 
+    <!-- ————— ACERCA DE DPORTES(VERSION) ————— -->
     <div data-role="page" id="acerca" class="jqm-demos background-login" data-title="Dportes" data-theme="a">
 
         <div data-role="header" data-position="fixed" class="color-encabezado">
@@ -651,6 +653,7 @@
         </div>      
     </div>
 
+	<!-- ————— PAGINA COMO SE USA ————— -->
     <div data-role="page" id="como-usar" data-title="Dportes">
     
         <div data-role="header" data-position="fixed" class="color-encabezado">
@@ -768,7 +771,6 @@
                     <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
             <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
-            <li data-icon="mail"><a href="#" >FAQ</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
         </ul>
     </div>
