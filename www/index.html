@@ -156,7 +156,7 @@
     <div data-role="page" id="mi-perfil" class="jqm-demos" data-title="Dportes" data-theme="a">
     
         <div data-role="header" data-position="fixed" class="color-encabezado">
-        <a href="perfil.html" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+        <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
         <h1>Mi Perfil</h1>
         <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
         </div>
@@ -168,16 +168,16 @@
                 <li data-icon="false">
                 <a href="#" class="color-boton-equipo-dark">
                     <img src="jquerymobile/img-dportes/foto.png">
-                    <h2>KEYLOR NAVAS</h2>
+                    <h2 id="perfil-usuario"></h2>
                 </a>
                 </li>
                 
                 <div style="margin:20px">
                 <form action="" method="post">
                         <label id="2"><strong>Tu Nombre:</strong></label>
-                        <input name="nombre" id="2" value="Francisco Vargas" type="text">
+                        <input name="nombre" id="perfil-nombre" value="" type="text">
                         <label id="3"><strong>Tu Correo:</strong></label>
-                        <input name="correo" id="3" value="furrea@ilia.cl" type="text">
+                        <input name="correo" id="perfil-correo" value="" type="text">
                         <!--<label id="4"><strong>Tu Clave Actual:</strong></label>
                         <input name="clave" id="4" value="145$dge" type="text">-->
                 
@@ -198,11 +198,11 @@
                                 <label for="checkbox-3-a">Extremo</label>
                             </div>
                         </fieldset> -->
-                            
-                        <br><br>
+                        <br><br>    
+                       <!-- 
                         <label for="file">Cambiar Foto de Perfil:</label>
-                        <input name="foto" id="file" value="" type="file">
-                        <a href="perfil.html" class="color-boton" data-transition="fade"><button class="ui-btn btn-input">Guardar</button></a>
+                        <input name="foto" id="file" value="" type="file">-->
+                        <a id="perfil-save" class="color-boton" data-transition="fade"><button class="ui-btn btn-input">Guardar</button></a>
                     </form>
                 </div>
 
@@ -839,6 +839,7 @@
             <script type="text/javascript" src="js/jugadores.js"></script>
             <script type="text/javascript" src="js/eventos.js"></script>
             <script type="text/javascript" src="js/registro.js"></script>
+            <script type="text/javascript" src="js/usuarios.js"></script>
             <script type="text/javascript" src="js/auth.js"></script>
 </body>
 </html>
