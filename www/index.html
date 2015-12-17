@@ -688,6 +688,74 @@
         </div>
     </div>
 
+    <!-- ————— EDITAR EQUIPOS ————— -->
+    <div data-role="page" id="editar-equipo" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+        <a href="#mis-equipos" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+        <h1>Editar Equipo</h1>
+        <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+        </div>
+        
+        <div class="content" style="margin:0px">
+    
+            <ul data-role="listview" data-inset="false">
+            
+                <li data-icon="false">
+                <a href="#" class="color-boton-equipo-dark">
+                    <img src="jquerymobile/img-dportes/logo-encuentro.png">
+                    <h2 id="edit-equipo"></h2>
+                    <p id="edit-ubicacion">No disponible</p>
+                </a>
+                </li>
+                
+                <div style="margin:20px">
+                <form method="post">
+                        <label><strong>Nombre del equipo:</strong></label>
+                        <input name="nombre_equipo" id="edit-eq-nombre" value="" maxlength="100" type="text">
+                        <label><strong>Región:</strong></label>
+                        <input name="comuna_equipo" id="edir-eq-region" value="" type="text">
+                        <label><strong>Comuna:</strong></label>
+                        <input name="clave" id="edit-eq-comuna" value="" type="text" maxlength="100">
+                
+                        <!--<div style="margin-bottom:10px">
+                        <fieldset data-role="collapsible">
+                            <legend>Categoria</legend>
+                            <div data-role="controlgroup">
+                                <input name="categoria_equipo" id="infantil" type="radio">
+                                <label for="infantil">Infantil</label>
+                                <input name="categoria_equipo" id="juvenil" type="radio">
+                                <label for="juvenil">Juvenil</label>
+                                <input name="categoria_equipo" id="adulta" type="radio" checked>
+                                <label for="adulta">Adulta</label>
+                                <input name="categoria_equipo" id="senior" type="radio">
+                                <label for="senior">Senior</label>
+                            </div>
+                        </fieldset>
+                        </div>
+                        
+                        <div style="margin-bottom:10px">
+                        <fieldset data-role="collapsible">
+                            <legend>Genero</legend>
+                            <div data-role="controlgroup">
+                                <input name="genero" id="masculino" type="radio" checked>
+                                <label for="masculino">Masculino</label>
+                                <input name="genero" id="femenino" type="radio">
+                                <label for="femenino">Femenino</label>
+                            </div>
+                        </fieldset>
+                        </div>
+                            
+                        <label for="foto_perfil">Cambiar Foto de Perfil:</label>
+                        <input name="foto_perfil" id="foto_perfil" value="" type="file">-->
+                        <a onclick="setEquipo()" data-rel="popup" data-position-to="window" data-transition="pop" class="color-boton"><button class="ui-btn btn-input" type="submit">Guardar</button></a>
+                    </form>
+                </div>
+
+            </ul>
+
+        </div>
+    </div>
     <!-- Acerde de -->
     <div data-role="page" id="acerca" class="jqm-demos background-login" data-title="Dportes" data-theme="a">
 

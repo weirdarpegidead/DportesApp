@@ -167,4 +167,10 @@
             delete eq;
         }
 
+        if(activePage === 'editar-equipo'){
+            var eq = new equipos();
+            eq.getEquipo();
+            delete eq;
+        }
+
     });
