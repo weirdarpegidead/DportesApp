@@ -48,6 +48,12 @@
             stat.equipo = localStorage.getItem('equipo');
             stat.getEstadisticasPage();
             delete stat;
+
+
+            var jg = new jugadores();
+            jg.getJugadoresEstadisticas();
+            delete jg;
+            
             if(sessionStorage.getItem('periodosJugados')){
                 var hasta = document.getElementById('pg-periodo').value;
                 periodos = JSON.parse(sessionStorage.getItem('periodosJugados'));
@@ -125,14 +131,6 @@
             document.getElementById('jg-rel-back').href = '#'+activePage;
             document.getElementById('tyc-back').href = '#'+activePage;
             document.getElementById('jug-nom-eq').innerHTML = String(localStorage.getItem('nombre_equipo'));
-            delete jg;
-        }
-
-        if(activePage === 'stat-jugadores'){
-            swipe('#stat-jugadores','#menu_perfil','right'); 
-            document.getElementById('stat-jg-nom-eq').innerHTML = String(localStorage.getItem('nombre_equipo'));
-            var jg = new jugadores();
-            jg.getJugadoresEstadisticas();
             delete jg;
         }
 
