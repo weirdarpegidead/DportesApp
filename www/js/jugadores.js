@@ -308,7 +308,7 @@ function jugadores(){
                             inc += "</li>";
                         }
                     } else {
-                        inc += "<li><h2>No se detectaron estadisticas para los jugadores</h2></li>";
+                        inc += "<li><h2 class='mensaje'>No se detectaron estadisticas para los jugadores</h2></li>";
                     }
                     $("#stat-jg-list").html(inc).listview('refresh');
                 }
