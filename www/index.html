@@ -160,27 +160,23 @@
         <h1>Mi Perfil</h1>
         <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
         </div>
-        
         <div class="content" style="margin:0px">
-    
             <ul data-role="listview" data-inset="false">
-            
-                <li data-icon="false">
-                <a href="#" class="color-boton-equipo-dark">
-                    <img src="jquerymobile/img-dportes/foto.png">
-                    <h2 id="perfil-usuario"></h2>
-                </a>
+                <li data-icon="false" style="padding-left:20px;">
+                    <a href="#" class="color-boton-equipo-dark" id="takePhoto">
+                        <img id="photo" src="jquerymobile/img-dportes/foto.png">
+                        <h2 id="perfil-usuario"></h2>
+                    </a>
                 </li>
-                
                 <div style="margin:20px">
-                <form action="" method="post">
+                    <form action="" method="post">
                         <label id="2"><strong>Tu Nombre:</strong></label>
                         <input name="nombre" id="perfil-nombre" value="" type="text">
                         <label id="3"><strong>Tu Correo:</strong></label>
                         <input name="correo" id="perfil-correo" value="" type="text">
                         <!--<label id="4"><strong>Tu Clave Actual:</strong></label>
                         <input name="clave" id="4" value="145$dge" type="text">-->
-                
+                    
                         <!--<fieldset data-role="collapsible" >
                             <legend>Tu Posición Actual</legend>
                             <div data-role="controlgroup">
@@ -199,15 +195,13 @@
                             </div>
                         </fieldset> -->
                         <br><br>    
-                       <!-- 
+                        <!-- 
                         <label for="file">Cambiar Foto de Perfil:</label>
                         <input name="foto" id="file" value="" type="file">-->
                         <a id="perfil-save" class="color-boton" data-transition="fade"><button class="ui-btn btn-input">Guardar</button></a>
                     </form>
                 </div>
-
             </ul>
-
         </div>
     </div>
 
@@ -1014,5 +1008,6 @@
             <script type="text/javascript" src="js/registro.js"></script>
             <script type="text/javascript" src="js/usuarios.js"></script>
             <script type="text/javascript" src="js/auth.js"></script>
+            <script type="text/javascript" src="js/photo.js"></script>
 </body>
 </html>
