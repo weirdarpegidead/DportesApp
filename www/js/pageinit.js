@@ -12,6 +12,14 @@
                         $.mobile.navigate("#login", {transition: "fade"});
                     }
                 }, 4000);
+
+                // adicion de anibal para rescatar imegen de camara
+
+                //var takePhoto = document.getElementById('takePhoto');
+                //takePhoto.addEventListener('click', app.takePhoto, false);
+
+                //var sendPhoto = document.getElementById('sendPhoto');
+                //sendPhoto.addEventListener('click', app.sendPhoto, false);
             }
         }
 
