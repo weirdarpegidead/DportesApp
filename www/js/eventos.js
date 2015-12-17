@@ -147,7 +147,7 @@ function eventos(){
             inc = '<ul id="custom-format-listview" data-role="listview" data-filter="false" data-filter-placeholder="Buscar Fechas Anteriores..." data-inset="false" ></ul>';
             $("#historial-content").html(inc).trigger('create');
             inc = '<div class="detalle">';
-            inc += '<a href="#" onclick="setMore();" class="ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon color-boton">Ver más</a>';
+            inc += '<a href="#" onclick="setMore();" class="ui-btn ui-icon-plus ui-btn-icon-left ui-shadow-icon color-boton">Mostrar más</a>';
             inc += '</div>';
             $("#historial-content").append(inc).trigger('create');
             $('#custom-format-listview').html('').listview('refresh');

@@ -29,6 +29,13 @@
             document.getElementById('jg-rel-back').href = "#home";
         }
 
+        if(activePage === 'mi-perfil'){
+            var user = new usuarios();
+            user.id_usuario = localStorage.getItem('id');
+            user.getUsuario();
+            delete user;
+        }
+
         if(activePage === 'registro-equipo'){
             var dp = new dportes();
             dp.getDportes();
@@ -157,6 +164,12 @@
             var eq = new equipos();
             eq.setSwipe();
             eq.getMisEquipos();
+            delete eq;
+        }
+
+        if(activePage === 'editar-equipo'){
+            var eq = new equipos();
+            eq.getEquipo();
             delete eq;
         }
 
