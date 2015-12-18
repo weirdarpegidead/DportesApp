@@ -512,6 +512,17 @@ document.getElementById('pg-registro').addEventListener('click',function(){
     }
 });
 
+document.getElementById('stat-extra').addEventListener('click',function(){
+    if(sessionStorage.getItem("extra")){
+        setPeriodoLocal(4,'Segundo Tiempo Extra');
+        sessionStorage.removeItem("extra");
+    } else {
+        setPeriodoLocal(3,'Tiempo Extra');
+        sessionStorage.setItem("extra",true);
+    }
+
+});
+
 function checkProgramados(){
     $.mobile.loading('show');
     event.preventDefault();
