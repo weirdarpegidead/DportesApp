@@ -54,14 +54,27 @@
             var jg = new jugadores();
             jg.getJugadoresEstadisticas();
             delete jg;
-            
+
             if(sessionStorage.getItem('periodosJugados')){
                 var hasta = document.getElementById('pg-periodo').value;
                 periodos = JSON.parse(sessionStorage.getItem('periodosJugados'));
                 if(periodos.length >= hasta){
+                    document.getElementById('stat-tiempo').innerHTML = 'Finalizar';
+                    document.getElementById('stat-tiempo').href = '#home';
                     document.getElementById('stat-forward-rel').href = '#home';
+                    $('#stat-extra').removeClass('ui-state-disabled');
+                    if(sessionStorage.getItem("extra")){
+                        document.getElementById('stat-extra').innerHTML = "Extra 2";
+                    } else {
+                        document.getElementById('stat-extra').innerHTML = "Extra 1";
+                    }
                 } else {
-                    document.getElementById('stat-forward-rel').href = '#panel-juego';
+                    document.getElementById('stat-tiempo').innerHTML = '2do Tiempo';
+                    setPeriodoLocal(2,'Segundo Tiempo');
+                    document.getElementById('stat-tiempo').href = '#acciones';
+                    document.getElementById('stat-forward-rel').href = '#acciones';
+                    $('#stat-extra').addClass('ui-state-disabled');
+                    $('#stat-tiempo-penales').addClass('ui-state-disabled');
                 }
             }
         }
