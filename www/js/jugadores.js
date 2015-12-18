@@ -639,7 +639,9 @@ document.getElementById('jg-valida-titulares').addEventListener('click',function
     event.preventDefault();
     var jg = new jugadores();
     if(jg.validaTitulares()){
-        $.mobile.navigate("#panel-juego", {transition: "fade"});
+        setPeriodoLocal(1,'Primer Tiempo');
+        $.mobile.navigate("#acciones", {transition: "fade"});
+        //$.mobile.navigate("#panel-juego", {transition: "fade"});
     } else {
         navigator.notification.alert('Seleccione al menos una persona titular para el partido',titularesDismissed,'Atención','OK');
     }
