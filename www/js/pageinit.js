@@ -34,6 +34,7 @@
             user.id_usuario = localStorage.getItem('id');
             user.getUsuario();
             delete user;
+            swipe('#mi-perfil','#menu_perfil','right');
         }
 
         if(activePage === 'registro-equipo'){
@@ -132,6 +133,7 @@
             document.getElementById('tyc-back').href = '#'+activePage;
             document.getElementById('jug-nom-eq').innerHTML = String(localStorage.getItem('nombre_equipo'));
             delete jg;
+            swipe('#jugadores-equipo','#menu_perfil','right');
         }
 
         if(activePage === 'panel-juego'){
@@ -163,12 +165,22 @@
             eq.setSwipe();
             eq.getMisEquipos();
             delete eq;
+            swipe('#mis-equipos','#menu_perfil','right');
         }
 
         if(activePage === 'editar-equipo'){
             var eq = new equipos();
             eq.getEquipo();
             delete eq;
+            swipe('#editar-equipo','#menu_perfil','right');
+        }
+
+        if(activePage === 'como-usar'){
+            swipe('#como-usar','#menu_perfil','right');
+        }
+
+        if(activePage === 'acerca'){
+            swipe('#acerca','#menu_perfil','right');
         }
 
     });
