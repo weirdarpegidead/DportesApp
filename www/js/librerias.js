@@ -45,6 +45,30 @@ function swipe(id,nav,position){
 	}
 }
 
+function swipeEstadisticas(id){
+    var startLoc = null; 
+    $(id).on( "touchstart", function(e){ 
+	    if( e.originalEvent.touches.length == 1 ) { // one finger touch 
+	        var touch = e.originalEvent.touches[ 0 ]; 
+	        startLoc = { x : touch.pageX, y : touch.pageY }; 
+	    } 
+   	}); 
+
+    $(id).on( "touchmove", function(e){  
+        if( startLoc ) { 
+	        var touch = e.originalEvent.touches[ 0 ];  
+	        if( Math.abs( startLoc.x - touch.pageX ) >  Math.abs( startLoc.y - touch.pageY ) ) { 
+	            e.preventDefault(); 
+	        } 
+	        startLoc = null; 
+        } 
+    });
+
+    $( document ).on( "swipeleft swiperight", id, function( e ) {
+    	//alert('ds');
+    });
+}
+
 function validaEmail(email){
 	expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	if ( !expr.test(email) ){

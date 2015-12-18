@@ -50,7 +50,7 @@
             stat.getEstadisticasPage();
             delete stat;
 
-
+            swipeEstadisticas('#estadisticas');
             var jg = new jugadores();
             jg.getJugadoresEstadisticas();
             delete jg;
@@ -115,6 +115,7 @@
             partidos.getHistorialPartidos();
             delete partidos;
 
+            document.getElementById('botones-estadisticos').style.display = "none";
             document.getElementById('stat-back-rel').style.display = "block";
             document.getElementById('stat-forward-rel').href = "#menu_perfil";
             document.getElementById('stat-forward-rel').innerHTML = "<div class='icono-menu-right'></div>";
@@ -141,6 +142,7 @@
         }
 
         if(activePage === 'acciones'){
+            document.getElementById('botones-estadisticos').style.display = "block";
             document.getElementById('stat-back-rel').style.display = "none"; 
             document.getElementById('stat-forward-rel').innerHTML = "<div class='fl-derecha'></div>";
             document.getElementById('stat-forward-rel').href = '#panel-juego';

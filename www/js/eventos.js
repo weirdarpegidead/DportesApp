@@ -420,70 +420,96 @@ $(document).on("pagebeforeshow","#panel-juego",function(){
 
 document.getElementById('pg-registro-next').addEventListener('click',function(){
     event.preventDefault();
-    navigator.notification.confirm(
-        '¿Desea notificar a sus jugadores?',
-            function(button){
-                if(button == 1){
-                    var pg = new eventos();
-                    pg.nombre       = document.getElementById('pg-rival').value;
-                    pg.ubicacion    = document.getElementById('pg-ubicacion').value;
-                    pg.fecha        = document.getElementById('pg-fecha').value;
-                    pg.hora         = document.getElementById('pg-hora').value;
-                    pg.periodo      = document.getElementById('pg-periodo').value;
-                    pg.tipo         = 1;
-                    pg.bool         = true;
-                    pg.addEvento();
-                    delete pg;
-                } else {
-                    var pg = new eventos();
-                    pg.nombre       = document.getElementById('pg-rival').value;
-                    pg.ubicacion    = document.getElementById('pg-ubicacion').value;
-                    pg.fecha        = document.getElementById('pg-fecha').value;
-                    pg.hora         = document.getElementById('pg-hora').value;
-                    pg.periodo      = document.getElementById('pg-periodo').value;
-                    pg.tipo         = 1;
-                    pg.bool         = false;
-                    pg.addEvento();
-                    delete pg;
-                }
-            },
-        'Advertencia',
-        'Si,No'
-    );
+    if(sessionStorage.getItem("evento")){
+        var pg = new eventos();
+        pg.nombre       = document.getElementById('pg-rival').value;
+        pg.ubicacion    = document.getElementById('pg-ubicacion').value;
+        pg.fecha        = document.getElementById('pg-fecha').value;
+        pg.hora         = document.getElementById('pg-hora').value;
+        pg.periodo      = document.getElementById('pg-periodo').value;
+        pg.tipo         = 1;
+        pg.bool         = false;
+        pg.addEvento();
+        delete pg;     
+    } else {
+        navigator.notification.confirm(
+            '¿Desea notificar a sus jugadores?',
+                function(button){
+                    if(button == 1){
+                        var pg = new eventos();
+                        pg.nombre       = document.getElementById('pg-rival').value;
+                        pg.ubicacion    = document.getElementById('pg-ubicacion').value;
+                        pg.fecha        = document.getElementById('pg-fecha').value;
+                        pg.hora         = document.getElementById('pg-hora').value;
+                        pg.periodo      = document.getElementById('pg-periodo').value;
+                        pg.tipo         = 1;
+                        pg.bool         = true;
+                        pg.addEvento();
+                        delete pg;
+                    } else {
+                        var pg = new eventos();
+                        pg.nombre       = document.getElementById('pg-rival').value;
+                        pg.ubicacion    = document.getElementById('pg-ubicacion').value;
+                        pg.fecha        = document.getElementById('pg-fecha').value;
+                        pg.hora         = document.getElementById('pg-hora').value;
+                        pg.periodo      = document.getElementById('pg-periodo').value;
+                        pg.tipo         = 1;
+                        pg.bool         = false;
+                        pg.addEvento();
+                        delete pg;
+                    }
+                },
+            'Advertencia',
+            'Si,No'
+        );
+    }
 });
 
 document.getElementById('pg-registro').addEventListener('click',function(){
     event.preventDefault();
-    navigator.notification.confirm(
-        '¿Desea notificar a sus jugadores?',
-            function(button){
-                if(button == 1){
-                    var pg = new eventos();
-                    pg.nombre       = document.getElementById('pg-rival').value;
-                    pg.ubicacion    = document.getElementById('pg-ubicacion').value;
-                    pg.fecha        = document.getElementById('pg-fecha').value;
-                    pg.hora         = document.getElementById('pg-hora').value;
-                    pg.periodo      = document.getElementById('pg-periodo').value;
-                    pg.tipo         = 1;
-                    pg.bool         = true;
-                    pg.addEvento();
-                    delete pg;
-                } else {
-                    var pg = new eventos();
-                    pg.nombre       = document.getElementById('pg-rival').value;
-                    pg.ubicacion    = document.getElementById('pg-ubicacion').value;
-                    pg.fecha        = document.getElementById('pg-fecha').value;
-                    pg.hora         = document.getElementById('pg-hora').value;
-                    pg.periodo      = document.getElementById('pg-periodo').value;
-                    pg.tipo         = 1;
-                    pg.bool         = false;
-                    pg.addEvento();
-                    delete pg;
-                }
-            },
-        'Advertencia',
-        'Si,No'
-    );
+    if(sessionStorage.getItem("evento")){
+        var pg = new eventos();
+        pg.nombre       = document.getElementById('pg-rival').value;
+        pg.ubicacion    = document.getElementById('pg-ubicacion').value;
+        pg.fecha        = document.getElementById('pg-fecha').value;
+        pg.hora         = document.getElementById('pg-hora').value;
+        pg.periodo      = document.getElementById('pg-periodo').value;
+        pg.tipo         = 1;
+        pg.bool         = false;
+        pg.addEvento();
+        delete pg;     
+    } else {
+        navigator.notification.confirm(
+            '¿Desea notificar a sus jugadores?',
+                function(button){
+                    if(button == 1){
+                        var pg = new eventos();
+                        pg.nombre       = document.getElementById('pg-rival').value;
+                        pg.ubicacion    = document.getElementById('pg-ubicacion').value;
+                        pg.fecha        = document.getElementById('pg-fecha').value;
+                        pg.hora         = document.getElementById('pg-hora').value;
+                        pg.periodo      = document.getElementById('pg-periodo').value;
+                        pg.tipo         = 1;
+                        pg.bool         = true;
+                        pg.addEvento();
+                        delete pg;
+                    } else {
+                        var pg = new eventos();
+                        pg.nombre       = document.getElementById('pg-rival').value;
+                        pg.ubicacion    = document.getElementById('pg-ubicacion').value;
+                        pg.fecha        = document.getElementById('pg-fecha').value;
+                        pg.hora         = document.getElementById('pg-hora').value;
+                        pg.periodo      = document.getElementById('pg-periodo').value;
+                        pg.tipo         = 1;
+                        pg.bool         = false;
+                        pg.addEvento();
+                        delete pg;
+                    }
+                },
+            'Advertencia',
+            'Si,No'
+        );
+    }
 });
 
 function checkProgramados(){

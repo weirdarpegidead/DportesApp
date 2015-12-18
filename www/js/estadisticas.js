@@ -93,6 +93,7 @@ function estadisticas(){
                     var faltas = json.faltas;
                     var faltas_c = json.faltas_c;
                     var asistencias = json.asistencias;
+                    var asistencias_c = json.asistencias_c;
 
                     document.getElementById('dt-goles').innerHTML = goles
                     document.getElementById('dt-goles-c').innerHTML = goles_c;
@@ -109,6 +110,7 @@ function estadisticas(){
                     document.getElementById('dt-tarjetas-amarillas').innerHTML = tarjetas_amarillas;
                     document.getElementById('dt-tarjetas-rojas').innerHTML = tarjetas_rojas;
                     document.getElementById('dt-asistencias').innerHTML = asistencias;
+                    document.getElementById('dt-asistencias-c').innerHTML = asistencias_c;
                 }
             }
         }
@@ -256,6 +258,7 @@ function periodoConf(button){
     if(button == 1){
         $('#periodo'+sessionStorage.getItem('periodo')).addClass('ui-state-disabled');
         var periodos = [];
+        //periodos.push(1);
         if(sessionStorage.getItem('periodosJugados')){
             periodos = JSON.parse(sessionStorage.getItem('periodosJugados'));
         }
