@@ -10,7 +10,7 @@ document.getElementById('takePhoto').addEventListener('click',function(){
                 if(button == 1){
                     navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, destinationType: navigator.camera.DestinationType.DATA_URL });
                 } else {
-                    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, sourceType: 2, destinationType: navigator.camera.DestinationType.DATA_URL });
+                    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, sourceType: 0, destinationType: navigator.camera.DestinationType.DATA_URL });
                 }
             },
         'Insertar Imagen',
