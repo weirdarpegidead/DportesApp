@@ -262,7 +262,7 @@ li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border
 /* Contenedor de resumen de goles RESUMEN_1_TIEMPO.HTML, RESUMEN_2_TIEMPO.HTML*/
 .alinea-resumen {text-align:center; margin-bottom:10px;}
 .texto-resumen-goles {font-size:16px; font-weight:bold; color:#666;}
-.contenedor-resumen-goles { margin-bottom:10px; text-align:center; color:#666;}
+.contenedor-resumen-goles { margin-bottom:70px; text-align:center; color:#666;}
 .resultados-partido {/*width:49%*/;display:inline-block; text-align:left; margin-left:10px;}
 .contenedor-resultados { text-align:center}
 .estadisticas-mi-equipo { width:20%/*width:20%*/; text-align:center; font-size:16px; color:#000; display:inline-block; margin-bottom:10px; color:#666;}
