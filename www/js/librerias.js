@@ -69,6 +69,13 @@ function swipeEstadisticas(id){
     });
 }
 
+function checkName(nm,ap){
+	if(ap == null){
+		ap = '';
+	}
+	return nm + ' ' + ap;
+}
+
 function validaEmail(email){
 	expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	if ( !expr.test(email) ){
