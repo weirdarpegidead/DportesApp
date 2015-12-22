@@ -208,6 +208,225 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 	background-image:url(img-dportes/iconos/roja.svg);
 	right: 0px;
 	margin-right: 15px; }
+.gol_dentro_area_buena {
+	background-image:url(img-dportes/iconos_gol/gol_dentro_del_area1.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_dentro_area_mala {
+	background-image:url(img-dportes/iconos_gol/gol_dentro_del_area2.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_fuera_area_buena {
+	background-image:url(img-dportes/iconos_gol/gol_fuera_del_area1.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_fuera_area_mala {
+	background-image:url(img-dportes/iconos_gol/gol_fuera_del_area2.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_tiro_libre_buena {
+	background-image:url(img-dportes/iconos_gol/gol_de_tiro_libre1.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_tiro_libre_mala {
+	background-image:url(img-dportes/iconos_gol/gol_de_tiro_libre2.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_tiro_esquina_buena {
+	background-image:url(img-dportes/iconos_gol/gol_tiro_de_esquina1.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_tiro_esquina_mala {
+	background-image:url(img-dportes/iconos_gol/gol_tiro_de_esquina2.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_volea_buena {
+	background-image:url(img-dportes/iconos_gol/gol_de_volea1.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_volea_mala {
+	background-image:url(img-dportes/iconos_gol/gol_de_volea2.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_tijera_buena {
+	background-image:url(img-dportes/iconos_gol/gol_de_tijeras1.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_tijera_mala {
+	background-image:url(img-dportes/iconos_gol/gol_de_tijeras2.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_chilena_buena {
+	background-image:url(img-dportes/iconos_gol/gol_de_chilena1.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_chilena_mala {
+	background-image:url(img-dportes/iconos_gol/gol_de_chilena2.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_cabeza_buena {
+	background-image:url(img-dportes/iconos_gol/gol_de_cabeza1.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_cabeza_mala {
+	background-image:url(img-dportes/iconos_gol/gol_de_cabeza2.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_taco_buena {
+	background-image:url(img-dportes/iconos_gol/gol_de_taco1.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_taco_mala {
+	background-image:url(img-dportes/iconos_gol/gol_de_taco2.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_otro_buena {
+	background-image:url(img-dportes/iconos_gol/gol_otro1.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
+
+.gol_otro_mala {
+	background-image:url(img-dportes/iconos_gol/gol_otro2.png);
+	display: inline-block;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	margin-right: 15px;
+	width:30px;
+	height:30px;
+}
 .quita_margenes_iconos{margin:0 !important;}
 .nombre-jugador-accion {
 	font-size:12px;
