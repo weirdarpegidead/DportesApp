@@ -61,6 +61,7 @@
                 if(periodos.length >= hasta){
                     document.getElementById('stat-tiempo').innerHTML = 'Finalizar';
                     document.getElementById('stat-tiempo').href = '#home';
+                    document.getElementById('stat-tiempo').setAttribute('onclick','closeEvent();');
                     document.getElementById('stat-forward-rel').href = '#home';
                     $('#stat-extra').removeClass('ui-state-disabled');
                     if(sessionStorage.getItem("extra")){
@@ -72,6 +73,7 @@
                     document.getElementById('stat-tiempo').innerHTML = '2do Tiempo';
                     setPeriodoLocal(2,'Segundo Tiempo');
                     document.getElementById('stat-tiempo').href = '#acciones';
+                    document.getElementById('stat-tiempo').removeAttribute('onclick');
                     document.getElementById('stat-forward-rel').href = '#acciones';
                     $('#stat-extra').addClass('ui-state-disabled');
                     $('#stat-tiempo-penales').addClass('ui-state-disabled');

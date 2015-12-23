@@ -231,6 +231,7 @@ function eventos(){
         } else {
             $('#pro-list').html('').listview('refresh');
         }
+        
         var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_equipo',this.equipo);
@@ -267,6 +268,13 @@ function eventos(){
                         inc += '</li>';                    
                     }
                     $('#pro-list').append(inc).listview('refresh');
+
+                    if(json.length >= 5){
+                        document.getElementById('p-pro-more').style.display = "block";
+                    } else {
+                        document.getElementById('p-pro-more').style.display = "none";
+                    }
+                    
                     $.mobile.loading('hide');
                 }
             }
@@ -379,13 +387,13 @@ function setPeriodoLocal(id,nombre){
 }
 
 function closeSessionEvents(){
-    if(sessionStorage.getItem('evento')){
+    /*if(sessionStorage.getItem('evento')){
         var ev = new eventos();
         ev.id_evento = sessionStorage.getItem('evento');
         ev.tipo = 3;
         ev.cambiaTipo();
         delete ev;
-    }   
+    }*/   
     sessionStorage.removeItem('periodo');
     sessionStorage.removeItem('nPeriodo');
     sessionStorage.removeItem('evento');
