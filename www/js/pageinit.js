@@ -82,6 +82,7 @@
         }
 
         if(activePage === 'p-pro'){
+            sessionStorage.removeItem('evento');
             var ev = new eventos();
             ev.equipo  = localStorage.getItem('equipo');
             ev.getProgramados();
@@ -99,6 +100,7 @@
                 document.getElementById('pg-registro-next').style.display = "block";
                 document.getElementById('pg-boton-continuar').style.display = "none";
             } else {
+                clearGame();
                 document.getElementById('pg-registro-next').style.display = "none";
                 document.getElementById('pg-boton-continuar').style.display = "block";
             }
