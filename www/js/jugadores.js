@@ -178,6 +178,34 @@ function jugadores(){
         }   
     }
 
+    this.setJugador = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_jugador',this.id_jugador);
+        send.append('nombre',this.nombre); 
+        send.append('correo',this.email);
+        send.append('rol',this.rol_usuario);
+        xhr.open('POST', path + 'app/setJugador');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        xhr.timeout = 10000;
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+        }
+        xhr.ontimeout = function(e){
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+        }
+        xhr.onload = function(e){
+            if(this.status == 200){
+                if(this.response){
+                    navigator.notification.alert('Se actualizo correctamente el jugador',function(){},'Atención','Ok');
+                    $.mobile.loading('hide');
+                }
+            }
+        }
+    }
+
     this.getDeleteFunction = function(){
         var startLoc = null; 
         $(document).on( "touchstart", function(e){ 
@@ -710,6 +738,17 @@ document.getElementById('jg-valida-titulares').addEventListener('click',function
     } else {
         navigator.notification.alert('Seleccione al menos una persona titular para el partido',titularesDismissed,'Atención','OK');
     }
+    delete jg;
+});
+
+document.getElementById('edit-jg-save').addEventListener('click',function(){
+    event.preventDefault();
+    var jg = new jugadores();
+    jg.id_jugador = sessionStorage.getItem('jg_session');
+    jg.nombre = document.getElementById('edit-jg-nombre').value;
+    jg.email = document.getElementById('edit-jg-correo').value;
+    jg.rol_usuario = sessionStorage.getItem('rol_session');
+    jg.setJugador();
     delete jg;
 });
 

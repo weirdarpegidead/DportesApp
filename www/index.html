@@ -164,7 +164,7 @@
             <ul data-role="listview" data-inset="false">
                 <li data-icon="false" style="padding-left:20px;">
                     <a href="#" class="color-boton-equipo-dark" id="takePhoto">
-                        <img id="photo" src="jquerymobile/img-dportes/foto.png">
+                        <img id="photo" src="jquerymobile/img-dportes/foto2.png">
                         <h2 id="perfil-usuario"></h2>
                     </a>
                 </li>
@@ -246,7 +246,7 @@
     <!-- ———— INGRESO PARTIDO ————— -->
     <div data-role="page" id="add-partido" data-title="Dportes" data-theme="a">
         <div data-role="header" data-position="fixed" class="color-encabezado">
-            <a onclick="backHome()" href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <a href="#p-pro" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
             <h1>Datos del Juego</h1>
             <a id="pg-registro-next" href="#" data-transition="fade" class="saca-estilo-boton" style="display:none;"><div class="fl-derecha"></div></a>
         </div>
@@ -300,7 +300,7 @@
                 <h3 align="center">Partidos Programados</h3>
                 <ul id="pro-list" data-role="listview" data-inset="false" >
                 </ul>
-                <a href="#" onclick="setMorePro();" class="ui-btn ui-icon-plus ui-btn-icon-left color-boton">Mostrar Más</a>
+                <a id="p-pro-more" href="#" onclick="setMorePro();" class="ui-btn ui-icon-plus ui-btn-icon-left color-boton" style="display:none;">Mostrar Más</a>
             </div>
             
             </div><!--cierre de tabs-->
@@ -669,7 +669,7 @@
                         </fieldset>
                             
                         <br><br>
-                        <a class="color-boton" data-transition="fade"><button class="ui-btn btn-input">Guardar</button></a>
+                        <a id="edit-jg-save" class="color-boton" data-transition="fade"><button class="ui-btn btn-input">Guardar</button></a>
                     </form>
                 </div>
 
@@ -689,6 +689,7 @@
         <div role="main" class="ui-content">
             <ul id="eq-list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete" data-inset="false">
             </ul>
+            <a href="#" class="color-boton ui-btn" data-transition="fade" style="width: 100%;bottom: 0px;position: fixed;" >Agregar Equipo</a>
         </div>
     </div>
 
