@@ -1,0 +1,212 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"padding",
+				"padding-left"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 107.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/Users/Lord_Sauron/Desktop/prueba en mac/prueba_mac_1/config.xml",
+		"/Users/Lord_Sauron/Desktop/prueba en mac/prueba/www/js/index.js",
+		"/Users/Lord_Sauron/Desktop/prueba en mac/prueba/www/index.html",
+		"/Users/Lord_Sauron/Desktop/prueba en mac/prueba_mac_1/www/index.html",
+		"/Users/Lord_Sauron/prueba1/index.html",
+		"/Users/Lord_Sauron/prueba1/scss/_settings.scss",
+		"/Users/Lord_Sauron/myApp/package.json",
+		"/Users/Lord_Sauron/prueba1/bower_components/modernizr/feature-detects/pointerlock-api.js",
+		"/Users/Lord_Sauron/myApp/node_modules/front-router/node_modules/gulp-util/lib/isNull.js",
+		"/Users/Lord_Sauron/myApp/node_modules/gulp-sass/node_modules/node-sass/scripts/install.js",
+		"/Users/Lord_Sauron/myApp/node_modules/gulp-sass/node_modules/node-sass/node_modules/node-gyp/0001-gyp-always-install-into-PRODUCT_DIR.patch",
+		"/Users/Lord_Sauron/myApp/client/templates/home.html",
+		"/Users/Lord_Sauron/myApp/client/templates/settings.html",
+		"/Users/Lord_Sauron/myApp/client/index.html",
+		"/Users/Lord_Sauron/Desktop/atleso/atleso-web/css/foundation.css",
+		"/Users/Lord_Sauron/Desktop/atleso/atleso-web/home.html",
+		"/Users/Lord_Sauron/Desktop/atleso/atleso-web/css/style.css",
+		"/Users/Lord_Sauron/Desktop/atleso/atleso-web/index.php",
+		"/Users/Lord_Sauron/Desktop/atleso/atleso-web/footer.php",
+		"/Users/Lord_Sauron/Desktop/maw/maw_web/css/style.css",
+		"/Users/Lord_Sauron/Desktop/maw/maw_web/general-template.php",
+		"/Users/Lord_Sauron/Desktop/maw/maw_web/desarrollo.php",
+		"/Users/Lord_Sauron/Desktop/nosotros.php",
+		"/Users/Lord_Sauron/Desktop/Catalogo falabella/catalogo_maqueta/index.html"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"green",
+			"red",
+			"button",
+			">\n",
+			"list",
+			"ul",
+			"24rem",
+			"logo",
+			"();\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "DportesApp.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 1126.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 182.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
