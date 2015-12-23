@@ -54,14 +54,29 @@
             var jg = new jugadores();
             jg.getJugadoresEstadisticas();
             delete jg;
-            
+
             if(sessionStorage.getItem('periodosJugados')){
                 var hasta = document.getElementById('pg-periodo').value;
                 periodos = JSON.parse(sessionStorage.getItem('periodosJugados'));
                 if(periodos.length >= hasta){
+                    document.getElementById('stat-tiempo').innerHTML = 'Finalizar';
+                    document.getElementById('stat-tiempo').href = '#home';
+                    document.getElementById('stat-tiempo').setAttribute('onclick','closeEvent();');
                     document.getElementById('stat-forward-rel').href = '#home';
+                    $('#stat-extra').removeClass('ui-state-disabled');
+                    if(sessionStorage.getItem("extra")){
+                        document.getElementById('stat-extra').innerHTML = "Extra 2";
+                    } else {
+                        document.getElementById('stat-extra').innerHTML = "Extra 1";
+                    }
                 } else {
-                    document.getElementById('stat-forward-rel').href = '#panel-juego';
+                    document.getElementById('stat-tiempo').innerHTML = '2do Tiempo';
+                    setPeriodoLocal(2,'Segundo Tiempo');
+                    document.getElementById('stat-tiempo').href = '#acciones';
+                    document.getElementById('stat-tiempo').removeAttribute('onclick');
+                    document.getElementById('stat-forward-rel').href = '#acciones';
+                    $('#stat-extra').addClass('ui-state-disabled');
+                    $('#stat-tiempo-penales').addClass('ui-state-disabled');
                 }
             }
         }
@@ -134,7 +149,17 @@
             document.getElementById('tyc-back').href = '#'+activePage;
             document.getElementById('jug-nom-eq').innerHTML = String(localStorage.getItem('nombre_equipo'));
             delete jg;
-            swipe('#jugadores-equipo','#menu_perfil','right');
+            //swipe('#jugadores-equipo','#menu_perfil','right');
+        }
+
+        if(activePage === 'editar-jugador'){
+            var jg = new jugadores();
+            jg.id_jugador = sessionStorage.getItem('jg_session');
+            jg.rol_usuario = sessionStorage.getItem('rol_session');
+            jg.id_equipo = localStorage.getItem('equipo');
+            jg.getJugador();
+            jg.getPosicionesJugador();
+            delete jg;
         }
 
         if(activePage === 'panel-juego'){
@@ -167,7 +192,7 @@
             eq.setSwipe();
             eq.getMisEquipos();
             delete eq;
-            swipe('#mis-equipos','#menu_perfil','right');
+            //swipe('#mis-equipos','#menu_perfil','right');
         }
 
         if(activePage === 'editar-equipo'){

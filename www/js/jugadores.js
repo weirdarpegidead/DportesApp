@@ -7,6 +7,7 @@ function jugadores(){
     this.id_equipo
     this.nombre
     this.email
+    this.rol_usuario
 
     this.addJugador = function(){
     	if(this.validarJugador()){
@@ -139,6 +140,72 @@ function jugadores(){
         }
     }
 
+    this.getJugador = function(){
+        if(this.rol_usuario == 3){
+            $('#edit-jg-nombre').addClass('ui-state-disabled');
+            $('#edit-jg-correo').addClass('ui-state-disabled');
+        } else {
+            $('#edit-jg-nombre').removeClass('ui-state-disabled');
+            $('#edit-jg-correo').removeClass('ui-state-disabled');
+        }
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_jugador',this.id_jugador);
+        send.append('id_equipo',this.id_equipo)
+        xhr.open('POST', path + 'app/getJugador');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        xhr.timeout = 10000;
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+        }
+        xhr.ontimeout = function(e){
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+        }
+        xhr.onload = function(e){
+            if(this.status == 200){
+                if(this.response && JSON.parse(this.response)){
+                    var json = JSON.parse(this.response);
+                    var fullname = checkName(json.nombre,json.apellido_paterno);
+                    document.getElementById('edit-jg').innerHTML = fullname;
+                    document.getElementById('edit-jg-posicion').innerHTML = 'Posición: ' + json.nombre_p;
+                    document.getElementById('edit-jg-nombre').value = fullname;
+                    document.getElementById('edit-jg-correo').value = json.email;
+                }
+            }
+            $.mobile.loading('hide');
+        }   
+    }
+
+    this.setJugador = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_jugador',this.id_jugador);
+        send.append('nombre',this.nombre); 
+        send.append('correo',this.email);
+        send.append('rol',this.rol_usuario);
+        xhr.open('POST', path + 'app/setJugador');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        xhr.timeout = 10000;
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+        }
+        xhr.ontimeout = function(e){
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+        }
+        xhr.onload = function(e){
+            if(this.status == 200){
+                if(this.response){
+                    navigator.notification.alert('Se actualizo correctamente el jugador',function(){},'Atención','Ok');
+                    $.mobile.loading('hide');
+                }
+            }
+        }
+    }
+
     this.getDeleteFunction = function(){
         var startLoc = null; 
         $(document).on( "touchstart", function(e){ 
@@ -242,12 +309,14 @@ function jugadores(){
                     var disabled = '';
                     for(var i = 0; i < json.length; i++ ){
                         if(localStorage.getItem('rol_equipo') == 1){
-                          disabled = (json[i].rol == 1) ? 'ui-state-disabled' : '';  
+                            disabled = (json[i].rol == 1) ? 'ui-state-disabled' : '';
+                            click = "onclick='redirectJugadores("+json[i].id_usuario+","+json[i].rol_usuario+")'"; 
                         } else {
                             disabled = 'ui-state-disabled';
+                            click = '';
                         }
                         
-                    inc += "<li value='"+json[i].id_usuario+"' class='li-padding'>";
+                    inc += "<li value='"+json[i].id_usuario+"' class='li-padding' "+click+">";
                     inc += "<span class='delete "+disabled+"'>";
                     inc += "<div class='centra_texto'>Borrar</div>";
                     inc += "</span>";
@@ -521,6 +590,30 @@ function jugadores(){
 
     }
 
+    this.getPosicionesJugador = function(){
+        var dporte = 1;
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_dporte',dporte);
+        xhr.open('POST', path + 'app/getPosiciones');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        xhr.onload = function(e){
+            if(this.status == 200){
+                if(this.response && JSON.parse(this.response)){
+                    var json = JSON.parse(this.response);
+                    var inc = "";
+                    for(var i = 0; i < json.length; i++ ){
+                        inc += "<input name='jg-radio-posicion' value="+json[i].id_posicion+" id='jg-radio-"+json[i].id_posicion+"' type='radio'>";
+                        inc += "<label for='jg-radio-"+json[i].id_posicion+"' >"+json[i].nombre+"</label>";
+                    }
+                    $('#edit-jg-posiciones').html(inc).trigger('create');
+                }
+            }
+        }  
+    }
+
     this.getPosiciones = function(){
         var dporte = 1;
         var xhr = new XMLHttpRequest();
@@ -648,6 +741,17 @@ document.getElementById('jg-valida-titulares').addEventListener('click',function
     delete jg;
 });
 
+document.getElementById('edit-jg-save').addEventListener('click',function(){
+    event.preventDefault();
+    var jg = new jugadores();
+    jg.id_jugador = sessionStorage.getItem('jg_session');
+    jg.nombre = document.getElementById('edit-jg-nombre').value;
+    jg.email = document.getElementById('edit-jg-correo').value;
+    jg.rol_usuario = sessionStorage.getItem('rol_session');
+    jg.setJugador();
+    delete jg;
+});
+
 function backAcciones(id){
     var xhr = new XMLHttpRequest();
     var send = new FormData();
@@ -677,6 +781,12 @@ function backAcciones(id){
         }
     }
 
+}
+
+function redirectJugadores(jg,rol){
+    sessionStorage.setItem("jg_session",jg);
+    sessionStorage.setItem("rol_session",rol);
+    $.mobile.navigate("#editar-jugador", {transition: "fade"});
 }
 
 function titularesDismissed(){
