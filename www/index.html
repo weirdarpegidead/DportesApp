@@ -45,7 +45,7 @@
                     <a id="log-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Su combinación usuario/password es incorrecta</a>
                     <div class="ancho-botones">
                         <div class="ui-input-btn ui-btn btn-input">
-                            Login
+                            Logins
                             <input id="logear" data-enhanced="true" value="Input value" type="submit">
                         </div>
                     </div>
@@ -160,9 +160,9 @@
         <h1>Mi Perfil</h1>
         <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
         </div>
-        <div class="content" style="margin:0px">
+        <div class="content">
             <ul data-role="listview" data-inset="false">
-                <li data-icon="false" style="padding-left:20px;">
+                <li data-icon="false" style="padding-left:20px;padding-right:20px;">
                     <a href="#" class="color-boton-equipo-dark" id="takePhoto">
                         <img id="photo" src="jquerymobile/img-dportes/foto2.png">
                         <h2 id="perfil-usuario"></h2>
@@ -343,9 +343,14 @@
 
     <!-- ———— ACCION DE JUGADOR - JUGADAS REALIZADAS POR EL JUGADOR ————— -->
     <div data-role="page" id="acciones" class="jqm-demos" data-title="Dportes" data-theme="a">
+
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Acciones</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
         
         <div class="content">
-        
             <div class="contenedor-fechas">
                 <div class="row centrado-fechas">
                         <div class="small-4 columns block"><p id="acc-marc-favor" class="marcador">0</p><p id="acc-equipo" class="nombre-equipo"></p></div>
@@ -353,10 +358,8 @@
                         <div class="small-4 columns block"><p id="acc-marc-contra" class="marcador">0</p><p id="acc-rival" class="nombre-equipo"></p></div>
                 </div>
             </div>
-
             <div id="acc-jugadores">
             </div>
-            
             <a id="acc-terminar-periodo" href="#" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-mini ui-btn-inline ui-icon-fin-tiempo ui-btn-icon-left">Fin del Tiempo</a>
             <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
                 <div data-role="header" data-theme="a">
@@ -368,7 +371,6 @@
                     <a href="resumen_1_tiempo.html" class="ui-btn ui-mini ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-transition="fade">Confirmar</a>
                 </div>
             </div>
-            
             <a id="acc-gol-contra" href="#" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-mini ui-btn-inline ui-icon-gol-encontra  ui-btn-icon-left">Gol en contra</a>
             <div data-role="popup" id="popupDialog2" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
                 <div data-role="header" data-theme="a">
@@ -380,19 +382,76 @@
                     <a href="#" class="ui-btn ui-mini ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Confirmar</a>
                 </div>
             </div>
-            
             <a id="acc-deshacer" href="#" class="ui-btn ui-mini ui-btn-inline ui-icon-back ui-btn-icon-left">Deshacer ultima Jugada</a>
-                        
-            
             <!-- PANEL JUGADAS -->
             <div data-role="panel" data-position="right" data-display="overlay" data-theme="a" id="jugada_partido">
     
-                <ul id="acc-tipo-stat" data-role="listview">
+                <ul id="" data-role="listview">
                         <!--<div class="jugadas"><span class="texto_jugada">Tarjeta</span>
                             <div class="jugada_buena"><a href="#" class="ui-btn ui-corner-all ui-icon-amarilla ui-btn-icon-notext quita_margenes_iconos" data-rel="close">Buena</a></div>
                             <div class="jugada_mala"><a href="#" class="ui-btn ui-corner-all ui-icon-roja ui-btn-icon-notext quita_margenes_iconos" data-rel="close">Mala</a></div>
-                        </div>-->                       
-
+                        </div>-->
+                    <!-- acciones de gol
+                    <div class="jugadas"><span class="texto_jugada">Dentro del Area</span>
+                        <a href="#" data-rel="close"><div class="gol_dentro_area_buena"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">Fuera del Area</span>
+                        <a href="#" data-rel="close"><div class="gol_fuera_area_buena"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">Tiro Libre</span>
+                        <a href="#" data-rel="close"><div class="gol_tiro_libre_buena"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">Tiro Esquina</span>
+                        <a href="#" data-rel="close"><div class="gol_tiro_esquina_buena"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">De Volea</span>
+                        <a href="#" data-rel="close"><div class="gol_volea_buena"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">De Tijeras</span>
+                        <a href="#" data-rel="close"><div class="gol_tijera_buena"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">De Chilena</span>
+                        <a href="#" data-rel="close"><div class="gol_chilena_buena"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">De Cabeza</span>
+                        <a href="#" data-rel="close"><div class="gol_cabeza_buena"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">De Taco</span>
+                        <a href="#" data-rel="close"><div class="gol_taco_buena"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">Otro</span>
+                        <a href="#" data-rel="close"><div class="gol_otro_buena"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">Dentro del Area</span>
+                        <a href="#" data-rel="close"><div class="gol_dentro_area_mala"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">Fuera del Area</span>
+                        <a href="#" data-rel="close"><div class="gol_fuera_area_mala"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">Tiro Libre</span>
+                        <a href="#" data-rel="close"><div class="gol_tiro_libre_mala"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">Tiro Esquina</span>
+                        <a href="#" data-rel="close"><div class="gol_tiro_esquina_mala"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">De Volea</span>
+                        <a href="#" data-rel="close"><div class="gol_volea_mala"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">De Tijeras</span>
+                        <a href="#" data-rel="close"><div class="gol_tijera_mala"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">De Chilena</span>
+                        <a href="#" data-rel="close"><div class="gol_chilena_mala"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">De Cabeza</span>
+                        <a href="#" data-rel="close"><div class="gol_cabeza_mala"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">De Taco</span>
+                        <a href="#" data-rel="close"><div class="gol_taco_mala"></div></a>
+                    </div>
+                    <div class="jugadas"><span class="texto_jugada">Otro</span>
+                        <a href="#" data-rel="close"><div class="gol_otro_mala"></div></a>
+                    </div>-->
                 </ul>
     
             </div>
@@ -911,7 +970,7 @@
                 <div id="uno" class="ui-body-d ui-content">
                     <ul id="custom-format-listview" data-role="listview" data-inset="false" >
                         <li data-icon="false">
-                            <a href="#" data-ajax="false" class="fechas" id="contenedor-fechas">
+                            <a href="#resumen-partido" data-ajax="false" class="fechas" id="contenedor-fechas">
                                 <div class="contenedor-fechas">
                                     <div class="centrado-fechas">
                                         <div class="block">
@@ -936,19 +995,19 @@
                 <div id="dos" class="ui-body-d ui-content">
                     <ul data-role="listview" data-inset="false">
                         <li>
-                            <a href="#estadisticas-individual-jugador" class="color-boton-equipo"><img src="jquerymobile/img-dportes/jugador1.jpg">
+                            <a href="#est-jugador-prueba" class="color-boton-equipo"><img src="jquerymobile/img-dportes/jugador1.jpg">
                                 <h2>KEYLOR NAVAS</h2>
                                 <p>Portero</p>
                             </a>
                         </li>
                         <li>
-                            <a href="#estadisticas-individual-jugador" class="color-boton-equipo-dark"><img src="jquerymobile/img-dportes/jugador2.jpg">
+                            <a href="#est-jugador-prueba" class="color-boton-equipo-dark"><img src="jquerymobile/img-dportes/jugador2.jpg">
                                 <h2>SERGIO RAMOS</h2>
                                 <p>Lateral</p>
                             </a>
                         </li>
                         <li>
-                            <a href="#estadisticas-individual-jugador" class="color-boton-equipo"><img src="jquerymobile/img-dportes/jugador3.jpg">
+                            <a href="#est-jugador-prueba" class="color-boton-equipo"><img src="jquerymobile/img-dportes/jugador3.jpg">
                                 <h2>PEPE</h2>
                                 <p>Lateral</p>
                             </a>
@@ -964,24 +1023,81 @@
                             <p>RM - Santiago - Pudahuel</p>
                         </a>
                         </li>
-                        <div class="ui-grid-a">
+                        <!--<div class="ui-grid-a">
                             <div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">Goles<br><span style="font-size:32px;">6</span></div></div>
                             <div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">P. Ganados<br><span style="font-size:32px;">0</span></div></div>
                             <div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">P. Perdidos<br><span style="font-size:32px;">14</span></div></div>
                             <div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">P. Empatados<br><span style="font-size:32px;">320</span></div></div>
                             <div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">Tarjetas Amarillas<br><span style="font-size:32px;">3</span></div></div>
                             <div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">Tarjetas Rojas<br><span style="font-size:32px;">3</span></div></div>
-                        </div>
+                        </div>-->
                         <h4 align="center">Datos Estadísticos:</h4>
-                        <table data-role="table" id="table-column-toggle" data-mode="" class="ui-responsive table-stroke">
-                             <tbody>
+                        <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+                            <option value="" selected>Rivales</option>
+                            <option value="aricayparinacota">Tarjetas</option>
+                            <option value="tarapaca">Goles</option>
+                            <option value="antofagasta">Tipos de Goles</option>
+                            <option value="antofagasta">Cambios</option>
+                            <option value="antofagasta">Efectividad</option>
+                        </select>
+                        <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
+                            <thead>
+                                <tr class="ui-bar-d">
+                                    <th width="100">Equipo</th>
+                                    <th data-priority="critical">PG</th>
+                                    <th data-priority="critical">PE</th>
+                                    <th data-priority="critical">PP</th>
+                                    <th data-priority="critical">GF</th>
+                                    <th data-priority="critical">GC</th>
+                                    <th data-priority="critical">Dif</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
-                                    <th>P. Jugados</th>
+                                    <td><a href="#">Club Deportivo Alto de Bajos</a></td>
+                                    <td>10</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>8</td>
+                                    <td>5</td>
                                     <td>3</td>
                                 </tr>
                                 <tr>
-                                    <th>Goles recibidos</th>
-                                    <td>0</td>
+                                    <td><a href="#">Club Deportivo Alto de Bajos</a></td>
+                                    <td>10</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>8</td>
+                                    <td>5</td>
+                                    <td>3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4 align="center">Amarillas</h4><!-- titulo momentaneo, borrar al programar -->
+                        <!-- ejemplo de tabla para tarjetas amarillas-->
+                        <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
+                            <thead>
+                                <tr class="ui-bar-d">
+                                    <th width=""></th>
+                                    <th data-priority="critical"><img src="jquerymobile/img-dportes/iconos/icono_amarilla.png"></th>
+                                    <th data-priority="critical"><img src="jquerymobile/img-dportes/iconos/icono_roja.png"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#">Totales</a></td>
+                                    <td>10</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Jugador 1</a></td>
+                                    <td>10</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Jugador 2</a></td>
+                                    <td>10</td>
+                                    <td>5</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -991,6 +1107,284 @@
         </div>      
     </div>
 
+    <!-- resumen partido -->
+    <div data-role="page" id="resumen-partido" class="jqm-demos">
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a><!--ABRE MENU-->
+            <h1>Estadísticas</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
+        <div class="content">
+            <ul data-role="listview">
+                <li data-icon="false">
+                    <a href="fechas_jugadas_estadisticas.html" data-transition="fade" data-ajax="false" class="fechas" id="contenedor-fechas">
+                        <div class="contenedor-fechas">
+                            <div class="centrado-fechas">
+                                    <div class="block"><img src="jquerymobile/img-dportes/realmadrid.png"><p class="nombre-equipo">R. Madrid de la nueva portugal</p><p class="marcador">1</p></div>
+                                    <div class="vs">VS</div>
+                                    <div class="block"><img src="jquerymobile/img-dportes/barcelona.png"><p class="nombre-equipo">Barcelona de la nueva españa</p><p class="marcador">1</p></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <div class="contenedor-resumen-goles"> <!--este centra los divs-->
+                    <div class="alinea-resumen"><h4 class="texto-resumen-goles">Resumen Goles:</h4></div>
+                    <div class="resultados-partido">
+                        <div class="contenedor-gol">
+                            <div class="icono-gol"></div>
+                            <div class="jugador">Jose Comprado</div>
+                        </div>
+                    </div>
+                    <div class="resultados-partido">
+                        <div class="contenedor-gol">
+                            <div class="icono-gol"></div>
+                            <div class="jugador">Jose Comprado</div>
+                        </div>
+                    </div>
+                    <h4 class="texto-resumen-goles">Resumen</h4>
+                    <div class="contenedor-resultados">
+
+                        <div class="contenedor-campo">
+                            <div class="estadisticas-mi-equipo">5</div>
+                            <div class="campos">Tiros al Arco</div>
+                            <div class="estadisticas-equipo-contrario"></div>
+                        </div>
+                        
+                        <div class="contenedor-campo">
+                            <div class="estadisticas-mi-equipo">7</div>
+                            <div class="campos">Tiro Libre</div>
+                            <div class="estadisticas-equipo-contrario"></div>
+                        </div>
+                        
+                        <div class="contenedor-campo">
+                            <div class="estadisticas-mi-equipo">7</div>
+                            <div class="campos">Tiro de Esquina</div>
+                            <div class="estadisticas-equipo-contrario"></div>
+                        </div>
+                        
+                        <div class="contenedor-campo">
+                            <div class="estadisticas-mi-equipo">5</div>
+                            <div class="campos">Tarjetas</div>
+                            <div class="estadisticas-equipo-contrario"></div>
+                        </div>
+                        
+                        <div class="contenedor-campo">
+                            <div class="estadisticas-mi-equipo">5</div>
+                            <div class="campos">Penal</div>
+                            <div class="estadisticas-equipo-contrario"></div>
+                        </div>
+                        
+                        <div class="contenedor-campo">
+                            <div class="estadisticas-mi-equipo">5</div>
+                            <div class="campos">Quites</div>
+                            <div class="estadisticas-equipo-contrario"></div>
+                        </div>
+                        
+                        <div class="contenedor-campo">
+                            <div class="estadisticas-mi-equipo">5</div>
+                            <div class="campos">Faltas</div>
+                            <div class="estadisticas-equipo-contrario"></div>
+                        </div>
+                        
+                        <div class="contenedor-campo">
+                            <div class="estadisticas-mi-equipo">5</div>
+                            <div class="campos">Cambios</div>
+                            <div class="estadisticas-equipo-contrario"></div>
+                        </div>
+                    </div>
+                    <h4>Estadisticas</h4>
+                    <table data-role="table" id="" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
+                        <thead>
+                            <tr class="ui-bar-d">
+                                <th width="100">Equipo</th>
+                                <th data-priority="critical">Favor</th>
+                                <th data-priority="critical">Contr</th>
+                                <th data-priority="critical">% Efec</th>
+                                <th data-priority="critical">B</th>
+                                <th data-priority="critical">M</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">Gol</a></td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>8</td>
+                                <td>5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="detalle">
+                        <a href="#detalle-jugador-prueba" class="ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon color-boton">Ver Detalle de Jugadores</a>
+                    </div>
+                </div><!--cierre contenedor-resumen-goles-->
+            </ul>
+        </div>
+    </div>
+
+    <!-- detalle jugador prueba-->
+    <div data-role="page" id="detalle-jugador-prueba" class="jqm-demos" data-title="Dportes" data-theme="a">
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Titulo</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
+        <div data-role="main">
+            <ul data-role="listview" data-inset="false">
+                <li data-icon="false">
+                    <a href="#" class="color-boton-equipo-dark">
+                        <img src="jquerymobile/img-dportes/jugador1.jpg">
+                        <h2>KEYLOR NAVAS</h2>
+                        <p>Posición: Portero</p>
+                    </a>
+                </li>
+                <h4 align="center">Datos Estadísticos del partido:</h4>
+                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="" data-column-popup-theme="a">
+                     <thead>
+                       <tr class="ui-bar-d">
+                         <th data-priority="critical"></th>
+                         <th data-priority="1">Favor</th>
+                         <th data-priority="1">Contra</th>
+                         <th data-priority="1">% Efec</th>
+                         <th data-priority="1">B</th>
+                         <th data-priority="2">M</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <th>Gol</th>
+                         <td>3</td>
+                         <td>3</td>
+                         <td>3%</td>
+                         <td>3.3</td>
+                         <td>3.3</td>
+                       </tr>
+                     </tbody>
+                </table>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Estadisticas globales de un jugador prueba-->
+    <div data-role="page" id="est-jugador-prueba" class="jqm-demos" data-title="Dportes" data-theme="a">
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Acumuladas jugador</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
+        <div data-role="main">
+
+        <ul data-role="listview" data-inset="false">
+            <li data-icon="false">
+                <a href="#" class="color-boton-equipo-dark">
+                    <img src="jquerymobile/img-dportes/jugador1.jpg">
+                    <h2>KEYLOR NAVAS</h2>
+                    <p>Posición: Portero</p>
+                </a>
+            </li>
+            <h4 align="center">Datos Estadísticos:</h4>
+            <!-- el select permitira navegar por las distintas opciones para listar las estadisticas del jugador especifico
+            por defecto mostrara la tabla de estadisticas globales del jugador -->
+            <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+                <option value="" selected>Global</option>
+                <option value="aricayparinacota">Rivales</option>
+                <option value="tarapaca">Periodo de Fechas</option>
+                <option value="antofagasta">Ligas</option>
+            </select>
+            <!-- codigo a mostrar al seleccionar rival -->
+            <input value="" type="search" placeholder="Buscar rival">
+            <!-- codigo a mostrar para los resultados de la busqueda-->
+            <ul data-role="listview" data-inset="false">
+                <li data-icon="false"><a href="#">Rival 1</a></li>
+                <li data-icon="false"><a href="#">Rival 2</a></li>
+                <li data-icon="false"><a href="#">Rival 3</a></li>
+            </ul>
+            <!-- codigo a mostrar al seleccionar periodo de fechas -->
+            <label>Desde:<input type="date" placeholder="Desde"></label>
+            <label>Hasta:<input type="date" placeholder="Desde"></label>
+            <!-- codigo a mostrar al seleccionar ligas -->
+            <ul data-role="listview" data-inset="false">
+                <li data-icon="false"><a href="#">Rival 1</a></li>
+                <li data-icon="false"><a href="#">Rival 2</a></li>
+                <li data-icon="false"><a href="#">Rival 3</a></li>
+            </ul>
+        </ul>
+        <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="" data-column-popup-theme="a">
+            <thead>
+                <tr class="ui-bar-d">
+                    <th data-priority="critical"></th>
+                    <th data-priority="1">Favor</th>
+                    <th data-priority="1">Contra</th>
+                    <th data-priority="1">% Efec</th>
+                    <th data-priority="1">B</th>
+                    <th data-priority="2">M</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Gol</th>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3%</td>
+                    <td>3.3</td>
+                    <td>3.3</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- nombre pagina-->
+    <div data-role="page" id="" class="jqm-demos" data-title="Dportes" data-theme="a">
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Titulo</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
+        <div data-role="main">
+            <!-- contenido -->
+        </div>
+    </div>
+    
+	<!--<div data-role="page" id="estadisticas_por_equipos_jugados" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Rivales acumuladas</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
+        
+
+        <div data-role="main">
+            <table data-role="table" id="" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
+                <thead>
+                    <tr class="ui-bar-d">
+                        <th width="200">Equipo</th>
+                        <th data-priority="critical">P G</th>
+                        <th data-priority="2">P E</th>
+                        <th data-priority="3">P P</th>
+                        <th data-priority="4">G F</th>
+                        <th data-priority="5">G C</th>
+                        <th data-priority="6">Dif</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">Club Deportivo Alto de Bajos</a></td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>-->
+    
+
     <!-- PANEL MENU -->
     <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu_perfil">
         <ul data-role="listview">
@@ -999,9 +1393,15 @@
             <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
             <li data-icon="grid"><a href="#mis-equipos">Mis Equipos</a></li>
             <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
+
+            <!-- pruebas -->
+            <!--<li data-icon="star"><a href="#estadisticas_por_equipos_jugados" data-transition="fade">Prueba</a></li>-->
+            <li data-icon="star"><a href="#estadisticas-nuevas" data-transition="fade">Prueba2</a></li>
+            <!-- pruebas -->
+
             <li data-icon="clock"><a href="#notificaciones" data-transition="fade">Notificaciones</a></li>
-                    <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
-                    <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
+            <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
+            <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
             <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
