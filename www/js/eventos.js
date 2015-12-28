@@ -23,6 +23,7 @@ function eventos(){
             add.append('hora_evento',this.hora);
             add.append('fecha_evento',this.fecha);
             add.append('tipo_evento',this.tipo);
+            add.append('periodo',this.periodo);
             add.append('id_equipo',localStorage.getItem('equipo'));
             add.append('notification',this.bool)
             if(sessionStorage.getItem('evento')){
@@ -46,6 +47,7 @@ function eventos(){
             };
             xhr.onload = function(e){
                 $.mobile.loading('hide');
+                //alert(this.response);
                 //alert('asdasd' + this.status);
                 if(this.status == 200){
                     //alert(this.response);
@@ -92,6 +94,12 @@ function eventos(){
                     var s = json.fecha_evento;
                     var bits = s.split(/\D/);
                     var date = new Date(bits[0], --bits[1], bits[2], bits[3], bits[4]);
+                    //alert(json.periodos_id_periodo_futbol);
+                    //var myselect = $("select#foo");
+                    //myselect[0].selectedIndex = json.periodos_id_periodo_futbol;
+                    //myselect.selectmenu("refresh");
+                    $('#pg-periodo').val(json.periodos_id_periodo_futbol).prop('selected', true);
+                    $('#pg-periodo').selectmenu('refresh');
                     document.getElementById('pg-rival').value = json.nombre;
                     document.getElementById('pg-ubicacion').value = json.ubicacion;
                     document.getElementById('pg-hora').value = date.getHours() +':'+('0'+date.getMinutes()).slice(-2);;
