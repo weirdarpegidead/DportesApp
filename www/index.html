@@ -16,20 +16,13 @@
             $(function () {
                 $("[data-role='panel']").panel().enhanceWithin();
             });
-<<<<<<< HEAD
-        </script>
-=======
             </script>
-
 			<script src="jquerymobile/imageMapResizer.min.js"></script>
             <script type="text/javascript">
-                                
-                            $(document).ready(function() {
-                                $('map').imageMapResize();
-                            });
-                                
-                        </script>
->>>>>>> parent of 8c13ad0... graficos
+                $(document).ready(function() {
+                    $('map').imageMapResize();
+                });  
+            </script>
     </head>
 
 <body>
@@ -389,6 +382,7 @@
                 <div data-role="header" data-theme="a">
                 <h1>Gol del Equipo Contrario</h1>
                 </div>
+
                 <div role="main" class="ui-content">
                     <h4 class="ui-title">Marcar Gol encontra</h4>
                     <a href="#" class="ui-btn ui-mini ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancelar</a>
@@ -844,8 +838,7 @@
             <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
         </div>
         
-        <div class="content" style="margin:20px;">
-            
+        <div class="content" style="margin:20px;">       
             
             <div class="alineacion-centro-vertical contenedor_logo_dportes acerca">
                 <h2>Dportes</h2>
@@ -938,6 +931,7 @@
         </div>
         
         <div class="content" style="margin:20px">
+
             <h3 class="titulo-terminos">1 Servicios</h3>
             <p class="texto-terminos"><strong>1.1 SCS</strong>, podrá interrumpir los Servicios. SCS puede optar por modificar o interrumpir los Servicios, incluyendo partes de ellos, ya que sea por actualización de ofertas o adición de más y nuevas funcionalidades. Podremos detener, suspender o modificar los Servicios en cualquier momento sin previo aviso. </p>
             <p class="texto-terminos"><strong>1.2 SCS </strong>puede modificar estos Términos. SCS puede actualizar estas condiciones. Siempre la versión más actualizada de estos Términos se mantendrá publicada en el sitio. También actualizaremos la "Última Actualización" en la parte superior de los Términos de Servicio. Cualquier cambio en las condiciones serán efectivas de inmediato para los nuevos usuarios de SCS y, para el resto de usuarios, cualquier cambio en los Términos de Servicio entrarán en vigor treinta (30) días después de la publicación de un aviso de dichos cambios en el Sitio. Si usted no está de acuerdo con cualquier cambio(s) después de recibir el aviso respectivo, deberá dejar de utilizar los servicios de SCS. De lo contrario, el uso continuado de dichos servicios constituye la aceptación de los cambio(s). Por favor, consulte el sitio regularmente para ver nuestros términos vigentes. </p>
@@ -970,7 +964,6 @@
             <h1>Estadísticas</h1>
             <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
         </div>
-        
         <div class="content">
             <div data-role="tabs" id="tabs">
                 <div data-role="navbar">
@@ -1036,14 +1029,6 @@
                             <p>RM - Santiago - Pudahuel</p>
                         </a>
                         </li>
-                        <!--<div class="ui-grid-a">
-                            <div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">Goles<br><span style="font-size:32px;">6</span></div></div>
-                            <div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">P. Ganados<br><span style="font-size:32px;">0</span></div></div>
-                            <div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">P. Perdidos<br><span style="font-size:32px;">14</span></div></div>
-                            <div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">P. Empatados<br><span style="font-size:32px;">320</span></div></div>
-                            <div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">Tarjetas Amarillas<br><span style="font-size:32px;">3</span></div></div>
-                            <div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:60px; text-align:center">Tarjetas Rojas<br><span style="font-size:32px;">3</span></div></div>
-                        </div>-->
                         <h4 align="center">Datos Estadísticos:</h4>
                         <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
                             <option value="" selected>Rivales</option>
@@ -1066,15 +1051,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><a href="#">Club Deportivo Alto de Bajos</a></td>
-                                    <td>10</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>8</td>
-                                    <td>5</td>
-                                    <td>3</td>
-                                </tr>
                                 <tr>
                                     <td><a href="#">Club Deportivo Alto de Bajos</a></td>
                                     <td>10</td>
@@ -1234,155 +1210,6 @@
                 </div><!--cierre contenedor-resumen-goles-->
             </ul>
         </div>
-<<<<<<< HEAD
-
-        <!-- Estadisticas globales de un jugador prueba-->
-        <div data-role="page" id="est-jugador-prueba" class="jqm-demos" data-title="Dportes" data-theme="a">
-            <div data-role="header" data-position="fixed" class="color-encabezado">
-                <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
-                <h1>Acumuladas jugador</h1>
-                <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
-            </div>
-            <div data-role="main">
-
-                <ul data-role="listview" data-inset="false">
-                    <li data-icon="false">
-                        <a href="#" class="color-boton-equipo-dark">
-                            <img src="jquerymobile/img-dportes/jugador1.jpg">
-                            <h2>KEYLOR NAVAS</h2>
-                            <p>Posición: Portero</p>
-                        </a>
-                    </li>
-                    <h4 align="center">Datos Estadísticos:</h4>
-                    <!-- el select permitira navegar por las distintas opciones para listar las estadisticas del jugador especifico
-                    por defecto mostrara la tabla de estadisticas globales del jugador -->
-                    <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
-                        <option value="" selected>Global</option>
-                        <option value="aricayparinacota">Rivales</option>
-                        <option value="tarapaca">Periodo de Fechas</option>
-                        <option value="antofagasta">Ligas</option>
-                    </select>
-                    <!-- codigo a mostrar al seleccionar rival -->
-                    <input value="" type="search" placeholder="Buscar rival">
-                    <!-- codigo a mostrar para los resultados de la busqueda-->
-                    <ul data-role="listview" data-inset="false">
-                        <li data-icon="false"><a href="#">Rival 1</a></li>
-                        <li data-icon="false"><a href="#">Rival 2</a></li>
-                        <li data-icon="false"><a href="#">Rival 3</a></li>
-                    </ul>
-                    <!-- codigo a mostrar al seleccionar periodo de fechas -->
-                    <label>Desde:<input type="date" placeholder="Desde"></label>
-                    <label>Hasta:<input type="date" placeholder="Desde"></label>
-                    <!-- codigo a mostrar al seleccionar ligas -->
-                    <ul data-role="listview" data-inset="false">
-                        <li data-icon="false"><a href="#">Rival 1</a></li>
-                        <li data-icon="false"><a href="#">Rival 2</a></li>
-                        <li data-icon="false"><a href="#">Rival 3</a></li>
-                    </ul>
-                </ul>
-                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="" data-column-popup-theme="a">
-            </div>
-        </div>
-    
-        <!-- prueba de cancha de basketball-->
-    	<div data-role="page" id="prueba-cancha" class="jqm-demos" data-title="Dportes" data-theme="a">
-            <div data-role="header" data-position="fixed" class="color-encabezado">
-                <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
-                <h1>Equipo Real Madrid</h1>
-                <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->                
-            </div>
-            <div class="content">
-                <div class="contenedor-fechas">
-                    <div class="row centrado-fechas">
-                        <div class="small-4 columns block"><p class="marcador">1</p><p class="nombre-equipo">R. Madrid</p></div>
-                        <div class="small-4 columns vs">VS</div>
-                        <div class="small-4 columns block"><p class="marcador">3</p><p class="nombre-equipo">Barcelona</p></div>
-                    </div>
-                </div>
-                <div style="position:absolute;" id="seccion1"><img src="jquerymobile/img-dportes/cancha_2.jpg" width="100%"></div>
-                <div style="text-align:center" id="imagen-central">
-                    <img src="jquerymobile/img-dportes/cancha_basketball.jpg" width="100%" usemap="#cancha-basketball" border="0" id="imagen_cancha">
-                    <map name="cancha-basketball">
-                          <area shape="poly" coords="27,106,67,87,98,126,129,148,107,187,60,156" href="#" onClick="saludo2()"></a>
-                          <area shape="poly" coords="115,191,139,150,183,158,225,150,247,194,184,206,147,202" href="#" onClick="saludo3()"></a>
-                          <area shape="poly" coords="233,147,257,192,302,160,326,132,338,110,297,89" href="#" onClick="saludo4()" onBlur=""></a>
-                          <area shape="poly" coords="23,100,67,81,59,47,59,5,15,6,15,53" href="#" onClick="saludo1()"></a>
-                          <area shape="poly" coords="70,9,101,10,101,37,105,60,76,67,70,36" href="#">
-                          <area shape="poly" coords="82,79,109,70,121,94,143,111,132,131,102,111" href="#">
-                          <area shape="poly" coords="147,140,158,116,178,120,207,118,218,140,183,149" href="#">
-                          <area shape="poly" coords="219,108,243,94,256,72,284,77,266,104,232,132" href="#">
-                          <area shape="poly" coords="258,60,288,67,292,45,292,9,262,9" href="#">
-                          <area shape="poly" coords="296,80,336,99,347,63,347,5,305,5" href="#" onClick="saludo5()"></a>
-                          <area shape="poly" coords="134,20,155,20,159,35,165,44,144,57,135,39" href="#">
-                          <area shape="poly" coords="173,50,154,63,183,74,214,64,197,52" href="#">
-                          <area shape="poly" coords="202,47,221,57,232,36,234,20,212,19" href="#">
-                    </map>
-                    <script>
-                        function saludo1(){$('#seccion1').css('display','block').fadeOut(500,"linear");}
-                        function saludo2(){alert("prueba 2")}
-                        function saludo3(){alert("prueba 3")}
-                        function saludo4(){alert("prueba 4")}
-                        function saludo5(){alert("prueba 5")}
-                    </script>
-                </div>
-    		</div>
-        </div>
-    
-        <!-- prueba de graficos-->
-        <div data-role="page" id="chart" class="jqm-demos" data-title="Dportes" data-theme="a">
-            <div data-role="header" data-position="fixed" class="color-encabezado">
-                <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
-                <h1>Gráfico</h1>
-                <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
-            </div>
-            <div data-role="main">
-                <canvas id="canvas"></canvas>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
-
-        <!-- PANEL MENU -->
-        <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu_perfil">
-            <ul data-role="listview">
-                <li data-icon="home"><a href="#home">Home</a></li>
-                <li data-icon="user"><a href="#mi-perfil" data-rel="close">Mi Perfil</a></li>
-                <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
-                <li data-icon="grid"><a href="#mis-equipos">Mis Equipos</a></li>
-                <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
-                <li data-icon="clock"><a href="#notificaciones" data-transition="fade">Notificaciones</a></li>
-                <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
-                <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
-                <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
-                <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
-                <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
-                <!-- pruebas -->
-                <!--<li data-icon="star"><a href="#estadisticas_por_equipos_jugados" data-transition="fade">Prueba</a></li>-->
-                <li data-icon="star"><a href="#estadisticas-nuevas" data-transition="fade">Prueba de Estadísticas</a></li>
-                <li data-icon="star"><a href="#chart" data-transition="fade">Prueba de Gráficos</a></li>
-                <li data-icon="star"><a href="#prueba-cancha">Prueba de Cancha</a></li>
-                <!-- pruebas -->
-            </ul>
-        </div>
-
-        <script type="text/javascript" src="js/librerias.js"></script>
-        <script type="text/javascript" src="js/dportes.js"></script>
-        <script type="text/javascript" src="js/equipos.js"></script>
-        <script type="text/javascript" src="js/estadisticas.js"></script>
-        <script type="text/javascript" src="js/jugadores.js"></script>
-        <script type="text/javascript" src="js/eventos.js"></script>
-        <script type="text/javascript" src="js/registro.js"></script>
-        <script type="text/javascript" src="js/usuarios.js"></script>
-        <script type="text/javascript" src="js/auth.js"></script>
-        <script type="text/javascript" src="js/photo.js"></script>
-        <script type="text/javascript" src="js/imageMapResizer.min.js"></script>
-        <script type="text/javascript" src="js/chart.js"></script>
-    </body>
-=======
     </div>
 
     <!-- detalle jugador prueba-->
@@ -1508,21 +1335,28 @@
             <!-- contenido -->
         </div>
     </div>
-    
+
+    <!-- prueba de graficos -->
+    <div data-role="page" id="chart" class="jqm-demos" data-title="Dportes" data-theme="a">
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Gráficos</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
+        <div data-role="main">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
     
     <!-- prueba de cancha de basketball-->
 	<div data-role="page" id="prueba-cancha" class="jqm-demos" data-title="Dportes" data-theme="a">
-
         <div data-role="header" data-position="fixed" class="color-encabezado">
             <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
             <h1>Equipo Real Madrid</h1>
             <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
             <div class="tarro-basura"><a href="#" id="tarro"><img src="jquerymobile/img-dportes/iconos/borrar.png"></a></div>
-            
         </div>
-        
         <div class="content">
-
             <div class="contenedor-fechas">
                 <div class="row centrado-fechas">
                         <div class="small-4 columns block"><p class="marcador">1</p><p class="nombre-equipo">R. Madrid</p></div>
@@ -1530,7 +1364,6 @@
                         <div class="small-4 columns block"><p class="marcador">3</p><p class="nombre-equipo">Barcelona</p></div>
                 </div>
             </div>
-        
             <img src="jquerymobile/img-dportes/cancha_basketball.jpg" alt="basketball" name="usaMap" width="100%" usemap="#usaMap" border="0">
             <map name="usaMap">
               <a href="#" data-transition="fade" onClick="saludo2()"><area shape="poly" coords="27,106,67,87,98,126,129,148,107,187,60,156" href="#"></a>
@@ -1548,69 +1381,15 @@
               <area shape="poly" coords="202,47,221,57,232,36,234,20,212,19" href="#">
             </map>
             <script>
-			function saludo1(){
-				alert("prueba 1")
-			}
-			
-			function saludo2(){
-				alert("prueba 2")
-			}
-			
-			function saludo3(){
-				alert("prueba 3")
-			}
-			
-			function saludo4(){
-				alert("prueba 4")
-			}
-			
-			function saludo5(){
-				alert("prueba 4")
-			}
+			function saludo1(){alert("prueba 1")}
+			function saludo2(){alert("prueba 2")}
+			function saludo3(){alert("prueba 3")}
+			function saludo4(){alert("prueba 4")}
+			function saludo5(){alert("prueba 4")}
 			</script>
 		</div>
- 
     </div>
-    <!--cierre-->
     
-	<!--<div data-role="page" id="estadisticas_por_equipos_jugados" class="jqm-demos" data-title="Dportes" data-theme="a">
-    
-        <div data-role="header" data-position="fixed" class="color-encabezado">
-            <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
-            <h1>Rivales acumuladas</h1>
-            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
-        </div>
-        
-
-        <div data-role="main">
-            <table data-role="table" id="" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                <thead>
-                    <tr class="ui-bar-d">
-                        <th width="200">Equipo</th>
-                        <th data-priority="critical">P G</th>
-                        <th data-priority="2">P E</th>
-                        <th data-priority="3">P P</th>
-                        <th data-priority="4">G F</th>
-                        <th data-priority="5">G C</th>
-                        <th data-priority="6">Dif</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="#">Club Deportivo Alto de Bajos</a></td>
-                        <td>10</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>8</td>
-                        <td>5</td>
-                        <td>3</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-	</div>-->
-    
-
     <!-- PANEL MENU -->
     <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu_perfil">
         <ul data-role="listview">
@@ -1619,19 +1398,16 @@
             <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
             <li data-icon="grid"><a href="#mis-equipos">Mis Equipos</a></li>
             <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
-
-            <!-- pruebas -->
-            <!--<li data-icon="star"><a href="#estadisticas_por_equipos_jugados" data-transition="fade">Prueba</a></li>-->
-            <li data-icon="star"><a href="#estadisticas-nuevas" data-transition="fade">Prueba2</a></li>
-            <!-- pruebas -->
-
             <li data-icon="clock"><a href="#notificaciones" data-transition="fade">Notificaciones</a></li>
             <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
             <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
             <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
-            <li data-icon="eye"><a href="#prueba-cancha">prueba</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
+            <!-- pruebas -->
+            <li data-icon="star"><a href="#estadisticas-nuevas" data-transition="fade">Estadisticas de Prueba</a></li>
+            <li data-icon="star"><a href="#chart" data-transition="fade">Gráficos de Prueba</a></li>
+            <li data-icon="eye"><a href="#prueba-cancha">Cancha de Prueba</a></li>
         </ul>
     </div>
 
@@ -1645,6 +1421,6 @@
             <script type="text/javascript" src="js/usuarios.js"></script>
             <script type="text/javascript" src="js/auth.js"></script>
             <script type="text/javascript" src="js/photo.js"></script>
+            <script type="text/javascript" src="js/chart.js"></script>
 </body>
->>>>>>> parent of 8c13ad0... graficos
 </html>
