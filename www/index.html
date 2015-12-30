@@ -51,7 +51,7 @@
                     <a id="log-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Su combinación usuario/password es incorrecta</a>
                     <div class="ancho-botones">
                         <div class="ui-input-btn ui-btn btn-input">
-                            Logins
+                            Ingresar
                             <input id="logear" data-enhanced="true" value="Input value" type="submit">
                         </div>
                     </div>
@@ -208,6 +208,36 @@
                     </form>
                 </div>
             </ul>
+        </div>
+    </div>
+
+    <!-- ———— INGRESO EQUIPO ————— -->
+
+    <div data-role="page" id="reg-equipo" data-title="Dportes">
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a data-rel="back" class="saca-estilo-boton">
+                <div class="fl-izquierda"></div>
+            </a>
+            <h1>Crear Equipo</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+        </div>
+        
+        <div data-role="main" class="content" style="margin:20px">
+            <form method="post">
+                <input id="reg-nom-equipo" name="equipo" placeholder="Nombre de tu equipo" type="text">
+                <select id="eq-region"></select>
+                <select id="eq-ciudad"></select>
+                <select id="eq-comuna"></select>
+                <fieldset id="reg-dportes" data-role="controlgroup">
+                </fieldset>
+                <a id="reg-dporte-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione deporte</a>
+                <!--<<input id="reg-ubicacion" name="ubicacion" placeholder="Locación" type="text">
+                a id="reg-ubicacion-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Ingrese una ubicación</a>-->
+                <div class="ui-input-btn ui-btn btn-input">
+                    Registrar
+                    <input id="registro-equipo" data-enhanced="true" type="submit">
+                </div>
+            </form>
         </div>
     </div>
 
@@ -755,7 +785,7 @@
         <div role="main" class="ui-content">
             <ul id="eq-list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete" data-inset="false">
             </ul>
-            <a href="#" class="color-boton ui-btn" data-transition="fade" style="width: 100%;bottom: 0px;position: fixed;" >Agregar Equipo</a>
+            <a href="#reg-equipo"><div class="agregar_nuevo_equipo"></div></a>
         </div>
     </div>
 
@@ -1398,6 +1428,15 @@
             <li data-icon="star"><a href="#jugadores-equipo">Mis Jugadores</a></li>
             <li data-icon="grid"><a href="#mis-equipos">Mis Equipos</a></li>
             <li data-icon="clock"><a href="#historial-stat" data-transition="fade">Estadisticas</a></li>
+<<<<<<< HEAD
+=======
+
+            <!-- pruebas -->
+            <!--<li data-icon="star"><a href="#estadisticas_por_equipos_jugados" data-transition="fade">Prueba</a></li>-->
+            <!--<li data-icon="star"><a href="#estadisticas-nuevas" data-transition="fade">Prueba2</a></li>-->
+            <!-- pruebas -->
+
+>>>>>>> refs/remotes/origin/master
             <li data-icon="clock"><a href="#notificaciones" data-transition="fade">Notificaciones</a></li>
             <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
             <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
