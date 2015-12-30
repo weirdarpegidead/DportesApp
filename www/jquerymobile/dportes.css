@@ -864,3 +864,12 @@ a.color-boton-presionado {
 	position: fixed;
 	left: 0px;
 	bottom: 10px; }
+.agregar_nuevo_equipo {
+                position: fixed;
+                bottom: 15px;
+                right: 15px;
+                width: 51px;
+                height: 51px;
+                background-image:url("img-dportes/iconos/icono_nuevo_equipo.svg");
+                z-index: 3;
+}
