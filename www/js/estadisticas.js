@@ -219,10 +219,6 @@ function setAccion(tipo,accion){
     xhr.setRequestHeader('Cache-Control', 'no-cache');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(add);
-    xhr.onload =function(e){
-        alert(this.response);
-    }
-
     if(tipo == 1 && accion == 1){
         var id = sessionStorage.getItem('accIDTitular');
         var marcador = document.getElementById('acc-marc-favor').innerHTML;
