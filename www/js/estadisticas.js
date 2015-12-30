@@ -119,7 +119,6 @@ function estadisticas(){
     this.getEstadisticasPage = function(){
         var xhr = new XMLHttpRequest();
         var send = new FormData();
-        //alert(this.evento);
         send.append('id_evento',this.evento);
         send.append('id_equipo',this.equipo);
         xhr.open('POST', path + 'app/getEstadisticasEvento');
@@ -220,6 +219,9 @@ function setAccion(tipo,accion){
     xhr.setRequestHeader('Cache-Control', 'no-cache');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(add);
+    xhr.onload =function(e){
+        alert(this.response);
+    }
 
     if(tipo == 1 && accion == 1){
         var id = sessionStorage.getItem('accIDTitular');

@@ -1,4 +1,5 @@
     $(document).on('pagecontainerbeforeshow', function (e, ui) {
+
         var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
         if(activePage === 'index') {
             document.addEventListener("deviceready", onDeviceReady, false);
